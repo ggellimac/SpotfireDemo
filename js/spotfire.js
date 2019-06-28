@@ -2,7 +2,7 @@ var app;
 var doc;
 var webPlayerServerRootUrl =
   "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
-var analysisPath = "/Teams/01DECXJ2T13ZJ745WSCZ0S2YAA/SpotfireDemoEmbed (2)";
+var analysisPath = "/Teams/01DECXJ2T13ZJ745WSCZ0S2YAA/ganttchart V7.5";
 var parameters = "";
 var reloadInstances = true;
 var apiVersion = "10.4";
@@ -18,7 +18,7 @@ var customizationInfo = {
   showFilterPanel: true,
   showHelp: true,
   showLogout: true,
-  showPageNavigation: true,
+  showPageNavigation: false,
   showStatusBar: true,
   showToolBar: true,
   showUndoRedo: true
@@ -45,10 +45,10 @@ function onReadyCallback(response, newApp) {
     );
 
     //The mock map data visualization for site activation
-    mapChart = app.openDocument("mapChart", 0);
+    mapChart = app.openDocument("mapChart", 1);
 
     //The mock pie chart visualization for sites activated VS. sites not activated 
-    pieChart = app.openDocument("pieChart", 1);
+    pieChart = app.openDocument("pieChart", 2);
   } else {
     console.log("Status not OK. " + response.status + ": " + response.message);
   }

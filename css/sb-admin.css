@@ -14,7 +14,7 @@
  #mapChart {
   position: relative;
   float: left;
-  width: 80%;
+  width: 50%;
   height: 480px;
   border: 5px solid grey;
   background-image: radial-gradient(blue, #87CEFA)
@@ -23,7 +23,7 @@
 #pieChart {
   position: relative;
   float: right;
-  width: 15%;
+  width: 50%;
   height: 480px;
   border: 5px solid grey;
 }
