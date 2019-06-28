@@ -8,20 +8,20 @@ var reloadInstances = true;
 var apiVersion = "10.4";
 
 var customizationInfo = {
-  showAbout: false,
-  showAnalysisInformationTool: false,
-  showAuthor: false,
-  showClose: false,
+  showAbout: true,
+  showAnalysisInformationTool: true,
+  showAuthor: true,
+  showClose: true,
   showCustomizableHeader: false,
-  showDodPanel: false,
-  showExportFile: false,
-  showFilterPanel: false,
-  showHelp: false,
-  showLogout: false,
-  showPageNavigation: false,
-  showStatusBar: false,
-  showToolBar: false,
-  showUndoRedo: false
+  showDodPanel: true,
+  showExportFile: true,
+  showFilterPanel: true,
+  showHelp: true,
+  showLogout: true,
+  showPageNavigation: true,
+  showStatusBar: true,
+  showToolBar: true,
+  showUndoRedo: true
 };
 
 spotfire.webPlayer.createApplication(

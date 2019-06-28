@@ -83,7 +83,8 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: blue;
+  background-color: blue;
   text-align: left;
   background-color: #fff;
 }
@@ -10596,6 +10597,7 @@ body {
 #wrapper #content-wrapper {
   overflow-x: hidden;
   width: 100%;
+  background-color: #293b56;
   padding-top: 1rem;
   padding-bottom: 80px;
 }
