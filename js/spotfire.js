@@ -2,7 +2,7 @@ var app;
 var doc;
 var webPlayerServerRootUrl =
   "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
-var analysisPath = "/Users/27xzprcicbnr65s5qmpu676nnynlltep/SpotfireDemoEmbed";
+var analysisPath = "/Teams/01DECXJ2T13ZJ745WSCZ0S2YAA/SpotfireDemoEmbed (2)";
 var parameters = "";
 var reloadInstances = true;
 var apiVersion = "10.4";
