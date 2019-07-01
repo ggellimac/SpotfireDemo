@@ -60,6 +60,25 @@
   float: right;
 }
 
+.search_field {
+  top: 25px;
+  float: right;
+  border-radius: 50px;
+  padding: 5px 5px 5px 25px;
+  z-index: 5;
+  background-color: white;
+}
+
+.search_field input {
+  border: none;
+  padding: 0;
+}
+
+.search_field button {
+  border: none;
+  background: none;
+}
+
 #project-dropdown{
    border-bottom: 1px solid #293B56;
    width: 15%;
