@@ -58,6 +58,23 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+#search-bar{
+  float: right;
+}
+
+#project-dropdown{
+   border-bottom: 1px solid #293B56;
+   width: 15%;
+}
+
+.breadcrumb{
+  margin-top: 30px;
+}
+
+.btn{
+  font-size: 32px;
+}
 /*a{
   font-family: "Open Sans", sans-serif;
 } */
@@ -2702,7 +2719,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #fff;
+  background-color: ##0069d9;
 }
 
 .btn-primary:hover {
