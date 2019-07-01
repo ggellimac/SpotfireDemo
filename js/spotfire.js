@@ -63,10 +63,10 @@ function onReadyCallback(response, newApp) {
     );
 
     //The mock map data visualization for site activation
-    mapChart = app.openDocument("mapChart", 1, customizationInfo);
+    mapChart = app.openDocument("mapChart", 1, customizationInfo1);
 
     //The mock pie chart visualization for sites activated VS. sites not activated 
-    siteAct = app.openDocument("siteAct", 2, customizationInfo);
+    siteAct = app.openDocument("siteAct", 2, customizationInfo1);
 
     kpiChart = app.openDocument("kpiChart", 3,customizationInfo1);
   } else {
