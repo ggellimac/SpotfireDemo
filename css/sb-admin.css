@@ -82,6 +82,11 @@
 #project-dropdown{
    border-bottom: 1px solid #293B56;
    width: 15%;
+
+}
+
+#project-name{
+   font-size: 32px;
 }
 
 .breadcrumb{
@@ -89,8 +94,9 @@
 }
 
 .btn{
-  font-size: 32px;
+  font-size: 2rem;
 }
+
 /*a{
   font-family: "Open Sans", sans-serif;
 } */
