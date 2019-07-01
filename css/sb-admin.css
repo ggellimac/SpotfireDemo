@@ -10,6 +10,13 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ .dot {
+  height: 40px;
+  width: 40px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
 
  #mapChart {
   position: relative;
@@ -66,6 +73,8 @@
 #search-bar{
   float: right;
   margin-top: 30px;
+  border-radius: 0.50rem;
+  background-image: linear-gradient(white, #F7F7F8);
 }
 
 .search_field {
@@ -89,22 +98,26 @@
 
 .project-name{
    width: 50vh;
-  /* border-bottom: 1px solid #293B56;*/
+ /* border-bottom: 1px solid #293B56;*/
 
-   position:relative;
-   margin-bottom: 40px;
+ position:relative;
+ margin-bottom: 40px;
 }
-  .project-name:after{
-    content: '';
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-    padding-top: 5px;
-    border-bottom: 1px solid ##293B56;
-  }
+.project-name:after{
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 5px;
+  border-bottom: 1px solid ##293B56;
+}  
 
 .breadcrumb{
   margin-top: 30px;
+}
+
+.homepage-card{
+  font-size: 30px;
 }
 
 .homepage-card{
@@ -5020,8 +5033,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.50rem;
-  background-image: linear-gradient(white, #F7F7F8);
-
+  background-image: linear-gradient(white,#f7f7f8);
 }
 
 .card > hr {
