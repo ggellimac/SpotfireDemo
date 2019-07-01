@@ -80,13 +80,31 @@
 }
 
 #project-dropdown{
-   border-bottom: 1px solid #293B56;
    width: 15%;
 
 }
 
 #project-name{
-   width: 30vh;
+   width: 50vh;
+  /* border-bottom: 1px solid #293B56; */
+
+   span {
+   width   : auto;
+   height  : 50px;
+   position: relative;
+   z-index : 1;
+
+   &:before {
+     content : "";
+     position: absolute;
+     left    : 0;
+     top  : 0px;
+     height  : 1px;
+     width   : 70%;  /* percentage of the element width*/
+     border-bottom:4px solid magenta;
+     margin-top:1.2em; move the border below the text*/
+   }
+ }
 }
 
 .breadcrumb{
@@ -10712,6 +10730,7 @@ body {
   padding-top: 1rem;
   padding-bottom: 80px;
   border-radius: 25px;
+  margin-top: 30px;
 }
 
 .scroll-to-top {
