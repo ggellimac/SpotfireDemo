@@ -47,9 +47,6 @@
    width: 95%;
 }
 
-#homepage-width{
-  width: 95%;
-}
 
 #no-padding{
   width: 100%;
@@ -2719,7 +2716,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: ##0069d9;
+  background-color: #0069d9;
 }
 
 .btn-primary:hover {
@@ -4984,6 +4981,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+
 }
 
 .card > hr {
