@@ -45,6 +45,14 @@
    border-radius: 25px;
    width: 95%;
 }
+
+#no-padding{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 /*a{
   font-family: "Open Sans", sans-serif;
 } */
@@ -663,8 +671,8 @@ pre code {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+/*  padding-right: 15px;
+  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -4405,7 +4413,6 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none;
   background-color: white;
-  
 }
 
 .nav-link {
@@ -4508,6 +4515,7 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  /*come back here*/
 }
 
 .navbar > .container,
@@ -10659,6 +10667,7 @@ body {
   background-color: #293b56;
   padding-top: 1rem;
   padding-bottom: 80px;
+  border-radius: 25px;
 }
 
 .scroll-to-top {

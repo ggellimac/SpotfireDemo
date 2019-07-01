@@ -129,113 +129,115 @@
         <li class="breadcrumb-item active">Overview</li>
       </ol>
 
-      <div id="content-wrapper">
-
-        <div id="blue-part" class="container-fluid">  <!--blue part-->
-
-
-
-          <!-- Navbar Search *have to fix alignment -->
-          <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <!-- KPI chart example-->
-          <div id="kpiChart">
+      <!-- Navbar Search *have to fix alignment -->
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
+        </div>
+      </form>
 
-          <!-- Icon Cards-->
-          <div class="row">
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-primary o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-comments"></i>
-                  </div>
-                  <div class="mr-5">26 New Messages!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-warning o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-list"></i>
-                  </div>
-                  <div class="mr-5">11 New Tasks!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-success o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
-                  </div>
-                  <div class="mr-5">123 New Orders!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-life-ring"></i>
-                  </div>
-                  <div class="mr-5">13 New Tickets!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Map chart Example-->
-          <div id="mapChart" class="card mb-3">
-            <!-- The old chart that was where the map chart is now
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
-            <div class="card-body">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            -->
-          </div>
+      <div id="content-wrapper">   <!--blue part-->
 
-          <!-- SiteActivation Graph Example -->
-          <div id="siteAct" class="card mb-3">
-          
-          </div>
+        <div class="container-fluid">
+
+          <div id="no-padding" class="container-fluid">
+            <!-- KPI chart example-->
+            <div id="kpiChart">
+            </div>
+
+            <!-- Icon Cards-->
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-primary o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fas fa-fw fa-comments"></i>
+                    </div>
+                    <div class="mr-5">26 New Messages!</div>
+                  </div>
+                  <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                      <i class="fas fa-angle-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-warning o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fas fa-fw fa-list"></i>
+                    </div>
+                    <div class="mr-5">11 New Tasks!</div>
+                  </div>
+                  <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                      <i class="fas fa-angle-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-success o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fas fa-fw fa-shopping-cart"></i>
+                    </div>
+                    <div class="mr-5">123 New Orders!</div>
+                  </div>
+                  <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                      <i class="fas fa-angle-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-danger o-hidden h-100">
+                  <div class="card-body">
+                    <div class="card-body-icon">
+                      <i class="fas fa-fw fa-life-ring"></i>
+                    </div>
+                    <div class="mr-5">13 New Tickets!</div>
+                  </div>
+                  <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right">
+                      <i class="fas fa-angle-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map chart Example-->
+            <div id="mapChart" class="card mb-3">
+              <!-- The old chart that was where the map chart is now
+              <div class="card-header">
+                <i class="fas fa-chart-area"></i>
+                Area Chart Example</div>
+              <div class="card-body">
+                <canvas id="myAreaChart" width="100%" height="30"></canvas>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+              -->
+            </div>
+
+            <!-- SiteActivation Graph Example -->
+            <div id="siteAct" class="card mb-3">
+
+            </div>
+
+          </div> <!--end of fluid container-->
 
         </div>
         <!-- /.container-fluid -->
