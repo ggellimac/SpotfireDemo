@@ -47,6 +47,7 @@
    width: 95%;
 }
 
+
 #no-padding{
   width: 100%;
   padding-right: 15px;
@@ -4999,6 +5000,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+
 }
 
 .card > hr {
