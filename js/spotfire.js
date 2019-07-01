@@ -24,6 +24,24 @@ var customizationInfo = {
   showUndoRedo: true
 };
 
+var customizationInfo1 = {
+  showAbout: false,
+  showAnalysisInformationTool: false,
+  showAuthor: false,
+  showClose: false,
+  showCustomizableHeader: false,
+  showDodPanel: false,
+  showExportFile: false,
+  showFilterPanel: false,
+  showHelp: false,
+  showLogout: false,
+  showPageNavigation: false,
+  showStatusBar: false,
+  showToolBar: false,
+  showUndoRedo: false
+};
+
+
 spotfire.webPlayer.createApplication(
   webPlayerServerRootUrl,
   customizationInfo,
@@ -45,10 +63,12 @@ function onReadyCallback(response, newApp) {
     );
 
     //The mock map data visualization for site activation
-    mapChart = app.openDocument("mapChart", 1);
+    mapChart = app.openDocument("mapChart", 1, customizationInfo);
 
     //The mock pie chart visualization for sites activated VS. sites not activated 
-    pieChart = app.openDocument("pieChart", 2);
+    siteAct = app.openDocument("siteAct", 2, customizationInfo);
+
+    kpiChart = app.openDocument("kpiChart", 3,customizationInfo1);
   } else {
     console.log("Status not OK. " + response.status + ": " + response.message);
   }
