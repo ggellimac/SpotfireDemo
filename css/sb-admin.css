@@ -60,7 +60,7 @@
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
-    
+
 }
 
 #search-bar{
@@ -5019,7 +5019,8 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.50rem;
+  background-image: linear-gradient(white, #F7F7F8);
 
 }
 
