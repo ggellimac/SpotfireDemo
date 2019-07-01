@@ -162,12 +162,16 @@
 
         <!-- Navbar Search *have to fix alignment -->
 
-        <div class="search_field d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-          <input name="q" placeholder="Search"/>
-          <button type="submit">
-            <img src="images/search.png" alt="Search" />
-          </button>
+        <div id="search-bar" class="container">
+          <div class="search_field d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <input name="q" placeholder="Search"/>
+            <button type="submit">
+              <img src="images/search.png" alt="Search" />
+            </button>
+          </div>
         </div>
+
+
 
 
       <!-- Breadcrumbs/Project Name-->
@@ -178,8 +182,8 @@
       </ol>
 
 <!--project dropdown-->
-<div id="project-dropdown" class="dropdown">
-  <button id="project-name" type="button" class="btn" data-toggle="dropdown">
+<div class="dropdown project-dropdown">
+  <button type="button" class="btn project-name" data-toggle="dropdown">
     Eli Lilly / Glyxambi 093411-2
     <img id="search-carrot" src="images/carrot.png"></img>
   </button>
@@ -201,7 +205,7 @@
             <div id="kpiChart">
             </div>
 
-      
+
 
               <!-- Map chart Example-->
               <div id="mapChart" class="card mb-3">
@@ -248,79 +252,82 @@
     <!-- Icon Cards-->
 <div class="mt-4">
     <div id="white-part" class="container-fluid"> <!-- white part-->
-      <div class="row">
-        <div class="col-xl-2 col-sm-2 mb-2">
-          <div class="card text-secondary bg-white o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-comments"></i>
-              </div>
-              <div class="mr-4">Risks and Issues</div>
-            <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">Site 4 CDA pending receipt for 15 days
-                </label>
-              </div>
+      <div id="bottom-section" class="container-fluid"> <!--we need another container-->
+        <div class="row">
+          <div class="col-xl-2 col-sm-2 mb-2">
+            <div class="card text-secondary bg-white o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-4">Risks and Issues</div>
               <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">Burn rate 7% higher than projected 
-                </label>
-              </div>
-              <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">4 screen fails at Site 23
-                </label>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">Site 4 CDA pending receipt for 15 days
+                  </label>
+                </div>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">Burn rate 7% higher than projected
+                  </label>
+                </div>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">4 screen fails at Site 23
+                  </label>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-xl-2 col-sm-2 mb-2">
+            <div class="card text-secondary bg-white o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-4">Tasks</div>
+              <div>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">Generate weekly status report for Friday
+                  </label>
+                </div>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">Email Jack to schedule PSSV
+                  </label>
+                </div>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox" value="">Send invoice to GSK
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-sm-2 mb-2">
+            <div class="card text-secondary bg-white o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-shopping-cart"></i>
+                </div>
+                <div class="mr-4">Resources</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-sm-6 mb-6">
+            <div class="card text-secondary bg-white o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-4">Activity</div>
+              </div>
+            </div>
         </div>
-        <div class="col-xl-2 col-sm-2 mb-2">
-          <div class="card text-secondary bg-white o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-list"></i>
-              </div>
-              <div class="mr-4">Tasks</div>
-            <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">Generate weekly status report for Friday
-                </label>
-              </div>
-              <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">Email Jack to schedule PSSV
-                </label>
-              </div>
-              <div>
-                <label class="checkbox">
-                  <input type="checkbox" value="">Send invoice to GSK
-                </label>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="col-xl-2 col-sm-2 mb-2">
-          <div class="card text-secondary bg-white o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-shopping-cart"></i>
-              </div>
-              <div class="mr-4">Resources</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 col-sm-6 mb-6">
-          <div class="card text-secondary bg-white o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fas fa-fw fa-life-ring"></i>
-              </div>
-              <div class="mr-4">Activity</div>
-            </div>
-          </div>
       </div>
-      </div>
-    </div>
+
+    </div> <!--end of white part-->
   </div>
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
