@@ -37,8 +37,14 @@
 #userCenter{
   float: right;
   color: black;
+  margin-right: 30px;
 }
 
+#white-part{
+  background-image: linear-gradient(to right, white , #E5E5E5);
+   border-radius: 25px;
+   width: 95%;
+}
 /*a{
   font-family: "Open Sans", sans-serif;
 } */
@@ -221,13 +227,6 @@ margin-left: 30px;
   float: right;
 }
 
-#rcorners1 {
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
 
 
 
@@ -4406,6 +4405,7 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none;
   background-color: white;
+  
 }
 
 .nav-link {
@@ -5218,7 +5218,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: transparent;
   border-radius: 0.25rem;
 }
 
