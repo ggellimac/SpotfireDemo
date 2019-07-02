@@ -206,6 +206,9 @@ input:checked + .slider:before {
   color: #6A7B95;
 }
 
+.all-content{
+  display: block;
+}
 
 .mine-content{
   display: none; /*set this as hidden until the toggle switches*/
@@ -11163,5 +11166,3 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-
-
