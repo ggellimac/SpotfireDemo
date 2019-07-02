@@ -1,6 +1,12 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // Box toggles will change content
+  function changeContent(){
+    var x = document.getElementByID();
+    if()
+  }
+
   // Toggle the side navigation
   $("#sidebarToggle").on('click', function(e) {
     e.preventDefault();

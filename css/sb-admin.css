@@ -130,6 +130,9 @@
 
 
 /*lort pls help i hope this works*/
+#toggle-switch{
+  margin-top: 2vh;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -207,6 +210,12 @@ input:checked + .slider:before {
   display: inline;
   color: #6A7B95;
 }
+
+
+.mine-content{
+  display: none; /*set this as hidden until the toggle switches*/
+}
+
 
 
 
