@@ -132,7 +132,7 @@
 
 .homepage-card-content{
   font-size: .8rem;
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 
 }
 
@@ -3186,6 +3186,8 @@ fieldset:disabled a.btn {
   background-color: #f8f9fa;
   border-color: #f8f9fa;
   border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,.25,.25);
+
 }
 
 .btn-light:hover {
