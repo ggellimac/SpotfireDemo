@@ -120,18 +120,22 @@
 
 
 .homepage-card{
-  font-size: 28px;
+  font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
 }
 
 .homepage-card-content{
-  font-size: 14px;
+  font-size: .8rem;
+  margin-top: 2vh;
+
 }
+
+
 
 
 /*lort pls help i hope this works*/
 #toggle-switch{
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 }
 .switch {
   position: relative;
