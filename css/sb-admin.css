@@ -100,12 +100,13 @@
 
  position:relative;
  margin-bottom: 40px;
+
 }
 .project-name:after{
   content: '';
   display: block;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   padding-top: 5px;
   border-bottom: 1px solid #293B56;
 }
