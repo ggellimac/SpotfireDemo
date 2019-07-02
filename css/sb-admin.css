@@ -108,20 +108,22 @@
   margin: 0 auto;
   width: 80%;
   padding-top: 5px;
-  border-bottom: 1px solid ##293B56;
+  border-bottom: 1px solid #293B56;
 }
 
 .breadcrumb{
   margin-top: 30px;
 }
 
-.homepage-card{
-  font-size: 30px;
-}
 
 .homepage-card{
-  font-size: 30px;
+  font-size: 28px;
 }
+
+.homepage-card-content{
+  font-size: 14px;
+}
+
 
 /*a{
   font-family: "Open Sans", sans-serif;
