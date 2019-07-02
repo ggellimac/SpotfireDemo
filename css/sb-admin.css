@@ -10,6 +10,9 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
+ 
  .dot {
   height: 40px;
   width: 40px;
@@ -134,6 +137,8 @@
   height: 2vh;
   margin-left: 0.5vh;
   margin-right: 0.5vh;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .switch input {
