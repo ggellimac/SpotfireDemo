@@ -118,6 +118,7 @@
 
 .homepage-card{
   font-size: 28px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .homepage-card-content{
@@ -125,10 +126,86 @@
 }
 
 
-/*a{
-  font-family: "Open Sans", sans-serif;
-} */
+/*lort pls help i hope this works*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5vh;
+  height: 2vh;
+  margin-left: 0.5vh;
+  margin-right: 0.5vh;
+}
 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FF671F;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.6vh;
+  width: 1.6vh;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #6A7B95;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.4vh);
+  -ms-transform: translateX(1.4vh);
+  transform: translateX(1.4vh);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline;
+  color: #FF671F;
+}
+.gray{
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline;
+  color: #6A7B95;
+}
+
+
+
+/*real stuff*/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
