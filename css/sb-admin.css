@@ -120,19 +120,23 @@
 
 
 .homepage-card{
-  font-size: 28px;
+  font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
   height: 10vh;
 }
 
 .homepage-card-content{
-  font-size: 14px;
+  font-size: .8rem;
+  margin-top: 2vh;
+
 }
+
+
 
 
 /*lort pls help i hope this works*/
 #toggle-switch{
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 }
 .switch {
   position: relative;
@@ -3173,6 +3177,7 @@ fieldset:disabled a.btn {
   color: #212529;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
+  border-radius: 12px;
 }
 
 .btn-light:hover {
