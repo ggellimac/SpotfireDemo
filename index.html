@@ -290,31 +290,52 @@
 
                 </div>
               <div class="homepage-card-content">
-                <div id="toggle-switch" class="d-inline">
+                <div id="risks" class="toggle-switch">
                   <p class="montserrat">ALL</p>
 
-                  <label class="switch">
+                  <label class="switch" onclick="changeContent()">
                     <input type="checkbox">
                     <span class="slider round"></span>
                   </label>
 
                 <p class="gray">MINE</p>
                 </div>
-                <div>
-                  <label class="checkbox">
-                    <input type="checkbox" value=""> Site 4 CDA pending receipt for 15 days
-                  </label>
-                </div>
-                <div>
-                  <label class="checkbox">
-                    <input type="checkbox" value=""> Burn rate 7% higher than projected
-                  </label>
-                </div>
-                <div>
-                  <label class="checkbox">
-                    <input type="checkbox" value=""> 4 screen fails at Site 23
-                  </label>
-                </div>
+
+                <div class="all-content">
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> Site 4 CDA pending receipt for 15 days
+                    </label>
+                  </div>
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> Burn rate 7% higher than projected
+                    </label>
+                  </div>
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> 4 screen fails at Site 23
+                    </label>
+                  </div>
+                </div> <!-- /all-content-->
+
+                <div class="mine-content">
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> These are my tasks.
+                    </label>
+                  </div>
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> This is a task
+                    </label>
+                  </div>
+                  <div>
+                    <label class="checkbox">
+                      <input type="checkbox" value=""> Can someone tell me if this works pls?
+                    </label>
+                  </div>
+                </div><!-- /mine-content-->
               </div>
             </div>
           </div>
@@ -357,7 +378,7 @@
 
                   </div>
                 <div class="homepage-card-content">
-                  <div id="toggle-switch" class="d-inline">
+                  <div id="risks" class="toggle-switch">
                     <p class="montserrat">ALL</p>
 
                     <label class="switch">
@@ -509,7 +530,7 @@
                       </svg>
                     </span>
               </div>
-              <div id="toggle-switch" class="d-inline">
+              <div id="risks" class="toggle-switch">
                 <p class="montserrat">ALL</p>
 
                 <label class="switch">
@@ -518,6 +539,12 @@
                 </label>
 
               <p class="gray">MINE</p>
+              </div>
+
+              <div>
+                <label class="checkbox">
+                  <input type="checkbox" value=""> Generate weekly status report for Friday
+                </label>
               </div>
             </div>
           </div>
