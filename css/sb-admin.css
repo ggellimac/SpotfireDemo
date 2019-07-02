@@ -211,13 +211,23 @@ input:checked + .slider:before {
   color: #6A7B95;
 }
 
-.all-content{
+#all-content{
   display: block;
 }
 
-.mine-content{
+#mine-content{
   display: none; /*set this as hidden until the toggle switches*/
 }
+
+#all-tasks{
+  display: block;
+}
+
+#my-tasks{
+  display: none; /*set this as hidden until the toggle switches*/
+}
+
+
 
 
 
