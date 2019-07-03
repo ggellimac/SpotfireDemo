@@ -258,12 +258,13 @@ input:checked + .slider:before {
 }
 
 #all-activity-dates{
-  /* display:block; */
+  display:block;
   font-style: italic;
   font-size: 11px;
 }
 
 #my-activity-dates {
+  display:none;
   font-style: italic;
   font-size: 11px;
 }
