@@ -30,14 +30,15 @@ function injectDomElement(parent, messages) {
     let span = document.createElement("span");
     span.className = "checkmark";
 
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "name";
-    checkbox.id = "id";
+ 
 
     let line = document.createElement("hr");
-    // label.appendChild(checkbox);
-    // label.appendChild(span);
+    // if (messages != allActivityMessages && messages != myActivityMessage) {
+    //   label.appendChild(checkbox);
+    //   label.appendChild(span);
+    // }
+   
+
     label.appendChild(document.createTextNode(message));
     parent.appendChild(line);
     parent.appendChild(label);
