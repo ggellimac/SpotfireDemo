@@ -114,6 +114,18 @@
   border-bottom: 1px solid #293B56;
 }
 
+.other-project-name{
+  position:relative;
+  margin-bottom: 8px;
+}
+.other-project-name:after{
+  content: '';
+  display: block;
+  /* margin: 0 auto; */
+  padding-top: 2px;
+  border-bottom: 1px solid #293B56;
+}
+
 .breadcrumb{
   margin-top: 30px;
 }
@@ -125,7 +137,7 @@
 .homepage-card{
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
-  height: 10vh;
+  height: 5vh;
   font-weight: 300;
   color: #293B56;
 }
