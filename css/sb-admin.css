@@ -118,11 +118,16 @@
   margin-top: 30px;
 }
 
-
+#bottom-card{
+  -webkit-box-shadow: 0 0 20px #ECEEF0;
+   box-shadow: 0 0 20px #ECEEF0;
+}
 .homepage-card{
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
-  height: 5vh;
+  height: 10vh;
+  font-weight: 300;
+  color: #293B56;
 }
 
 .homepage-card-content{
@@ -145,8 +150,11 @@
   height: 2vh;
   margin-left: 0.5vh;
   margin-right: 0.5vh;
+  margin-bottom: 5vh;
+  bottom: -2.3vh;
   vertical-align: middle;
   display: inline-block;
+
 }
 
 .switch input {
@@ -170,10 +178,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.6vh;
-  width: 1.6vh;
-  left: 2px;
-  bottom: 2px;
+  height: 1.4vh;
+  width: 1.4vh;
+  left: 2.5px;
+  bottom: 2.6px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -195,7 +203,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 45px;
 }
 
 .slider.round:before {
@@ -5228,9 +5236,9 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.50rem;
-  background-image: linear-gradient(white,#f7f7f8);
+  border: 1px solid #EDEDED;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(white,#F5F6F7);
 }
 
 .card > hr {
