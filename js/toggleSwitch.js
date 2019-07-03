@@ -18,6 +18,9 @@ let myTasks = document.getElementById("my-tasks");
 let allActivity = document.getElementById("all-activity");
 let myActivity = document.getElementById("my-activity");
 
+let allActivityDates = document.getElementById("all-activity-dates");
+let myActivityDates = document.getElementById("my-activity-dates");
+
 
 //Handles the event when the user toggles the risks and issues toggle switch
 function handleClickForRisksAndIssues() {
@@ -62,10 +65,13 @@ function handleClickForActivity() {
   if (checkBox.checked === true) {
     myActivity.style.display = "block";
     allActivity.style.display = "none";
-
+    myActivityDates.style.display = "block";
+    allActivityDates.style.display = "none";
     //else show "all-activity" and hide "mine-activity"
   } else {
     allActivity.style.display = "block";
     myActivity.style.display = "none";
+    allActivityDates.style.display = "block";
+    myActivityDates.style.display = "none";
   }
 }
