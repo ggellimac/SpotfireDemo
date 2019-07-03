@@ -5,8 +5,8 @@ let myRiskMessages = ["This is my risk"];
 let allTaskMessages = ["This is a task", "This is a new task", "This is my task"];
 let myTaskMessages = ["This is my task"];
 
-let allActivityMessages = ["This is an activity", "This is my activity", "This is a different activity"];
-let myActivityMessage = ["This is my activity"];
+let allActivityMessages = ["Jack replied to your comment on your published report \"Sponsor Status Report\"", "Data refresh from Gobalto", "Weekly status report exported to Excel", "You started following Lauren on GSK Notes and Tasks"];
+let myActivityMessage = ["Jack replied to your comment on your published report \"Sponsor Status Report\"", "You started following Lauren on GSK Notes and Tasks"];
 
 injectDomElement(allContent, allRiskMessages);
 injectDomElement(myContent, myRiskMessages);
@@ -28,8 +28,11 @@ function injectDomElement(parent, messages) {
     checkbox.id = "id";
 
     let line = document.createElement("hr");
-    label.appendChild(checkbox);
-    label.appendChild(span);
+    if (messages != allActivityMessages && messages != myActivityMessage) {
+      label.appendChild(checkbox);
+      label.appendChild(span);
+    }
+   
 
     label.appendChild(document.createTextNode(message));
     parent.appendChild(line);
