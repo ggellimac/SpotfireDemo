@@ -251,10 +251,14 @@ input:checked + .slider:before {
 
 #all-activity{
   display:block;
+  font-size: 11px;
+
 }
 
 #my-activity {
   display: none;
+  font-size: 11px;
+
 }
 
 #all-activity-dates{

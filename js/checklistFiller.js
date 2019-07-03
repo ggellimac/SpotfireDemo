@@ -45,17 +45,10 @@ injectDomElement(myActivity, myActivityMessage);
 function injectDomElement(parent, messages) {
   let counter = 0;
   messages.forEach(message => {
-    let label = document.createElement("label");
-    label.className = "checkbox";
+    let label = document.createElement("span");
     let span = document.createElement("span");
-    span.className = "checkmark";
 
     let line = document.createElement("hr");
-    // if (messages != allActivityMessages && messages != myActivityMessage) {
-    //   label.appendChild(checkbox);
-    //   label.appendChild(span);
-    // }
-
     label.appendChild(document.createTextNode(message));
     if (counter !== 0) {
       parent.appendChild(line);
