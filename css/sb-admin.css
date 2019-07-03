@@ -257,6 +257,17 @@ input:checked + .slider:before {
   display: none;
 }
 
+#all-activity-dates{
+  /* display:block; */
+  font-style: italic;
+  font-size: 11px;
+}
+
+#my-activity-dates {
+  font-style: italic;
+  font-size: 11px;
+}
+
 /*this is for the actual checkboxes*/
 .checkbox{
   display: block;
