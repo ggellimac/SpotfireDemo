@@ -11,6 +11,13 @@ chart.background.stroke = am4core.color("#293b56");
 chart.background.strokeOpacity = 2;
 chart.background.strokeWidth = 2;
 
+//gradient
+var fillModifier = new am4core.LinearGradientModifier();
+fillModifier.brightnesses = [-0.8, 1, -0.8];
+fillModifier.offsets = [0, 0.5, 1];
+fillModifier.gradient.rotation = 45;
+chart.fillModifier = fillModifier;
+
 
 //chart.parent = container;
 
@@ -48,4 +55,3 @@ chart.data = [{
 var pieSeries = chart.series.push(new am4charts.PieSeries());
 pieSeries.dataFields.value = "litres";
 pieSeries.dataFields.category = "country";
-  
