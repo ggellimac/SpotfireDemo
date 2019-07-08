@@ -18,7 +18,8 @@
   width: 40px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  /* display: inline-block; */
+  float: left;
 }
 
  #map-chart {
@@ -259,10 +260,14 @@ input:checked + .slider:before {
 
 #all-activity{
   display:block;
+  font-size: 11px;
+
 }
 
 #my-activity {
   display: none;
+  font-size: 11px;
+
 }
 
 #all-activity-dates{
