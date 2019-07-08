@@ -41,6 +41,17 @@ var customizationInfo1 = {
   showUndoRedo: false
 };
 
+/*
+ok looks like i can't even add anything here or else the API just doesn't work,
+so I'm gonna comment this all out.
+var d3Info = {
+  d3.select("mapChart").style("background-color", "black");
+};
+
+var color = d3.scale.linear()
+    .range(["steelblue", "brown"])
+    .interpolate(d3.interpolateHcl);
+*/
 
 spotfire.webPlayer.createApplication(
   webPlayerServerRootUrl,
@@ -51,6 +62,7 @@ spotfire.webPlayer.createApplication(
   apiVersion,
   onReadyCallback,
   onCreateLoginElement
+  /* d3Info */
 );
 function onReadyCallback(response, newApp) {
   app = newApp;
@@ -65,7 +77,7 @@ function onReadyCallback(response, newApp) {
     //The mock map data visualization for site activation
     mapChart = app.openDocument("mapChart", 1, customizationInfo1);
 
-    //The mock pie chart visualization for sites activated VS. sites not activated 
+    //The mock pie chart visualization for sites activated VS. sites not activated
     siteAct = app.openDocument("siteAct", 4, customizationInfo1);
 
     kpiChart = app.openDocument("kpiChart", 3,customizationInfo1);
