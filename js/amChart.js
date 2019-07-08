@@ -10,6 +10,8 @@ chart.background.fillOpacity = 2;
 chart.background.stroke = am4core.color("#293b56");
 chart.background.strokeOpacity = 2;
 chart.background.strokeWidth = 2;
+chart.background.fillOpacity = 0;
+
 
 
 //chart.parent = container;
@@ -48,4 +50,4 @@ chart.data = [{
 var pieSeries = chart.series.push(new am4charts.PieSeries());
 pieSeries.dataFields.value = "litres";
 pieSeries.dataFields.category = "country";
-  
+pieSeries.stroke = am4core.color("#ffffff");
