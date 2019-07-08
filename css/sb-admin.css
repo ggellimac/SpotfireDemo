@@ -18,10 +18,11 @@
   width: 40px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  /* display: inline-block; */
+  float: left;
 }
 
- #mapChart {
+ #map-chart {
   position: relative;
   float: left;
   width: 50%;
@@ -30,7 +31,15 @@
   background-image: radial-gradient(blue, #87CEFA)
 }
 
-#siteAct {
+#am-chart {
+  position: relative;
+  width: 50%;
+  height: 480px;
+  border: 5px solid #293b56;
+  background-color: pink;
+}
+
+#budget-chart {
   position: relative;
   width: 50%;
   height: 480px;
@@ -114,6 +123,18 @@
   border-bottom: 1px solid #293B56;
 }
 
+.other-project-name{
+  position:relative;
+  margin-bottom: 8px;
+}
+.other-project-name:after{
+  content: '';
+  display: block;
+  /* margin: 0 auto; */
+  padding-top: 2px;
+  border-bottom: 1px solid #293B56;
+}
+
 .breadcrumb{
   margin-top: 30px;
 }
@@ -125,7 +146,7 @@
 .homepage-card{
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
-  height: 10vh;
+  height: 5vh;
   font-weight: 300;
   color: #293B56;
 }
@@ -135,9 +156,6 @@
   /* margin-top: 2vh; */
 
 }
-
-
-
 
 /*lort pls help i hope this works*/
 #toggle-switch{
@@ -242,10 +260,26 @@ input:checked + .slider:before {
 
 #all-activity{
   display:block;
+  font-size: 11px;
+
 }
 
 #my-activity {
   display: none;
+  font-size: 11px;
+
+}
+
+#all-activity-dates{
+  display:block;
+  font-style: italic;
+  font-size: 11px;
+}
+
+#my-activity-dates {
+  display:none;
+  font-style: italic;
+  font-size: 11px;
 }
 
 /*this is for the actual checkboxes*/
