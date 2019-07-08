@@ -59,7 +59,6 @@ function injectDomElement(parent, messages) {
     label.appendChild(document.createTextNode(message));
     if (counter !== 0) {
       parent.appendChild(line);
-      console.log(messages.length - 1);
     }
     parent.appendChild(label);
     counter++;

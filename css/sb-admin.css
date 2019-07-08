@@ -21,7 +21,7 @@
   display: inline-block;
 }
 
- #mapChart {
+ #map-chart {
   position: relative;
   float: left;
   width: 50%;
@@ -30,7 +30,15 @@
   background-image: radial-gradient(blue, #87CEFA)
 }
 
-#siteAct {
+#am-chart {
+  position: relative;
+  width: 50%;
+  height: 480px;
+  border: 5px solid #293b56;
+  background-color: pink;
+}
+
+#budget-chart {
   position: relative;
   width: 50%;
   height: 480px;

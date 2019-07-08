@@ -30,6 +30,9 @@
   </head>
 
   <body id="page-top">
+
+     
+
     <!-- The two containers that the visualizations are being inserted into
     <div id="container2"></div> -->
 
@@ -213,7 +216,7 @@
 
 
               <!-- Map chart Example-->
-              <div id="mapChart" class="card mb-3">
+              <div id="map-chart" class="card mb-3">
 
                 <!-- The old chart that was where the map chart is now
               <div class="card-header">
@@ -225,8 +228,8 @@
               <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
               --></div>
 
-              <!-- SiteActivation Graph Example -->
-              <div id="siteAct" class="card mb-3"></div>
+              <!-- Either a budget chart from Spotfire or a Piechart from Amchart Graph Example, Spotfire id budgetChart and am chart id am-chart -->
+              <div id="am-chart" class="card mb-3"></div>
             </div>
             <!--end of fluid container-->
           </div>
@@ -638,6 +641,7 @@
       </div>
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -656,6 +660,13 @@
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+
+
+    <!--Scripts for AmChart visualizations-->
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/maps.js"></script>
+    
   </body>
 
   <!-- Script for fetching and embedding the Spotfire visualization-->
@@ -663,4 +674,7 @@
   <script src="../js/toggleSwitch.js"></script>
   <script src="../js/checklistFiller.js"></script>
   <script src="../js/resourcesFiller.js"></script>
+
+  <!--AmChart JS file-->
+  <script src="../js/amChart.js"></script>
 </html>

@@ -8,23 +8,6 @@ var reloadInstances = true;
 var apiVersion = "10.4";
 
 var customizationInfo = {
-  showAbout: true,
-  showAnalysisInformationTool: true,
-  showAuthor: true,
-  showClose: true,
-  showCustomizableHeader: false,
-  showDodPanel: true,
-  showExportFile: true,
-  showFilterPanel: true,
-  showHelp: true,
-  showLogout: true,
-  showPageNavigation: false,
-  showStatusBar: true,
-  showToolBar: true,
-  showUndoRedo: true
-};
-
-var customizationInfo1 = {
   showAbout: false,
   showAnalysisInformationTool: false,
   showAuthor: false,
@@ -63,12 +46,12 @@ function onReadyCallback(response, newApp) {
     );
 
     //The mock map data visualization for site activation
-    mapChart = app.openDocument("mapChart", 1, customizationInfo1);
+    mapChart = app.openDocument("map-chart", 1, customizationInfo);
 
     //The mock pie chart visualization for sites activated VS. sites not activated 
-    siteAct = app.openDocument("siteAct", 4, customizationInfo1);
+    siteAct = app.openDocument("budget-chart", 4, customizationInfo);
 
-    kpiChart = app.openDocument("kpiChart", 3,customizationInfo1);
+    kpiChart = app.openDocument("kpiChart", 3,customizationInfo);
   } else {
     console.log("Status not OK. " + response.status + ": " + response.message);
   }
