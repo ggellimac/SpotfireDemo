@@ -1,15 +1,14 @@
-// Create chart instance
-var chart = am4core.create("am-chart", am4charts.PieChart);
+//Create chart instance
+let chart = am4core.create("am-chart", am4charts.PieChart);
 
 
 //var container = am4core.create("am-chart", am4core.Container);
 chart.width = am4core.percent(100);
 chart.height = am4core.percent(100);
-chart.background.fill = am4core.color("#293b56");
-chart.background.fillOpacity = 2;
-chart.background.stroke = am4core.color("#293b56");
-chart.background.strokeOpacity = 2;
-chart.background.strokeWidth = 2;
+//chart.background.fill = am4core.color("#293b56");
+// chart.background.stroke = am4core.color("#293b56");
+//chart.background.strokeOpacity = 2;
+//chart.background.strokeWidth = 2;
 chart.background.fillOpacity = 0;
 
 
@@ -47,7 +46,7 @@ chart.data = [{
 }];
 
 // Add and configure Series
-var pieSeries = chart.series.push(new am4charts.PieSeries());
+let pieSeries = chart.series.push(new am4charts.PieSeries());
 pieSeries.dataFields.value = "litres";
 pieSeries.dataFields.category = "country";
 pieSeries.stroke = am4core.color("#ffffff");
