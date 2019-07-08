@@ -30,6 +30,9 @@
   </head>
 
   <body id="page-top">
+
+
+
     <!-- The two containers that the visualizations are being inserted into
     <div id="container2"></div> -->
 
@@ -181,14 +184,21 @@
 
 <!--project dropdown-->
 <div class="dropdown project-dropdown">
-    <button type="button" class="btn project-name" data-toggle="dropdown">
+    <button type="button" class="btn other-project-name" data-toggle="dropdown">
     Eli Lilly / Glyxambi 093411-2
     <img id="search-carrot" src="images/carrot.png"></img>
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
+    <div class="dropdown-item">
+        <a class="btn other-project-name" href="#">Pfizer / EpiPenJr 000563-1</a>
+
+    </div>
+    <div class="dropdown-item">
+      <a class=" btn other-project-name " href="#">GSK / ViiV 089234-1</a>
+    </div>
+    <div class="dropdown-item">
+      <a class=" btn other-project-name" href="#">GSK / Stiefel 444277-9</a>
+    </div>
   </div>
 </div>
 
@@ -206,7 +216,7 @@
 
 
               <!-- Map chart Example-->
-              <div id="mapChart" class="card mb-3">
+              <div id="map-chart" class="card mb-3">
 
                 <!-- The old chart that was where the map chart is now
               <div class="card-header">
@@ -218,8 +228,8 @@
               <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
               --></div>
 
-              <!-- SiteActivation Graph Example -->
-              <div id="siteAct" class="card mb-3"></div>
+              <!-- Either a budget chart from Spotfire or a Piechart from Amchart Graph Example, Spotfire id budgetChart and am chart id am-chart -->
+              <div id="am-chart" class="card mb-3"></div>
             </div>
             <!--end of fluid container-->
           </div>
@@ -285,9 +295,9 @@
                       class="dropdown-menu dropdown-menu-right"
                       aria-labelledby="alertsDropdown"
                       >
-                      <a class="dropdown-item" href="#">Comment</a>
-                      <a class="dropdown-item" href="#">Share</a>
                       <a class="dropdown-item" href="#">Add to Report</a>
+                      <a class="dropdown-item" href="#">Share</a>
+                      <a class="dropdown-item" href="#">Add Alert</a>
                     </div>
 
                     <svg width="27px" height="25px" viewBox="0 0 27 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -322,73 +332,12 @@
                 </div>
 
                 <div id="all-content">
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Site 4 CDA pending receipt for 15 days
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Burn rate 7% higher than projected
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> 4 screen fails at Site 23
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                      <label class="checkbox">
-                        <input type="checkbox" value=""> These are my risks.
-                        <span class="checkmark"> </span>
-                      </label>
-                    </div>
-                    <hr>
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox" value=""> This is an issue
-                        <span class="checkmark"> </span>
-                      </label>
-                    </div>
-                    <hr>
-                    <div>
-                      <label class="checkbox">
-                        <input type="checkbox" value=""> Can someone tell me if this works pls?
-                        <span class="checkmark"> </span>
-                      </label>
-                    </div>
+
                 </div> <!-- /all-content-->
 
                 <div id="mine-content">
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> These are my risks.
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> This is an issue
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Can someone tell me if this works pls?
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                </div><!-- /mine-content-->
 
-                <button type="button" class="montserrat float-right btn-light ">+Add</button>
+                </div><!-- /mine-content-->
 
               </div>
 
@@ -427,9 +376,9 @@
                       class="dropdown-menu dropdown-menu-right"
                       aria-labelledby="alertsDropdown"
                       >
-                      <a class="dropdown-item" href="#">Comment</a>
-                      <a class="dropdown-item" href="#">Share</a>
                       <a class="dropdown-item" href="#">Add to Report</a>
+                      <a class="dropdown-item" href="#">Share</a>
+                      <a class="dropdown-item" href="#">Add Alert</a>
                     </div>
 
                       <svg width="27px" height="25px" viewBox="0 0 27 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -463,37 +412,12 @@
                   </div>
 
                   <div id="all-tasks"> <!--Start of all tasks-->
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Generate weekly status report for Friday
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Email Jack to schedule PSSV
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-                  <hr>
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Send invoice to GSK
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
+
                 </div> <!-- End of all tasks-->
 
                 <div id="my-tasks"> <!--Start of my tasks-->
-                  <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> Send invoice to GSK
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
+
                 </div> <!-- End of my tasks-->
-                <button type="button" class="montserrat float-right btn-light ">+Add</button>
 
 
                 </div>
@@ -504,7 +428,7 @@
           <div id="bottom-card" class="card text-secondary bg-white o-hidden h-100">
             <div class="card-body">
               <div class="mr-4 homepage-card">Resources
-                  <span >
+                  <span class="float-lg-right">
                       <a
                         class="dropdown-toggle"
                         href="#"
@@ -531,9 +455,9 @@
                       class="dropdown-menu dropdown-menu-right"
                       aria-labelledby="alertsDropdown"
                       >
-                      <a class="dropdown-item" href="#">Comment</a>
-                      <a class="dropdown-item" href="#">Share</a>
                       <a class="dropdown-item" href="#">Add to Report</a>
+                      <a class="dropdown-item" href="#">Share</a>
+                      <a class="dropdown-item" href="#">Add Alert</a>
                     </div>
 
                       <svg width="27px" height="25px" viewBox="0 0 27 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -553,65 +477,23 @@
                       </svg>
                     </span>
               </div>
-              <div class="homepage-card-content">
+              <div class="homepage-card-content" id="resources-card">
                 <div class="row">
-                  <div class="col">
+                  <div class="col gray">
                     Internal Team
                   </div>
-                  <div class="col">
+                  <div class="col gray">
                     Sponsors
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <span class="dot"></span>
-                    <span>Chris C.</span>
-                  </div>
-                  <div class="col">
-                      <span class="dot"></span>
-                      <span>Steve S.</span>
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                      <span class="dot"></span>
-                      <span>Chris C.</span>
-                    </div>
-                    <div class="col">
-                        <span class="dot"></span>
-                        <span>Steve S.</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="col">
-                        <span class="dot"></span>
-                        <span>Chris C.</span>
-                      </div>
-                      <div class="col">
-                          <span class="dot"></span>
-                          <span>Steve S.</span>
-                      </div>
-                    </div>
-                  <div class="row">
-                      <div class="col">
-                        <span class="dot"></span>
-                        <span>Chris C.</span>
-                      </div>
-                      <div class="col">
-                          <span class="dot"></span>
-                          <span>Steve S.</span>
-                      </div>
-                    </div>
-                    <button type="button" class="montserrat float-right btn-light ">View All</button>
-
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-6 col-sm-3 mb-4">
+        <div class="col-xl-6 col-sm-6 mb-4">
           <div id="bottom-card" class="card text-secondary bg-white o-hidden h-100">
             <div class="card-body">
-              <div class="mr-4 homepage-card">Activity
+              <div class="homepage-card">Announcements
                   <span class="float-lg-right">
                       <a
                         class="dropdown-toggle"
@@ -670,31 +552,20 @@
                 </label>
               <p class="gray">MINE</p>
               </div>
+              <div class="row">
+                <div class="col-xl-3 col-sm-3 mb-3">
+                  <div id="all-activity-dates"></div>
+                  <div id="my-activity-dates"></div>
 
-              <div id="all-activity"> <!--Start of all activty-->
-              <div>
-                <label class="checkbox">
-                  <input type="checkbox" value=""> Generate weekly status report for Friday
-                  <span class="checkmark"> </span>
-                </label>
-              </div>
-              <hr>
-              <div>
-                  <label class="checkbox">
-                    <input type="checkbox" value=""> I was a boss
-                    <span class="checkmark"> </span>
-                  </label>
+
                 </div>
-            </div>  <!--end of all activty-->
-
-            <div id="my-activity"> <!--start of my activity-->
-                <div>
-                    <label class="checkbox">
-                      <input type="checkbox" value=""> I was a boss
-                      <span class="checkmark"> </span>
-                    </label>
-                  </div>
-              </div><!--end of my activity-->
+                <div class="col-xl-9 col-sm-9 mb-9">
+                  <div id="all-activity"> <!--Start of all activty-->
+                  </div>  <!--end of all activty-->
+                  <div id="my-activity"> <!--start of my activity-->
+                  </div><!--end of my activity-->
+                </div>
+              </div>
               <button type="button" class="montserrat float-right btn-light ">View All</button>
             </div>
             </div>
@@ -770,6 +641,7 @@
       </div>
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -788,10 +660,21 @@
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+
+
+    <!--Scripts for AmChart visualizations-->
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/maps.js"></script>
+
   </body>
 
   <!-- Script for fetching and embedding the Spotfire visualization-->
   <script src="../js/spotfire.js"></script>
   <script src="../js/toggleSwitch.js"></script>
+  <script src="../js/checklistFiller.js"></script>
+  <script src="../js/resourcesFiller.js"></script>
 
+  <!--AmChart JS file-->
+  <script src="../js/amChart.js"></script>
 </html>
