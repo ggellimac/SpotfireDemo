@@ -94,7 +94,13 @@
   height: 50vh;
   border: 5px solid #293b56;
   display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline;
+  color: #FFFFFF;
 }
+
 
 
 #userCenter{
