@@ -38,27 +38,27 @@ polygonSeries.data = [{
   "id": "US",
   "name": "United States",
   "value": 100,
-  "fill": am4core.color("#E58A6F")
+  "fill": am4core.color("#FF671F")
 }, {
   "id": "ES",
   "name": "Spain",
   "value": 50,
-  "fill": am4core.color("#E58A6F")
+  "fill": am4core.color("#EB3300")
 }, {
   "id": "SA",
   "name": "Saudi Arabia",
   "value": 50,
-  "fill": am4core.color("#E58A6F")
+  "fill": am4core.color("#FF671F")
 }, {
   "id": "OM",
   "name": "Oman",
   "value": 50,
-  "fill": am4core.color("#E58A6F")
+  "fill": am4core.color("#FF671F")
 }, {
   "id": "NE",
   "name": "Niger",
   "value": 50,
-  "fill": am4core.color("#E58A6F")
+  "fill": am4core.color("#EB3300")
 }, {
   "id": "GL",
   "name": "Greenland",
@@ -327,7 +327,7 @@ am4core.ready(function () {
     bullets[i].label.fill = am4core.color("#ffffff");
 
     bullets[i].locationX = 0.5;
-  
+
 
   }
   // categoryAxis.renderer.disabled = true;
