@@ -20,7 +20,7 @@ polygonTemplate.fill = am4core.color("#12769E");
 
 // Create hover state and set alternative fill color
 var hs = polygonTemplate.states.create("hover");
-hs.properties.fill = am4core.color("#108BBC");
+hs.properties.fill = am4core.color("#FFFFFF");
 
 //Exclude Antarctica
 polygonSeries.exclude = ["AQ"];
@@ -86,7 +86,7 @@ var imageSeries = map.series.push(new am4maps.MapImageSeries());
 // How to dynamically change size of circle depending on data (no copies)?
 var imageSeriesTemplate = imageSeries.mapImages.template;
 var circle = imageSeriesTemplate.createChild(am4core.Circle);
-circle.radius = 4;
+circle.radius = 8;
 circle.fillOpacity = 0;
 circle.stroke = am4core.color("#FFFFFF");
 circle.strokeWidth = 2;
@@ -110,6 +110,10 @@ imageSeries.data = [{
   "latitude": 49.282729,
   "longitude": -123.120738,
   "title": "Vancouver"
+}, {
+  "latitude": 39.09973,
+  "longitude": -94.57857,
+  "title": "Kansas City"
 }];
 
 map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56");
