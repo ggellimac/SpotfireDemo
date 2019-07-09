@@ -285,8 +285,10 @@ am4core.ready(function () {
     series[i].tooltip.pointerOrientation = "horizontal";
 
     var fillModifier = new am4core.LinearGradientModifier();
-    
-    fillModifier.opacities = [0, 1];
+    fillModifier.opacities = [1, 1];
+    fillModifier.brightnesses = [.3, 1];
+    fillModifier.lightnesses = [.5, 0];
+
     fillModifier.offsets = [0, 1];
 
     series[i].columns.template.fillModifier = fillModifier;
