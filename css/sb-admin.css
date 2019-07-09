@@ -62,7 +62,7 @@
   padding-right: 5px;
 
 
-  
+
 }
 
 #chartdiv{
@@ -70,6 +70,8 @@
   height: 50vh;
   display: inline-block;
   border-radius: 0px;
+  border: 0px;
+  background-color: #293B56;
 }
 
 #am-chart {
