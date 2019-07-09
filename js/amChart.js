@@ -71,7 +71,7 @@ categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 
 
-var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.title.text = "Expenditure (M)";
 
 // Create series
@@ -98,3 +98,108 @@ series3.stacked = true;
 
 // Add cursor
 chart.cursor = new am4charts.XYCursor();
+
+
+
+
+
+// Left horizontal bar charts
+
+am4core.ready(function () {
+
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+  var kpiamChart = am4core.create("kpiamChart", am4charts.XYChart);
+  kpiamChart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+  kpiamChart.colors.list = [
+    // light blue, orange, dark blue
+    am4core.color("#75BDD0"),
+    am4core.color("#F15A2A"),
+    am4core.color("#4D5B74")
+  ];
+
+
+
+  let gradient = new am4core.LinearGradient();
+  gradient.addColor(am4core.color("white"));
+  gradient.addColor(am4core.color("blue"));
+
+
+  kpiamChart.data = [
+
+
+    {
+      category: "PATIENTS ENROLLED",
+      value0: 14,
+      // value2: 5,
+      value2: 200 - 14
+    },
+    {
+      category: "SITES ACTIVATED",
+      value0: 48,
+      // value2: 0,
+      value2: 200 - 48
+    },
+    {
+      category: "SITES IDENTIFIED",
+      value0: 68,
+      value1: 40,
+      value2: 200 - 68 - 40
+    },
+
+  ];
+
+  // chart.colors.step = 2;
+  kpiamChart.padding(30, 30, 10, 30);
+  kpiamChart.legend = new am4charts.Legend();
+
+
+  var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
+  categoryAxis.dataFields.category = "category";
+
+  categoryAxis.renderer.grid.template.location = 0;
+
+  var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
+  valueAxis.min = 0;
+  valueAxis.max = 100;
+  valueAxis.strictMinMax = true;
+  valueAxis.calculateTotals = true;
+  valueAxis.renderer.minWidth = 50;
+
+  var series = [];
+  var bullets = [];
+  var numSeries = 3;
+  for (i = 0; i < numSeries; i++) {
+    series.push(kpiamChart.series.push(new am4charts.ColumnSeries()));
+    series[i].columns.template.width = am4core.percent(80);
+    series[i].columns.template.tooltipText =
+      "{name}: {valueX.totalPercent.formatNumber('#.00')}%";
+    // series[i].name = "Series ".concat(i);
+
+
+    series[i].dataFields.categoryY = "category";
+    series[i].dataFields.valueX = "value".concat(i);
+    series[i].dataFields.valueXShow = "totalPercent";
+    series[i].dataItems.template.locations.categoryY = 0.5;
+    series[i].stacked = true;
+    series[i].tooltip.pointerOrientation = "horizontal";
+
+
+    bullets[i] = series[i].bullets.push(new am4charts.LabelBullet());
+    bullets[i].interactionsEnabled = false;
+    bullets[i].label.text = "{valueX.totalPercent.formatNumber('#.00')}%";
+    bullets[i].label.fill = am4core.color("#ffffff");
+
+    bullets[i].locationX = 0.5;
+
+  }
+  kpiamChart.scrollbarY = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+
+
+
+
+
