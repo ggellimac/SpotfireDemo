@@ -99,6 +99,8 @@ let data = [{"id":1,"Country":"Azerbaijan","Patient Count":90,"Out of Scope":fal
 {"id":99,"Country":"United States","Patient Count":39,"Out of Scope":true,"No Issue":true,"Not Started ":true,"Problematic":false},
 {"id":100,"Country":"Cyprus","Patient Count":100,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":true}]
 
+am4core.options.autoSetClassName = true;
+
 // Create MapChart instance
 var map = am4core.create("chartdiv", am4maps.MapChart);
 
