@@ -10,17 +10,115 @@ map.projection = new am4maps.projections.Miller();
 //Create map polygon series
 var polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
 
+//Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+polygonTemplate.fill = am4core.color("#12769E");
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = am4core.color("#108BBC");
+
 //Exclude Antarctica
 polygonSeries.exclude = ["AQ"];
 
+//Zoom control (VERY customizable)
+map.zoomControl = new am4maps.ZoomControl();
 
+/*
+Data - How to import data from something like Excel??? Use a JSON maybe???
+Have to manually set each country value ))):
+HOWEVER you can use heat-map settings to change the colors instead of manually setting
+the color for each country.
+*/
+polygonSeries.data = [{
+  "id": "US",
+  "name": "United States",
+  "value": 100,
+  "fill": am4core.color("#E58A6F")
+}, {
+  "id": "ES",
+  "name": "Spain",
+  "value": 50,
+  "fill": am4core.color("#E58A6F")
+}, {
+  "id": "SA",
+  "name": "Saudi Arabia",
+  "value": 50,
+  "fill": am4core.color("#E58A6F")
+}, {
+  "id": "OM",
+  "name": "Oman",
+  "value": 50,
+  "fill": am4core.color("#E58A6F")
+}, {
+  "id": "NE",
+  "name": "Niger",
+  "value": 50,
+  "fill": am4core.color("#E58A6F")
+}, {
+  "id": "GL",
+  "name": "Greenland",
+  "value": 50,
+  "fill": am4core.color("#828D95")
+}, {
+  "id": "ET",
+  "name": "Ethiopia",
+  "value": 50,
+  "fill": am4core.color("#BBBCBC")
+}, {
+  "id": "KE",
+  "name": "Kenya",
+  "value": 50,
+  "fill": am4core.color("#BBBCBC")
+}];
 
+// Bind "fill" property to "fill" key in data
+polygonTemplate.propertyFields.fill = "fill";
 
+// Create image series
+var imageSeries = map.series.push(new am4maps.MapImageSeries());
+
+// Create a circle image in image series template so it gets replicated to all new images
+// How to dynamically change size of circle depending on data (no copies)?
+var imageSeriesTemplate = imageSeries.mapImages.template;
+var circle = imageSeriesTemplate.createChild(am4core.Circle);
+circle.radius = 4;
+circle.fillOpacity = 0;
+circle.stroke = am4core.color("#FFFFFF");
+circle.strokeWidth = 2;
+circle.nonScaling = true;
+circle.tooltipText = "{title}";
+
+// Set property fields
+imageSeriesTemplate.propertyFields.latitude = "latitude";
+imageSeriesTemplate.propertyFields.longitude = "longitude";
+
+// Add data for the three cities
+imageSeries.data = [{
+  "latitude": 48.856614,
+  "longitude": 2.352222,
+  "title": "Paris"
+}, {
+  "latitude": 40.712775,
+  "longitude": -74.005973,
+  "title": "New York"
+}, {
+  "latitude": 49.282729,
+  "longitude": -123.120738,
+  "title": "Vancouver"
+}];
+
+map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56");
+map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 2;
 
 
 // Create XYchart instance
 var chart = am4core.create("am-chart", am4charts.XYChart);
-polygonSeries.useGeodata = true;
+
 
 //var container = am4core.create("am-chart", am4core.Container);
 chart.width = am4core.percent(100);
@@ -224,8 +322,3 @@ am4core.ready(function () {
   // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
-
-
-
-
-
