@@ -178,7 +178,8 @@ am4core.ready(function () {
 
   var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
   categoryAxis.dataFields.category = "category";
-
+  categoryAxis.renderer.dy = -30;
+  categoryAxis.renderer.dx = 100;
   categoryAxis.renderer.grid.template.location = 0;
 
   // resize cell which changes column size
@@ -228,8 +229,12 @@ am4core.ready(function () {
     bullets[i].label.fill = am4core.color("#ffffff");
 
     bullets[i].locationX = 0.5;
+  
 
   }
+  // categoryAxis.renderer.disabled = true;
+
+    valueAxis.renderer.disabled = true;
   // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
