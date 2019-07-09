@@ -346,14 +346,14 @@ am4core.ready(function () {
 
   // chart.colors.step = 2;
   kpiamChart.padding(30, 10, 10, 0);
-  kpiamChart.legend = new am4charts.Legend();
+  // kpiamChart.legend = new am4charts.Legend();
 
 
   var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
 
   categoryAxis.dataFields.category = "category";
-  categoryAxis.renderer.dy = -30;
-  // categoryAxis.renderer.dx = 100;
+  categoryAxis.renderer.dy = -10;
+  categoryAxis.renderer.dx = 50;
   categoryAxis.renderer.grid.template.location = 0;
 
   // resize cell which changes column size
@@ -361,6 +361,7 @@ am4core.ready(function () {
   categoryAxis.renderer.cellEndLocation = 0.3;
 
   // remove grid
+  categoryAxis.renderer.grid.template.disabled = true;
   categoryAxis.renderer.grid.template.disabled = true;
 
   var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
@@ -398,13 +399,13 @@ am4core.ready(function () {
 
     var fillModifier = new am4core.LinearGradientModifier();
     fillModifier.opacities = [1, 1];
-    fillModifier.brightnesses = [.3, 1];
+    fillModifier.brightnesses = [.05, .8];
     fillModifier.lightnesses = [.5, 0];
 
     fillModifier.offsets = [0, 1];
 
     series[i].columns.template.fillModifier = fillModifier;
-
+    series[i].columns.template.strokeWidth = 0;
     bullets[i] = series[i].bullets.push(new am4charts.LabelBullet());
     bullets[i].interactionsEnabled = false;
     bullets[i].label.text = "{valueX.totalPercent.formatNumber('#.00')}%";
