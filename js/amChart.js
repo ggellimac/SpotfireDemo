@@ -116,7 +116,7 @@ map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56"
 map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 2;
 
 
-// Create XYchart instance for Patient Enrollment 
+// Create XYchart instance
 var chart = am4core.create("am-chart", am4charts.XYChart);
 
 
@@ -144,11 +144,12 @@ chart.data = [{
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
 categoryAxis.title.text = "Patient Enrollment";
+categoryAxis.title.strokeWidth = 1;
 categoryAxis.fontSize = 22;
+categoryAxis.fill = "#ffffff";
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
-
 
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.renderer.labels.template.disabled = true;
@@ -176,6 +177,8 @@ series2.tooltipText = "{name}: [bold]{valueY}[/]";
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.lineX.disabled = true;
 chart.cursor.lineY.disabled = true;
+
+
 
 
 
@@ -233,18 +236,18 @@ am4core.ready(function () {
 
 
   var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
+
   categoryAxis.dataFields.category = "category";
   categoryAxis.renderer.dy = -30;
-  categoryAxis.renderer.dx = 100;
+  // categoryAxis.renderer.dx = 100;
   categoryAxis.renderer.grid.template.location = 0;
 
   // resize cell which changes column size
   categoryAxis.renderer.cellStartLocation = 0.1;
-  categoryAxis.renderer.cellEndLocation = 0.5;
+  categoryAxis.renderer.cellEndLocation = 0.3;
 
   // remove grid
   categoryAxis.renderer.grid.template.disabled = true;
-
 
   var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
@@ -275,6 +278,7 @@ am4core.ready(function () {
     series[i].dataFields.valueX = "value".concat(i);
     series[i].dataFields.valueXShow = "totalPercent";
     series[i].dataItems.template.locations.categoryY = 0.5;
+
     series[i].stacked = true;
     series[i].tooltip.pointerOrientation = "horizontal";
 
@@ -289,8 +293,10 @@ am4core.ready(function () {
 
   }
   // categoryAxis.renderer.disabled = true;
+  categoryAxis.renderer.inside = true;
 
-    valueAxis.renderer.disabled = true;
+    valueAxis.renderer.labels.template.disabled = true;
+    categoryAxis.position= "left";
   // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
