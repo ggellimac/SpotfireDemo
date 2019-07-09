@@ -64,6 +64,18 @@
 
 
 }
+.amcharts-MapChart g g rect {
+  fill: blue;
+  fill-opacity: 2;
+}
+
+.amcharts-AxisLabel text tspan {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  display: inline;
+  color: #ffffff;
+}
 
 #chartdiv{
   width: 40%;
