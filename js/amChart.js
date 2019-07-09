@@ -223,6 +223,11 @@ imageSeries.data = [{
   "title": "Kansas City"
 }];
 
+var fillModifier = new am4core.LinearGradientModifier();
+fillModifier.brightnesses = [-0.8, 1, -0.8];
+fillModifier.offsets = [0, 0.5, 1];
+map.fillModifier = fillModifier;
+
 map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56");
 map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 2;
 
@@ -313,7 +318,7 @@ am4core.ready(function () {
   ];
 
 
- 
+
 
   kpiamChart.data = [
 
