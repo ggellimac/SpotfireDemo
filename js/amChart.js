@@ -116,7 +116,7 @@ map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56"
 map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 2;
 
 
-// Create XYchart instance
+// Create XYchart instance for Patient Enrollment 
 var chart = am4core.create("am-chart", am4charts.XYChart);
 
 
@@ -144,9 +144,7 @@ chart.data = [{
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
 categoryAxis.title.text = "Patient Enrollment";
-categoryAxis.title.strokeWidth = 1;
 categoryAxis.fontSize = 22;
-categoryAxis.fill = "#ffffff";
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
@@ -178,8 +176,6 @@ series2.tooltipText = "{name}: [bold]{valueY}[/]";
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.lineX.disabled = true;
 chart.cursor.lineY.disabled = true;
-
-
 
 
 
