@@ -1,6 +1,26 @@
-// Create chart instance
-var chart = am4core.create("am-chart", am4charts.XYChart);
+// Create MapChart instance
+var map = am4core.create("chartdiv", am4maps.MapChart);
 
+//Set map definition
+map.geodata = am4geodata_worldLow;
+
+//Set projection
+map.projection = new am4maps.projections.Miller();
+
+//Create map polygon series
+var polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
+
+//Exclude Antarctica
+polygonSeries.exclude = ["AQ"];
+
+
+
+
+
+
+// Create XYchart instance
+var chart = am4core.create("am-chart", am4charts.XYChart);
+polygonSeries.useGeodata = true;
 
 //var container = am4core.create("am-chart", am4core.Container);
 chart.width = am4core.percent(100);
