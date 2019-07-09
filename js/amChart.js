@@ -357,7 +357,6 @@ am4core.ready(function () {
 
   // remove grid
   categoryAxis.renderer.grid.template.disabled = true;
-  categoryAxis.renderer.grid.template.disabled = true;
 
   var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
@@ -392,14 +391,15 @@ am4core.ready(function () {
     series[i].stacked = true;
     series[i].tooltip.pointerOrientation = "horizontal";
 
-    var fillModifier = new am4core.LinearGradientModifier();
-    fillModifier.opacities = [1, 1];
-    fillModifier.brightnesses = [.05, .8];
-    fillModifier.lightnesses = [.5, 0];
+    if (i < numSeries - 1) {
+      var fillModifier = new am4core.LinearGradientModifier();
+      fillModifier.opacities = [1, 1];
+      fillModifier.brightnesses = [.05, .8];
+      fillModifier.lightnesses = [.5, 0];
+      fillModifier.offsets = [0, 1];
+      series[i].columns.template.fillModifier = fillModifier;
+    }
 
-    fillModifier.offsets = [0, 1];
-
-    series[i].columns.template.fillModifier = fillModifier;
     series[i].columns.template.strokeWidth = 0;
     bullets[i] = series[i].bullets.push(new am4charts.LabelBullet());
     bullets[i].interactionsEnabled = false;
