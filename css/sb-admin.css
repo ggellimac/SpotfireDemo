@@ -65,8 +65,9 @@
   width: 10%;
   height: 50vh;
   border: 5px solid #293b56;
-  font-size: 20px;
+  font-size: 8px;
   display: inline-block;
+  
 }
 
 #chartdiv{
