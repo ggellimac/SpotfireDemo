@@ -172,7 +172,7 @@ am4core.ready(function () {
   ];
 
   // chart.colors.step = 2;
-  kpiamChart.padding(30, 30, 10, 30);
+  kpiamChart.padding(30, 10, 10, 0);
   kpiamChart.legend = new am4charts.Legend();
 
 
@@ -180,6 +180,14 @@ am4core.ready(function () {
   categoryAxis.dataFields.category = "category";
 
   categoryAxis.renderer.grid.template.location = 0;
+
+  // resize cell which changes column size
+  categoryAxis.renderer.cellStartLocation = 0.1;
+  categoryAxis.renderer.cellEndLocation = 0.5;
+
+  // remove grid
+  categoryAxis.renderer.grid.template.disabled = true;
+
 
   var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
@@ -193,7 +201,8 @@ am4core.ready(function () {
   var numSeries = 3;
   for (i = 0; i < numSeries; i++) {
     series.push(kpiamChart.series.push(new am4charts.ColumnSeries()));
-    series[i].columns.template.width = am4core.percent(80);
+    series[i].columns.template.width = am4core.percent(50);
+
     series[i].columns.template.tooltipText =
       "{name}: {valueX.totalPercent.formatNumber('#.00')}%";
     // series[i].name = "Series ".concat(i);
