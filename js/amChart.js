@@ -177,7 +177,13 @@ am4core.ready(function () {
     series[i].columns.template.tooltipText =
       "{name}: {valueX.totalPercent.formatNumber('#.00')}%";
     // series[i].name = "Series ".concat(i);
-
+    if (i == 0) {
+      series[i].name = "Completed";
+    } else if (i == 1) {
+      series[i].name = "At Risk";
+    } else if (i == 2) {
+      series[i].name = "To Be Completed";
+    }
 
     series[i].dataFields.categoryY = "category";
     series[i].dataFields.valueX = "value".concat(i);
@@ -195,7 +201,7 @@ am4core.ready(function () {
     bullets[i].locationX = 0.5;
 
   }
-  kpiamChart.scrollbarY = new am4core.Scrollbar();
+  // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
 
