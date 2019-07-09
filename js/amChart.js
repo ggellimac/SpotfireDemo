@@ -196,15 +196,13 @@ am4core.ready(function () {
     // light blue, orange, dark blue
     am4core.color("#75BDD0"),
     am4core.color("#F15A2A"),
-    am4core.color("#4D5B74")
+    am4core.color("#4D5B74"),
+    am4core.color("#ffffff")
+
   ];
 
 
-
-  let gradient = new am4core.LinearGradient();
-  gradient.addColor(am4core.color("white"));
-  gradient.addColor(am4core.color("blue"));
-
+ 
 
   kpiamChart.data = [
 
@@ -282,6 +280,12 @@ am4core.ready(function () {
     series[i].stacked = true;
     series[i].tooltip.pointerOrientation = "horizontal";
 
+    var fillModifier = new am4core.LinearGradientModifier();
+    
+    fillModifier.opacities = [0, 1];
+    fillModifier.offsets = [0, 1];
+
+    series[i].columns.template.fillModifier = fillModifier;
 
     bullets[i] = series[i].bullets.push(new am4charts.LabelBullet());
     bullets[i].interactionsEnabled = false;
@@ -295,8 +299,8 @@ am4core.ready(function () {
   // categoryAxis.renderer.disabled = true;
   categoryAxis.renderer.inside = true;
 
-    valueAxis.renderer.labels.template.disabled = true;
-    categoryAxis.position= "left";
+  valueAxis.renderer.labels.template.disabled = true;
+  categoryAxis.position = "left";
   // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
