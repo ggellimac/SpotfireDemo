@@ -120,6 +120,14 @@ polygonSeries.useGeodata = true;
 var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipText = "{name}";
 polygonTemplate.fill = am4core.color("#12769E");
+polygonTemplate.nonScalingStroke = true;
+polygonTemplate.strokeOpacity = 0.2;
+
+//i tried to do something
+var fillModifier = new am4core.LinearGradientModifier();
+fillModifier.brightnesses = [-0.8, 1, -0.8];
+fillModifier.offsets = [0, 0.5, 1];
+map.fillModifier = fillModifier;
 
 // Create hover state and set alternative fill color
 var hs = polygonTemplate.states.create("hover");
@@ -225,13 +233,14 @@ imageSeries.data = [{
   "title": "Kansas City"
 }];
 
-var fillModifier = new am4core.LinearGradientModifier();
-fillModifier.brightnesses = [-0.8, 1, -0.8];
-fillModifier.offsets = [0, 0.5, 1];
-map.fillModifier = fillModifier;
 
+var fillModifier = new am4core.LinearGradientModifier();
+fillModifier.brightnesses = [-1, 1, -1];
+fillModifier.offsets = [0, 0.5, 1];
 map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#293B56");
 map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 2;
+map.backgroundSeries.mapPolygons.template.polygon.fillModifier = fillModifier;
+
 
 
 // Create XYchart instance
@@ -261,10 +270,10 @@ chart.data = [{
 // Add and configure Series
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
-categoryAxis.title.text = "Patient Enrollment";
+categoryAxis.title.text = "MONTHLY VS. ANNUAL PROFIT";
 categoryAxis.title.strokeWidth = 1;
-categoryAxis.fontSize = 22;
-categoryAxis.fill = "#ffffff";
+categoryAxis.fontSize = 10;
+//categoryAxis.fill = "#FFFFFF";
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
