@@ -136,7 +136,7 @@ map.fillModifier = fillModifier;
 
 // Create hover state and set alternative fill color
 var hs = polygonTemplate.states.create("hover");
-hs.properties.fill = am4core.color("#FFFFFF");
+hs.properties.fill = am4core.color("#293B56");
 
 //Exclude Antarctica
 polygonSeries.exclude = ["AQ"];
