@@ -1,3 +1,4 @@
+//Dummy data to be used to fill the map
 let data = [{"id":1,"Country":"Azerbaijan","Patient Count":90,"Out of Scope":false,"No Issue":false,"Not Started ":false,"Problematic":false},
 {"id":2,"Country":"Colombia","Patient Count":85,"Out of Scope":false,"No Issue":false,"Not Started ":false,"Problematic":false},
 {"id":3,"Country":"Nigeria","Patient Count":83,"Out of Scope":false,"No Issue":true,"Not Started ":false,"Problematic":false},
@@ -101,7 +102,11 @@ let data = [{"id":1,"Country":"Azerbaijan","Patient Count":90,"Out of Scope":fal
 
 am4core.options.autoSetClassName = true;
 
-// Create MapChart instance
+// Create MapChart instance from AmCharts
+//
+//
+//
+//
 var map = am4core.create("chartdiv", am4maps.MapChart);
 
 //Set map definition
@@ -243,7 +248,12 @@ map.backgroundSeries.mapPolygons.template.polygon.fillModifier = fillModifier;
 
 
 
-// Create XYchart instance
+// Create XYchart instance for Patient Enrollment
+//
+//
+//
+//
+//
 var chart = am4core.create("am-chart", am4charts.XYChart);
 
 
@@ -309,8 +319,12 @@ chart.cursor.lineY.disabled = true;
 
 
 
-// Left horizontal bar charts
-
+// Left horizontal bar charts (KPI Charts to the left of the map)
+//
+//
+//
+//
+//
 am4core.ready(function () {
 
   // Themes begin
@@ -328,12 +342,7 @@ am4core.ready(function () {
 
   ];
 
-
-
-
   kpiamChart.data = [
-
-
     {
       category: "PATIENTS ENROLLED",
       value0: 14,
