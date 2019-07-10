@@ -141,7 +141,7 @@ hs.properties.fill = am4core.color("#FFFFFF");
 //Exclude Antarctica
 polygonSeries.exclude = ["AQ"];
 
-//Zoom control (VERY customizable)
+//Zoom control
 map.zoomControl = new am4maps.ZoomControl();
 
 /*
