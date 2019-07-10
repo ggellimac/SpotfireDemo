@@ -70,12 +70,12 @@
   fill-opacity: 2;
 }
 
-.amcharts-AxisLabel text tspan {
+.amcharts-Label text tspan {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: bold;
   display: inline;
-  color: #ffffff;
+  fill: #ffffff;
 }
 
 #chartdiv{
