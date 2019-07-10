@@ -109,6 +109,7 @@ am4core.options.autoSetClassName = true;
 //
 var map = am4core.create("am-mapchart", am4maps.MapChart);
 
+
 //Set map definition
 map.geodata = am4geodata_worldLow;
 
