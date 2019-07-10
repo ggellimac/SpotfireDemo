@@ -107,7 +107,7 @@ am4core.options.autoSetClassName = true;
 //
 //
 //
-var map = am4core.create("chartdiv", am4maps.MapChart);
+var map = am4core.create("am-mapchart", am4maps.MapChart);
 
 //Set map definition
 map.geodata = am4geodata_worldLow;
@@ -254,7 +254,7 @@ map.backgroundSeries.mapPolygons.template.polygon.fillModifier = fillModifier;
 //
 //
 //
-var chart = am4core.create("am-chart", am4charts.XYChart);
+var chart = am4core.create("am-barchart", am4charts.XYChart);
 
 
 //var container = am4core.create("am-chart", am4core.Container);
@@ -331,7 +331,7 @@ am4core.ready(function () {
   am4core.useTheme(am4themes_animated);
   // Themes end
 
-  var kpiamChart = am4core.create("kpiamChart", am4charts.XYChart);
+  var kpiamChart = am4core.create("am-kpichart", am4charts.XYChart);
   kpiamChart.hiddenState.properties.opacity = 0; // this creates initial fade-in
   kpiamChart.colors.list = [
     // light blue, orange, dark blue
