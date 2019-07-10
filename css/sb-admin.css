@@ -70,7 +70,7 @@
   fill-opacity: 2;
 }
 
-.amcharts-AxisLabel text tspan {
+.amcharts-Container-Label text tspan {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: bold;
