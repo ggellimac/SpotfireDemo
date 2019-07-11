@@ -380,3 +380,163 @@ am4core.ready(function () {
   // kpiamChart.scrollbarY = new am4core.Scrollbar();
 
 }); // end am4core.ready()
+
+am4core.ready(function () {
+
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+  var chart = am4core.create("am-progressbar", am4charts.XYChart);
+  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+  chart.paddingRight = 30;
+  chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm";
+
+  var colorSet = new am4core.ColorSet();
+  colorSet.saturation = 0.4;
+
+  // [ 'Category', 'PREP', new Date(2018, 1, 1), new Date(2018, 3, 1) ],
+  //     [ 'Category', 'SITE STARTUP', new Date(2018, 3, 1), new Date(2018, 5, 25) ],
+  //     [ 'Category', 'SITE IDENTIFICATION', new Date(2018, 5, 25), new Date(2019, 6, 1)],
+  //     [ 'Category', 'SITE ACTIVATION', new Date(2019, 6, 1), new Date(2019, 6, 10) ],
+  //     [ 'Category', 'PATIENT ENROLLMENT', new Date(2019, 6, 10), new Date(2019, 7, 29) ],
+  //     [ 'Category', 'PATIENT TREATMENT', new Date(2019, 7, 29), new Date(2019, 9, 8)],
+  //     [ 'Category', 'PATIENT FOLLOW UP', new Date(2019, 9, 8), new Date(2019, 10, 30) ],
+  //     [ 'Category', 'CLOSEOUT', new Date(2019, 10, 30), new Date(2019, 12, 30) ],
+
+  chart.data = [
+    {
+      started: true,
+      row: "test",
+      name: "PREP",
+      fromDate: "2018-01-01",
+      toDate: "2018-03-01",
+      color: am4core.color("#38A7C8"),
+    },
+    {
+      started: true,
+      row: "test",
+      name: "SITE STARTUP",
+      fromDate: "2018-03-01",
+      toDate: "2018-05-25",
+      color: am4core.color("#38A7C8")
+
+    },
+    {
+      started: true,
+      row: "test",
+      name: "SITE ACTIVATION",
+      fromDate: "2018-05-25",
+      toDate: "2018-06-01",
+      color: am4core.color("#38A7C8")
+    },
+    {
+      started: false,
+      row: "test",
+      name: "SITE IDENTIFICATION",
+      fromDate: "2018-06-01",
+      toDate: "2018-06-10",
+      color: am4core.color("#4C5A71")
+    },
+    {
+      started: false,
+      row: "test",
+      name: "PATIENT ENROLLMENT",
+      fromDate: "2018-06-10",
+      toDate: "2018-07-29",
+      color: am4core.color("#4C5A71")
+    },
+    {
+      started: false,
+      row: "test",
+      name: "PATIENT TREATMENT",
+      fromDate: "2018-07-29",
+      toDate: "2018-09-08",
+      color: am4core.color("#4C5A71")
+    },
+
+    {
+      started: false,
+      row: "test",
+      name: "PATIENT FOLLOW UP",
+      fromDate: "2018-09-08",
+      toDate: "2018-10-30",
+      color: am4core.color("#4C5A71")
+    },
+
+    {
+      started: false,
+      row: "test",
+      name: "CLOSEOUT",
+      fromDate: "2018-10-30",
+      toDate: "2018-12-30",
+      color: am4core.color("#4C5A71")
+    }
+
+  ];
+  am4core.options.autoSetClassName = true;
+
+  var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+  categoryAxis.dataFields.category = "row";
+  categoryAxis.renderer.grid.template.location = 0;
+  categoryAxis.renderer.inversed = true;
+
+  var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+  dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm";
+  dateAxis.renderer.minGridDistance = 70;
+  dateAxis.baseInterval = { count: 30, timeUnit: "minute" };
+  dateAxis.max = new Date(2019, 0, 1, 24, 0, 0, 0).getTime();
+  dateAxis.strictMinMax = true;
+  dateAxis.renderer.tooltipLocation = 0;
+
+  var series1 = chart.series.push(new am4charts.ColumnSeries());
+  series1.columns.template.width = am4core.percent(80);
+  series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX}";
+  console.log("fromDate");
+  series1.dataFields.openDateX = "fromDate";
+  series1.dataFields.dateX = "toDate";
+  series1.dataFields.categoryY = "row";
+  series1.columns.template.propertyFields.fill = "color"; // get color from data
+  series1.columns.template.propertyFields.stroke = "color";
+  categoryAxis.renderer.labels.template.disabled = true;
+
+  // var fillModifier = new am4core.LinearGradientModifier();
+  // fillModifier.opacities = [1, 1];
+  // fillModifier.brightnesses = [.05, .8];
+  // fillModifier.lightnesses = [.5, 0];
+  // fillModifier.offsets = [0, 1];
+  // series1.columns.template.fillModifier = fillModifier;
+  // series1.columns.template.column.cornerRadiusTopLeft = 50;
+  // series1.columns.template.column.cornerRadiusTopRight = 10;
+  // series1.columns.template.column.cornerRadiusBottomLeft = 50;
+  // series1.columns.template.column.cornerRadiusBottomRight = 10;
+  count = 0;
+  chart.data.forEach(element => {
+    // if (count == 0) {
+    //   element.column.cornerRadiusTopLeft = 50;
+    //   // element.cornerRadiusBottomLeft = 50;
+
+    // }
+    console.log(element["name"] + " " + element["started"]);
+    if (element["started"]) {
+      var gradient = new am4core.LinearGradient();
+      gradient.addColor(am4core.color("#88C5CF"));
+      gradient.addColor(element["color"], 1, .99);
+      element["color"] = gradient;
+    }
+    count++;
+  });
+  categoryAxis.renderer.grid.template.disabled = true;
+
+
+
+
+
+  series1.columns.template.strokeOpacity = 1;
+
+  // chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+
+
