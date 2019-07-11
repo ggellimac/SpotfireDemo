@@ -1,72 +1,77 @@
-{ "barChartData" : {
-    "legend" : {
-        "enabled" : false
-    },
-    "colors" : {
-      "step" : 2
-    },
-    "xAxes" : [{
-      "id" : "c1",
-      "type" : "CategoryAxis",
-      "dataFields" : {
-        "category" : "category"
-      },
-      "renderer" : {
-        "grid" : {
-          "location" : 0 
-        }
-      }
-    }],
-    "yAxes" : [{
-      "id" : "v1",
-      "type" : "ValueAxis",
-      "min" : 0,
-      "renderer" : {
-        "minWidth" : 35
-      }
-    }],
-    "series" : [
-      {
-        "id" : "s1",
-        "type" : "ColumnSeries",
-        "name" : "Series 1",
-        "dataFields" : {
-          "categoryX" : "category",
-          "valueY" : "value1"
+{
+    "barChartData": {
+        "legend": {
+            "enabled": false
         },
-        "stacked" : true
-       },
-      {
-        "id" : "s2",
-        "type" : "ColumnSeries",
-        "name" : "Series 2",
-        "dataFields" : {
-          "categoryX" : "category",
-          "valueY" : "value2"
+        "colors": {
+            "step": 2
         },
-        "stacked" : true
-       },
-      {
-        "id" : "s3",
-        "type" : "ColumnSeries",
-        "name" : "Series 3",
-        "dataFields" : {
-          "categoryX" : "category",
-          "valueY" : "value3"
-        },
-        "stacked" : true
-       },
-      {
-        "id" : "s4",
-        "type" : "ColumnSeries",
-        "tooltupPosition" : "mouse",
-        "name" : "Series 4",
-        "dataFields" : {
-          "categoryX" : "category",
-          "valueY" : "value4"
-        },
-        "stacked" : true
-       }
-    ]
+        "xAxes": [
+            {
+                "id": "c1",
+                "type": "CategoryAxis",
+                "dataFields": {
+                    "category": "category"
+                },
+                "renderer": {
+                    "grid": {
+                        "location": 0
+                    }
+                }
+            }
+        ],
+        "yAxes": [
+            {
+                "id": "v1",
+                "type": "ValueAxis",
+                "min": 0,
+                "renderer": {
+                    "minWidth": 35
+                }
+            }
+        ],
+        "series": [
+            {
+                "id": "s1",
+                "type": "ColumnSeries",
+                "name": "Series 1",
+                "dataFields": {
+                    "categoryX": "category",
+                    "valueY": "value1"
+                },
+                "stacked": true
+            },
+            {
+                "id": "s2",
+                "type": "ColumnSeries",
+                "name": "Series 2",
+                "dataFields": {
+                    "categoryX": "category",
+                    "valueY": "value2"
+                },
+                "stacked": true
+            },
+            {
+                "id": "s3",
+                "type": "ColumnSeries",
+                "name": "Series 3",
+                "dataFields": {
+                    "categoryX": "category",
+                    "valueY": "value3"
+                },
+                "stacked": true
+            },
+            {
+                "id": "s4",
+                "type": "ColumnSeries",
+                "tooltupPosition": "mouse",
+                "name": "Series 4",
+                "dataFields": {
+                    "categoryX": "category",
+                    "valueY": "value4"
+                },
+                "stacked": true
+            }
+        ]
+    }
 }
-  }
