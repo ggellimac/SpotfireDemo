@@ -100,6 +100,16 @@ let data = [{"id":1,"Country":"Azerbaijan","Patient Count":90,"Out of Scope":fal
 {"id":99,"Country":"United States","Patient Count":39,"Out of Scope":true,"No Issue":true,"Not Started ":true,"Problematic":false},
 {"id":100,"Country":"Cyprus","Patient Count":100,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":true}]
 
+
+function loadConfigFile() {
+  $.getJSON('../js/jsonAmChart.json', function (jsonData){
+    console.log(jsonData.barChartData);
+    let chart = am4core.createFromConfig(jsonData.barChartData, "am-barchart", am4charts.XYChart);
+    chart.dataSource.url = "../js/jsonAmChartData.json";
+  });
+};
+
+loadConfigFile();
 am4core.options.autoSetClassName = true;
 
 // Create MapChart instance from AmCharts
@@ -255,66 +265,66 @@ map.backgroundSeries.mapPolygons.template.polygon.fillModifier = fillModifier;
 //
 //
 //
-var chart = am4core.create("am-barchart", am4charts.XYChart);
+// var chart = am4core.create("am-barchart", am4charts.XYChart);
 
 
-//var container = am4core.create("am-chart", am4core.Container);
-chart.width = am4core.percent(25);
-chart.height = am4core.percent(100);
-chart.background.fill = am4core.color("#293b56");
-chart.background.fillOpacity = 0;
-chart.background.stroke = am4core.color("#293b56");
-chart.background.strokeOpacity = 2;
-chart.background.strokeWidth = 2;
-chart.marginRight = 400;
+// //var container = am4core.create("am-chart", am4core.Container);
+// chart.width = am4core.percent(25);
+// chart.height = am4core.percent(100);
+// chart.background.fill = am4core.color("#293b56");
+// chart.background.fillOpacity = 0;
+// chart.background.stroke = am4core.color("#293b56");
+// chart.background.strokeOpacity = 2;
+// chart.background.strokeWidth = 2;
+// chart.marginRight = 400;
 
 
-//chart.parent = container;
+// //chart.parent = container;
 
-// Add data
-chart.data = [{
-  "topic": "",
-  "total": 501,
-  "spent": 450,
-}];
+// // Add data
+// chart.data = [{
+//   "topic": "",
+//   "total": 501,
+//   "spent": 450,
+// }];
 
-// Add and configure Series
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "topic";
-categoryAxis.title.text = "MONTHLY VS. ANNUAL PROFIT";
-categoryAxis.title.strokeWidth = 1;
-categoryAxis.fontSize = 10;
-//categoryAxis.fill = "#FFFFFF";
-categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.renderer.minGridDistance = 20;
-categoryAxis.renderer.grid.template.disabled = true;
+// // Add and configure Series
+// var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+// categoryAxis.dataFields.category = "topic";
+// categoryAxis.title.text = "MONTHLY VS. ANNUAL PROFIT";
+// categoryAxis.title.strokeWidth = 1;
+// categoryAxis.fontSize = 10;
+// //categoryAxis.fill = "#FFFFFF";
+// categoryAxis.renderer.grid.template.location = 0;
+// categoryAxis.renderer.minGridDistance = 20;
+// categoryAxis.renderer.grid.template.disabled = true;
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.renderer.labels.template.disabled = true;
-valueAxis.renderer.grid.template.disabled = true;
-
-
-// Create series
-
-var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.valueY = "total";
-series.dataFields.categoryX = "topic";
-series.clustered = false;
-series.name = "Total";
-series.tooltipText = "{name}: [bold]{valueY}[/]";
-
-var series2 = chart.series.push(new am4charts.ColumnSeries());
-series2.dataFields.valueY = "spent";
-series2.dataFields.categoryX = "topic";
-series2.clustered = false;
-series2.name = "Spent";
-series2.tooltipText = "{name}: [bold]{valueY}[/]";
+// var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+// valueAxis.renderer.labels.template.disabled = true;
+// valueAxis.renderer.grid.template.disabled = true;
 
 
-// Add cursor
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.lineX.disabled = true;
-chart.cursor.lineY.disabled = true;
+// // Create series
+
+// var series = chart.series.push(new am4charts.ColumnSeries());
+// series.dataFields.valueY = "total";
+// series.dataFields.categoryX = "topic";
+// series.clustered = false;
+// series.name = "Total";
+// series.tooltipText = "{name}: [bold]{valueY}[/]";
+
+// var series2 = chart.series.push(new am4charts.ColumnSeries());
+// series2.dataFields.valueY = "spent";
+// series2.dataFields.categoryX = "topic";
+// series2.clustered = false;
+// series2.name = "Spent";
+// series2.tooltipText = "{name}: [bold]{valueY}[/]";
+
+
+// // Add cursor
+// chart.cursor = new am4charts.XYCursor();
+// chart.cursor.lineX.disabled = true;
+// chart.cursor.lineY.disabled = true;
 
 
 
