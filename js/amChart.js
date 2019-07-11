@@ -16,14 +16,17 @@ let data = [
 
 
 function loadConfigFile() {
-  $.getJSON('../js/jsonAmChart.json', function (jsonData){
-    console.log(jsonData.barChartData);
-    let chart = am4core.createFromConfig(jsonData.barChartData, "am-barchart", am4charts.XYChart);
-    chart.dataSource.url = "../js/jsonAmChartData.json";
+  $.getJSON('../js/amMapjsonData.json', function (jsonData){
+    console.log(jsonData.mapchartdata);
+    let chart = am4core.createFromConfig(jsonData.mapchartdata, "am-barchart", am4maps.MapChart);
+    var series = chart.series.push(new am4maps.MapPolygonSeries());
+    series.useGeodata = true;
+    //chart.dataSource.url = "../js/jsonAmChartData.json";
   });
 };
 
 loadConfigFile();
+
 am4core.options.autoSetClassName = true;
 
 // Create MapChart instance from AmCharts
@@ -32,7 +35,6 @@ am4core.options.autoSetClassName = true;
 //
 //
 var map = am4core.create("am-mapchart", am4maps.MapChart);
-
 
 //Set map definition
 map.geodata = am4geodata_worldLow;

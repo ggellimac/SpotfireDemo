@@ -1,0 +1,15 @@
+{
+    "mapchartdata": {
+        "legend": {},
+        "geodata": "worldLow",
+        "projection": "Miller",
+        "backgroundSeries": {
+            "mapPolygons": {
+                "polygon": {
+                    "fill": "#12769E",
+                    "fillOpacity": "0.1"
+                }
+            }
+        }
+    }
+}
