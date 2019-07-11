@@ -3,13 +3,26 @@
         "legend": {},
         "geodata": "worldLow",
         "projection": "Miller",
-        "backgroundSeries": {
-            "mapPolygons": {
-                "polygon": {
-                    "fill": "#12769E",
-                    "fillOpacity": "0.1"
+        "series": [
+            {
+                "type": "MapPolygonSeries",
+                "useGeodata": true,
+                "mapPolygons": {
+                    "template": {
+                        "tooltipText": "{name}",
+                        "fill": "#12769E",
+                        "nonScallingStroke": true,
+                        "strokeOpacity": ".02",
+                        "states": {
+                            "hover": {
+                                "properties": {
+                                    "fill": "#293B56"
+                                }
+                            }
+                        }
+                    }
                 }
             }
-        }
+        ]
     }
 }

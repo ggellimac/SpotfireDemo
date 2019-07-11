@@ -19,9 +19,6 @@ function loadConfigFile() {
   $.getJSON('../js/amMapjsonData.json', function (jsonData){
     console.log(jsonData.mapchartdata);
     let chart = am4core.createFromConfig(jsonData.mapchartdata, "am-barchart", am4maps.MapChart);
-    var series = chart.series.push(new am4maps.MapPolygonSeries());
-    series.useGeodata = true;
-    //chart.dataSource.url = "../js/jsonAmChartData.json";
   });
 };
 
