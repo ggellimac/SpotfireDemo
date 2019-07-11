@@ -381,6 +381,8 @@ am4core.ready(function () {
 
 }); // end am4core.ready()
 
+
+// progress bar using gantt chart example
 am4core.ready(function () {
 
   // Themes begin
@@ -513,11 +515,6 @@ am4core.ready(function () {
   // series1.columns.template.column.cornerRadiusBottomRight = 10;
   count = 0;
   chart.data.forEach(element => {
-    // if (count == 0) {
-    //   element.column.cornerRadiusTopLeft = 50;
-    //   // element.cornerRadiusBottomLeft = 50;
-
-    // }
     console.log(element["name"] + " " + element["started"]);
     if (element["started"]) {
       var gradient = new am4core.LinearGradient();
