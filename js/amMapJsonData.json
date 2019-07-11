@@ -5,6 +5,10 @@
         "projection": "Miller",
         "series": [
             {
+                "dataSource" : {
+                    "url" : "../js/amMapChartData.json"
+                },
+                "exclude" : ["AQ"],
                 "type": "MapPolygonSeries",
                 "useGeodata": true,
                 "mapPolygons": {
@@ -13,6 +17,9 @@
                         "fill": "#12769E",
                         "nonScallingStroke": true,
                         "strokeOpacity": ".02",
+                        "propertyFields" : {
+                            "fill" : "fill"
+                        },
                         "states": {
                             "hover": {
                                 "properties": {

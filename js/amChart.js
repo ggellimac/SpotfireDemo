@@ -17,7 +17,6 @@ let data = [
 
 function loadConfigFile() {
   $.getJSON('../js/amMapjsonData.json', function (jsonData){
-    console.log(jsonData.mapchartdata);
     let chart = am4core.createFromConfig(jsonData.mapchartdata, "am-barchart", am4maps.MapChart);
   });
 };
@@ -492,7 +491,6 @@ am4core.ready(function () {
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
   series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX}";
-  console.log("fromDate");
   series1.dataFields.openDateX = "fromDate";
   series1.dataFields.dateX = "toDate";
   series1.dataFields.categoryY = "row";
@@ -512,7 +510,6 @@ am4core.ready(function () {
   // series1.columns.template.column.cornerRadiusBottomRight = 10;
   count = 0;
   chart.data.forEach(element => {
-    console.log(element["name"] + " " + element["started"]);
     if (element["started"]) {
       var gradient = new am4core.LinearGradient();
       gradient.addColor(am4core.color("#88C5CF"));
