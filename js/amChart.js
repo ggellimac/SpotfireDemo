@@ -1,17 +1,17 @@
 //Dummy data to be used to fill the map
 let data = [
-  {"id":1,"Country":"United States","Patient Count":100,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":false},
-  {"id":2,"Country":"Greenland","Patient Count":73,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":3,"Country":"Somalia","Patient Count":22,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":4,"Country":"Kenya","Patient Count":54,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":5,"Country":"Ukraine","Patient Count":12,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":6,"Country":"Ethiopia","Patient Count":87,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":7,"Country":"United Kingdom","Patient Count":43,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":8,"Country":"Egypt","Patient Count":65,"Out of Scope":false,"No Issue":true,"Not Started ":true,"Problematic":false},
-  {"id":9,"Country":"Niger","Patient Count":88,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":false},
-  {"id":10,"Country":"Saudi Arabia","Patient Count":2,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":false},
-  {"id":11,"Country":"Oman","Patient Count":17,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":false},
-  {"id":12,"Country":"Spain","Patient Count":95,"Out of Scope":false,"No Issue":false,"Not Started ":true,"Problematic":false}
+  {"id":"US","Country":"United States","Patient Count":100,"Out of Scope":false,"Not Started":false,"Problematic":true},
+  {"id":"GL","Country":"Greenland","Patient Count":73,"Out of Scope":false,"Not Started":true,"Problematic":false},
+  {"id":"SO","Country":"Somalia","Patient Count":22,"Out of Scope":false,"Not Started":true,"Problematic":false},
+  {"id":"KE","Country":"Kenya","Patient Count":54,"Out of Scope":false,"Not Started":false,"Problematic":false},
+  {"id":"UA","Country":"Ukraine","Patient Count":12,"Out of Scope":false,"Not Started":false,"Problematic":false},
+  {"id":"ET","Country":"Ethiopia","Patient Count":87,"Out of Scope":false,"Not Started":false,"Problematic":false},
+  {"id":"GB","Country":"United Kingdom","Patient Count":43,"Out of Scope":false,"Not Started":false,"Problematic":false},
+  {"id":"EG","Country":"Egypt","Patient Count":65,"Out of Scope":false,"Not Started":false,"Problematic":false},
+  {"id":"NE","Country":"Niger","Patient Count":88,"Out of Scope":false,"Not Started":false,"Problematic":true},
+  {"id":"SA","Country":"Saudi Arabia","Patient Count":2,"Out of Scope":false,"Not Started":false,"Problematic":true},
+  {"id":"OM","Country":"Oman","Patient Count":17,"Out of Scope":false,"Not Started":false,"Problematic":true},
+  {"id":"ES","Country":"Spain","Patient Count":95,"Out of Scope":false,"Not Started":false,"Problematic":true}
 ]
 
 
@@ -76,7 +76,7 @@ Data - How to import data from something like Excel??? Use a JSON maybe???
 Have to manually set each country value ))):
 HOWEVER you can use heat-map settings to change the colors instead of manually setting
 the color for each country.
-*/
+
 polygonSeries.data = [{
   "id": "US",
   "name": "United States",
@@ -118,12 +118,22 @@ polygonSeries.data = [{
   "value": 50,
   "fill": am4core.color("#BBBCBC")
 }];
-
-data.forEach(element => {
-  if (element["Country"] == "China") {
-    polygonSeries.data.push({"id" : "CN", "name": "China", "value":50, "fill":am4core.color("#BBBCBC")});
+*/
+ data.forEach(element => {
+   if (element["Not Started"] == true) {
+     polygonSeries.data.push({"id" : element["id"], "name": element["Country"], "value":element["Patient Count"], "fill":am4core.color("#828D95")});
+   }
+   if (element["Problematic"] == true) {
+    polygonSeries.data.push({"id" : element["id"], "name": element["Country"], "value":element["Patient Count"], "fill":am4core.color("#FF671F")});
+   }
+   //this statement avoids coloring the "not started" countries and only fills the "no issues" countries
+   else if ((element["Problematic"] == false) && (element["Not Started"] == false)) {
+    polygonSeries.data.push({"id" : element["id"], "name": element["Country"], "value":element["Patient Count"], "fill":am4core.color("#BBBCBC")});
   }
+
 });
+
+
 
 // Bind "fill" property to "fill" key in data
 polygonTemplate.propertyFields.fill = "fill";
