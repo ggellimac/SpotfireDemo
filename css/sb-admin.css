@@ -117,8 +117,8 @@
   border: 5px solid #293b56;
 }
 
-#am-barchart2 .amcharts-Container-group g rect{
-  width: 20%;
+#am-barchart .amcharts-Container-group .amcharts-Rectangle-group rect{
+  width: 10%;
 }
 
 #userCenter{
