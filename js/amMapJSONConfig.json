@@ -16,7 +16,7 @@
                         "tooltipText": "{name}",
                         "fill": "#12769E",
                         "nonScallingStroke": true,
-                        "strokeOpacity": ".02",
+                        "strokeOpacity": ".2",
                         "propertyFields" : {
                             "fill" : "fill"
                         },
