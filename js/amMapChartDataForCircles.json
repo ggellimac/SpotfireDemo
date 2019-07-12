@@ -1,0 +1,22 @@
+[
+    {
+        "latitude": 48.856614,
+        "longitude": 2.352222,
+        "title": "Paris"
+    },
+    {
+        "latitude": 40.712775,
+        "longitude": -74.005973,
+        "title": "New York"
+    },
+    {
+        "latitude": 49.282729,
+        "longitude": -123.120738,
+        "title": "Vancouver"
+    },
+    {
+        "latitude": 39.09973,
+        "longitude": -94.57857,
+        "title": "Kansas City"
+    }
+]

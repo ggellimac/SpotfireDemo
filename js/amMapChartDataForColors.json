@@ -1,0 +1,110 @@
+[
+    {
+        "id": "US",
+        "Name": "United States",
+        "value": 100,
+        "fill": "#FF671F",
+        "Out Of Scope" : false,
+        "Problematic" : true,
+        "Started" : true
+    },
+    {
+        "id": "GL",
+        "Name": "Greenland",
+        "value": 73,
+        "fill": "#828D95",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : false
+    },
+    {
+        "id": "SO",
+        "Name": "Somalia",
+        "value": 22,
+        "fill": "#828D95",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : false
+    },
+    {
+        "id": "KE",
+        "Name": "Kenya",
+        "value": 54,
+        "fill": "#BBBCBC",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : true
+    }
+    ,{
+        "id": "UA",
+        "Name": "Ukraine",
+        "value": 12,
+        "fill": "#BBBCBC",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : true
+    },
+    {
+        "id": "ET",
+        "Name": "Ethiopia",
+        "value": 87,
+        "fill": "#BBBCBC",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : true
+    },
+    {
+        "id": "GB",
+        "Name": "United Kingdom",
+        "value": 43,
+        "fill": "#BBBCBC",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : true
+    },
+    {
+        "id": "EG",
+        "Name": "Egypt",
+        "value": 65,
+        "fill": "#BBBCBC",
+        "Out Of Scope" : false,
+        "Problematic" : false,
+        "Started" : true
+    },
+    {
+        "id": "NE",
+        "Name": "Niger",
+        "value": 65,
+        "fill": "#FF671F",
+        "Out Of Scope" : false,
+        "Problematic" : true,
+        "Started" : true
+    },
+    {
+        "id": "SA",
+        "Name": "Saudi Arabia",
+        "value": 2,
+        "fill": "#FF671F",
+        "Out Of Scope" : false,
+        "Problematic" : true,
+        "Started" : true
+    },
+    {
+        "id": "OM",
+        "Name": "Oman",
+        "value": 17,
+        "fill": "#FF671F",
+        "Out Of Scope" : false,
+        "Problematic" : true,
+        "Started" : true
+    },
+    {
+        "id": "ES",
+        "Name": "Spain",
+        "value": 95,
+        "fill": "#FF671F",
+        "Out Of Scope" : false,
+        "Problematic" : true,
+        "Started" : true
+    }
+]

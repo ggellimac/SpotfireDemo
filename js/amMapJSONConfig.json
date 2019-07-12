@@ -1,0 +1,57 @@
+{
+    "mapchartdata": {
+        "geodata": "worldLow",
+        "zoomControl" : {},
+        "projection": "Miller",
+        "series": [
+            {
+                "type": "MapPolygonSeries",
+                "dataSource" : {
+                    "url" : "../js/amMapChartDataForColors.json"
+                },
+                "exclude" : ["AQ"],
+                "useGeodata": true,
+                "mapPolygons": {
+                    "template": {
+                        "tooltipText": "{name}",
+                        "fill": "#12769E",
+                        "nonScallingStroke": true,
+                        "strokeOpacity": ".02",
+                        "propertyFields" : {
+                            "fill" : "fill"
+                        },
+                        "states": {
+                            "hover": {
+                                "properties": {
+                                    "fill": "#ffffff"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "type" : "MapImageSeries",
+                "dataSource" : {
+                    "url" : "../js/amMapChartDataForCircles.json"
+                },
+                "mapImages" : {
+                    "propertyFields" : {
+                        "latitude" : "latitude",
+                        "longitude" : "longitude"
+                    },
+                    "children" : [{
+                        "type" : "Circle",
+                        "radius": 8,
+                        "fillOpacity" : 0,
+                        "stroke" : "#FFFFFF",
+                        "strokeWidth" : 2,
+                        "nonScaling" : true,
+                        "tooltipText" : "{title}"
+                    }]
+                }
+
+            }
+        ]
+    }
+}
