@@ -15,7 +15,11 @@ container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 
 //Creates a progress bar with the desired title and data
+//
+//
+//
 function createProgressBarForFinances(title, spent, total) {
+
 let progressBar = container.createChild(am4charts.XYChart);
 progressBar.numberFormatter.numberFormat = '$#,###';
 progressBar.width = am4core.percent(25);
@@ -26,10 +30,21 @@ progressBar.background.stroke = am4core.color("#293b56");
 progressBar.background.strokeOpacity = 2;
 progressBar.background.strokeWidth = 2;
 
-let label = progressBar.createChild(am4core.Label);
-label.text = "TEST";
-label.fontSize = 20;
-label.padding(0,0,0,0);
+let totalLabel = progressBar.createChild(am4core.Label);
+totalLabel.text = total;
+totalLabel.fontSize = 20;
+totalLabel.align = "left";
+totalLabel.isMeasured = false;
+totalLabel.y = 50;
+totalLabel.numberFormatter.numberFormat = "$###";
+
+let spentLabel = progressBar.createChild(am4core.Label);
+spentLabel.text = spent;
+spentLabel.fontSize = 20;
+spentLabel.align = "left";
+spentLabel.isMeasured = false;
+spentLabel.y = 250;
+//label.padding(0,0,0,0);
 
 // Add data
 progressBar.data = [{
@@ -75,7 +90,7 @@ totalSeries.name = "Total";
 totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
 totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
 totalSeries.columns.template.propertyFields.stroke = "color";
-totalSeries.columns.template.width = am4core.percent(50);
+totalSeries.columns.template.width = am4core.percent(25);
 
 let spentSeries = progressBar.series.push(new am4charts.ColumnSeries());
 spentSeries.dataFields.valueY = "spent";
@@ -85,7 +100,7 @@ spentSeries.name = "Spent";
 spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
 spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
 spentSeries.columns.template.propertyFields.stroke = "color";
-spentSeries.columns.template.width = am4core.percent(50);
+spentSeries.columns.template.width = am4core.percent(25);
 
 let gradient = new am4core.LinearGradient();
 gradient.rotation = 90;
@@ -98,7 +113,6 @@ progressBar.data[1]["color"] = gradient;
 progressBar.cursor = new am4charts.XYCursor();
 progressBar.cursor.lineX.disabled = true;
 progressBar.cursor.lineY.disabled = true;
-
 } 
 
 createProgressBarForFinances("MONTHLY", 63123, 1238123);
