@@ -53,8 +53,9 @@ categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
 
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.renderer.labels.template.disabled = true;
+valueAxis.renderer.labels.template.disabled = false;
 valueAxis.renderer.grid.template.disabled = true;
+valueAxis.min = 0;
 
 
 // Create series
