@@ -18,18 +18,20 @@ loadConfigFileForAmMapChart();
 //
 //
 //
-var chart = am4core.create("am-barchart", am4charts.XYChart);
+var container = am4core.create("am-barchart", am4core.Container);
+container.width = am4core.percent(100);
+container.height = am4core.percent(100);
 
 
-//var container = am4core.create("am-chart", am4core.Container);
+var chart = container.createChild(am4charts.XYChart);
 chart.width = am4core.percent(25);
 chart.height = am4core.percent(100);
+//chart.padding(100,50,50,0);
 chart.background.fill = am4core.color("#293b56");
 chart.background.fillOpacity = 0;
 chart.background.stroke = am4core.color("#293b56");
 chart.background.strokeOpacity = 2;
 chart.background.strokeWidth = 2;
-chart.marginRight = 400;
 
 
 //chart.parent = container;
@@ -38,10 +40,12 @@ chart.marginRight = 400;
 chart.data = [{
   "topic": "",
   "total": 501,
+  "spent": 450,
   "color" : am4core.color("#657181")
 },
 {
   "topic": "",
+  "total":0,
   "spent": 450,
   "color" : am4core.color("#FF8850")
   
@@ -50,7 +54,7 @@ chart.data = [{
 // Add and configure Series
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
-categoryAxis.title.text = "MONTHLY VS. ANNUAL PROFIT";
+categoryAxis.title.text = "MONTHLY";
 categoryAxis.title.strokeWidth = 1;
 categoryAxis.fontSize = 10;
 //categoryAxis.fill = "#FFFFFF";
@@ -94,6 +98,169 @@ chart.data[1]["color"] = gradient;
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.lineX.disabled = true;
 chart.cursor.lineY.disabled = true;
+
+var siteActProgressBar = container.createChild(am4charts.XYChart);
+
+//siteActProgressBar.padding(100,50,50,250);
+siteActProgressBar.width = am4core.percent(25);
+siteActProgressBar.paddingLeft = 250;
+
+
+siteActProgressBar.background.fill = am4core.color("#293b56");
+siteActProgressBar.background.fillOpacity = 0;
+siteActProgressBar.background.stroke = am4core.color("#293b56");
+siteActProgressBar.background.strokeOpacity = 2;
+siteActProgressBar.background.strokeWidth = 2;
+
+
+//chart.parent = container;
+
+// Add data
+siteActProgressBar.data = [{
+  "topic": "",
+  "total": 501,
+  "spent": 450,
+  "color" : am4core.color("#657181")
+},
+{
+  "topic": "",
+  "total":0,
+  "spent": 450,
+  "color" : am4core.color("#FF8850")
+  
+}];
+
+// Add and configure Series
+var categoryAxisForSiteAct = siteActProgressBar.xAxes.push(new am4charts.CategoryAxis());
+categoryAxisForSiteAct.dataFields.category = "topic";
+categoryAxisForSiteAct.title.text = "SITE ACT";
+categoryAxisForSiteAct.title.strokeWidth = 1;
+categoryAxisForSiteAct.fontSize = 10;
+//categoryAxis.fill = "#FFFFFF";
+categoryAxisForSiteAct.renderer.grid.template.location = 0;
+categoryAxisForSiteAct.renderer.minGridDistance = 20;
+categoryAxisForSiteAct.renderer.grid.template.disabled = true;
+
+var valueAxisForSiteAct = siteActProgressBar.yAxes.push(new am4charts.ValueAxis());
+valueAxisForSiteAct.renderer.labels.template.disabled = false;
+valueAxisForSiteAct.renderer.grid.template.disabled = true;
+valueAxisForSiteAct.min = 0;
+
+
+// Create series
+
+var totalSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
+totalSeries.dataFields.valueY = "total";
+totalSeries.dataFields.categoryX = "topic";
+totalSeries.clustered = false;
+totalSeries.name = "Total";
+totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
+totalSeries.columns.template.propertyFields.stroke = "color";
+
+var spentSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
+spentSeries.dataFields.valueY = "spent";
+spentSeries.dataFields.categoryX = "topic";
+spentSeries.clustered = false;
+spentSeries.name = "Spent";
+spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
+spentSeries.columns.template.propertyFields.stroke = "color";
+
+var gradientForSiteAct = new am4core.LinearGradient();
+gradientForSiteAct.rotation = 90;
+gradientForSiteAct.addColor(am4core.color("#657181"));
+gradientForSiteAct.addColor(siteActProgressBar.data[1]["color"], 1, .99);
+siteActProgressBar.data[1]["color"] = gradientForSiteAct;
+
+
+// Add cursor
+siteActProgressBar.cursor = new am4charts.XYCursor();
+siteActProgressBar.cursor.lineX.disabled = true;
+siteActProgressBar.cursor.lineY.disabled = true;
+
+var siteActProgressBar = container.createChild(am4charts.XYChart);
+
+siteActProgressBar.paddingLeft = 450;
+siteActProgressBar.width = am4core.percent(25);
+// siteActProgressBar.height = am4core.percent(100);
+//siteActProgressBar.padding(100,50,50,600);
+
+
+siteActProgressBar.background.fill = am4core.color("#293b56");
+siteActProgressBar.background.fillOpacity = 0;
+siteActProgressBar.background.stroke = am4core.color("#293b56");
+siteActProgressBar.background.strokeOpacity = 2;
+siteActProgressBar.background.strokeWidth = 2;
+
+
+//chart.parent = container;
+
+// Add data
+siteActProgressBar.data = [{
+  "topic": "",
+  "total": 501,
+  "spent": 450,
+  "color" : am4core.color("#657181")
+},
+{
+  "topic": "",
+  "total":0,
+  "spent": 450,
+  "color" : am4core.color("#FF8850")
+  
+}];
+
+// Add and configure Series
+var categoryAxisForSiteAct = siteActProgressBar.xAxes.push(new am4charts.CategoryAxis());
+categoryAxisForSiteAct.dataFields.category = "topic";
+categoryAxisForSiteAct.title.text = "PATIENT ENROLL";
+categoryAxisForSiteAct.title.strokeWidth = 1;
+categoryAxisForSiteAct.fontSize = 10;
+//categoryAxis.fill = "#FFFFFF";
+categoryAxisForSiteAct.renderer.grid.template.location = 0;
+categoryAxisForSiteAct.renderer.minGridDistance = 20;
+categoryAxisForSiteAct.renderer.grid.template.disabled = true;
+
+var valueAxisForSiteAct = siteActProgressBar.yAxes.push(new am4charts.ValueAxis());
+valueAxisForSiteAct.renderer.labels.template.disabled = false;
+valueAxisForSiteAct.renderer.grid.template.disabled = true;
+valueAxisForSiteAct.min = 0;
+
+
+// Create series
+
+var totalSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
+totalSeries.dataFields.valueY = "total";
+totalSeries.dataFields.categoryX = "topic";
+totalSeries.clustered = false;
+totalSeries.name = "Total";
+totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
+totalSeries.columns.template.propertyFields.stroke = "color";
+
+var spentSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
+spentSeries.dataFields.valueY = "spent";
+spentSeries.dataFields.categoryX = "topic";
+spentSeries.clustered = false;
+spentSeries.name = "Spent";
+spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
+spentSeries.columns.template.propertyFields.stroke = "color";
+
+var gradientForSiteAct = new am4core.LinearGradient();
+gradientForSiteAct.rotation = 90;
+gradientForSiteAct.addColor(am4core.color("#657181"));
+gradientForSiteAct.addColor(siteActProgressBar.data[1]["color"], 1, .99);
+siteActProgressBar.data[1]["color"] = gradientForSiteAct;
+
+
+// Add cursor
+siteActProgressBar.cursor = new am4charts.XYCursor();
+siteActProgressBar.cursor.lineX.disabled = true;
+siteActProgressBar.cursor.lineY.disabled = true;
+
+
 
 
 

@@ -48,9 +48,6 @@
 }
 
 /*am-charts*/
-.amCharts-Rectangle-group rect {
-  width : 10%;
-}
 .amcharts-MapChart g g rect {
   fill: #293b56;
   fill-opacity: 2;
@@ -95,27 +92,14 @@
   height: 50vh;
   border: 5px solid #293b56;
   fill: "#FFFFFF";
-  display: inline-block;
 }
-#am-barchart2{
-  display: inline-block;
-}
-#am-barchart3{
-  display: inline-block;
-}
-#am-barchart4{
-  display: inline-block;
-}
+
 
 #am-progressbar {
   width: 100%;
   height: 100px;
   background-image: linear-gradient(to right, #3B4D67 , #293B56);
   border: 5px solid #293b56;
-}
-
-#am-barchart .amcharts-Container-group .amcharts-Rectangle-group rect{
-  width: 10%;
 }
 
 #userCenter{
