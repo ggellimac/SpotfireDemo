@@ -38,7 +38,13 @@ chart.marginRight = 400;
 chart.data = [{
   "topic": "",
   "total": 501,
+  "color" : am4core.color("#657181")
+},
+{
+  "topic": "",
   "spent": 450,
+  "color" : am4core.color("#FF8850")
+  
 }];
 
 // Add and configure Series
@@ -66,6 +72,8 @@ series.dataFields.categoryX = "topic";
 series.clustered = false;
 series.name = "Total";
 series.tooltipText = "{name}: [bold]{valueY}[/]";
+series.columns.template.propertyFields.fill = "color"; // get color from data
+series.columns.template.propertyFields.stroke = "color";
 
 var series2 = chart.series.push(new am4charts.ColumnSeries());
 series2.dataFields.valueY = "spent";
@@ -73,6 +81,13 @@ series2.dataFields.categoryX = "topic";
 series2.clustered = false;
 series2.name = "Spent";
 series2.tooltipText = "{name}: [bold]{valueY}[/]";
+series2.columns.template.propertyFields.fill = "color"; // get color from data
+series2.columns.template.propertyFields.stroke = "color";
+var gradient = new am4core.LinearGradient();
+gradient.rotation = 90;
+gradient.addColor(am4core.color("#657181"));
+gradient.addColor(chart.data[1]["color"], 1, .99);
+chart.data[1]["color"] = gradient;
 
 
 // Add cursor
