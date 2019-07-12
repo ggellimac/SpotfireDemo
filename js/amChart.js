@@ -19,6 +19,7 @@ loadConfigFileForAmMapChart();
 //
 //
 var container = am4core.create("am-barchart", am4core.Container);
+container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 
@@ -101,9 +102,8 @@ chart.cursor.lineY.disabled = true;
 
 var siteActProgressBar = container.createChild(am4charts.XYChart);
 
-//siteActProgressBar.padding(100,50,50,250);
 siteActProgressBar.width = am4core.percent(25);
-siteActProgressBar.paddingLeft = 250;
+//siteActProgressBar.paddingLeft = 250;
 
 
 siteActProgressBar.background.fill = am4core.color("#293b56");
@@ -181,7 +181,6 @@ siteActProgressBar.cursor.lineY.disabled = true;
 
 var siteActProgressBar = container.createChild(am4charts.XYChart);
 
-siteActProgressBar.paddingLeft = 450;
 siteActProgressBar.width = am4core.percent(25);
 // siteActProgressBar.height = am4core.percent(100);
 //siteActProgressBar.padding(100,50,50,600);
@@ -259,11 +258,6 @@ siteActProgressBar.data[1]["color"] = gradientForSiteAct;
 siteActProgressBar.cursor = new am4charts.XYCursor();
 siteActProgressBar.cursor.lineX.disabled = true;
 siteActProgressBar.cursor.lineY.disabled = true;
-
-
-
-
-
 
 
 // Left horizontal bar charts (KPI Charts to the left of the map)
