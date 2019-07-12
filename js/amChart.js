@@ -241,15 +241,8 @@ am4core.ready(function () {
   var colorSet = new am4core.ColorSet();
   colorSet.saturation = 0.4;
 
-  // [ 'Category', 'PREP', new Date(2018, 1, 1), new Date(2018, 3, 1) ],
-  //     [ 'Category', 'SITE STARTUP', new Date(2018, 3, 1), new Date(2018, 5, 25) ],
-  //     [ 'Category', 'SITE IDENTIFICATION', new Date(2018, 5, 25), new Date(2019, 6, 1)],
-  //     [ 'Category', 'SITE ACTIVATION', new Date(2019, 6, 1), new Date(2019, 6, 10) ],
-  //     [ 'Category', 'PATIENT ENROLLMENT', new Date(2019, 6, 10), new Date(2019, 7, 29) ],
-  //     [ 'Category', 'PATIENT TREATMENT', new Date(2019, 7, 29), new Date(2019, 9, 8)],
-  //     [ 'Category', 'PATIENT FOLLOW UP', new Date(2019, 9, 8), new Date(2019, 10, 30) ],
-  //     [ 'Category', 'CLOSEOUT', new Date(2019, 10, 30), new Date(2019, 12, 30) ],
-
+  var icon = "M352.821381,363.269231 L356.814871,357.614288 C357.039817,357.295481 357.060717,356.885808 356.86987,356.548308 C356.677923,356.210808 356.305028,356 355.899684,356 L336.099983,356 C335.492793,356 335,356.465231 335,357.038462 L335,369.5 L335,381.961538 C335,382.534769 335.492793,383 336.099983,383 C336.707174,383 337.199967,382.534769 337.199967,381.961538 L337.199967,370.538462 L355.899684,370.538462 C356.305028,370.538462 356.677923,370.327654 356.86987,369.990154 C357.061267,369.652654 357.040367,369.242981 356.814871,368.924173 L352.821381,363.269231 Z M337.199967,368.461538 L337.199967,358.076923 L353.844365,358.076923 L350.584565,362.693404 C350.338168,363.042327 350.338168,363.496654 350.584565,363.845577 L353.844365,368.461538 L337.199967,368.461538 Z"
+        
   chart.data = [
     {
       started: true,
@@ -258,6 +251,15 @@ am4core.ready(function () {
       fromDate: "2018-01-01",
       toDate: "2018-03-01",
       color: am4core.color("#38A7C8"),
+      initialImage: {
+        svgPath: icon,
+        color: "#fff",
+        width: 30,
+        height: 30,
+        rotation: 170,
+        offsetX: 4,
+        offsetY: -17
+      },
     },
     {
       started: true,
