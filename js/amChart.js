@@ -9,61 +9,49 @@ function loadConfigFileForAmMapChart() {
 
 loadConfigFileForAmMapChart();
 
-
-
-
-//Create XYchart instance for Patient Enrollment
-//
-//
-//
-//
-//
 var container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 
+function createProgressBarForFinances(title, spent, total) {
+  //Progress bar for monthly spending
+var progressBar = container.createChild(am4charts.XYChart);
+progressBar.width = am4core.percent(25);
+progressBar.height = am4core.percent(100);
+progressBar.background.fill = am4core.color("#293b56");
+progressBar.background.fillOpacity = 0;
+progressBar.background.stroke = am4core.color("#293b56");
+progressBar.background.strokeOpacity = 2;
+progressBar.background.strokeWidth = 2;
 
-var chart = container.createChild(am4charts.XYChart);
-chart.width = am4core.percent(25);
-chart.height = am4core.percent(100);
-//chart.padding(100,50,50,0);
-chart.background.fill = am4core.color("#293b56");
-chart.background.fillOpacity = 0;
-chart.background.stroke = am4core.color("#293b56");
-chart.background.strokeOpacity = 2;
-chart.background.strokeWidth = 2;
-
-
-//chart.parent = container;
 
 // Add data
-chart.data = [{
+progressBar.data = [{
   "topic": "",
-  "total": 501,
-  "spent": 450,
+  "total": total,
+  "spent": spent,
   "color" : am4core.color("#657181")
 },
 {
   "topic": "",
-  "total":0,
-  "spent": 450,
+  "total": 0,
+  "spent": spent,
   "color" : am4core.color("#FF8850")
   
 }];
 
 // Add and configure Series
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+var categoryAxis = progressBar.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
-categoryAxis.title.text = "MONTHLY";
+categoryAxis.title.text = title;
 categoryAxis.title.strokeWidth = 1;
 categoryAxis.fontSize = 10;
-//categoryAxis.fill = "#FFFFFF";
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+var valueAxis = progressBar.yAxes.push(new am4charts.ValueAxis());
 valueAxis.renderer.labels.template.disabled = false;
 valueAxis.renderer.grid.template.disabled = true;
 valueAxis.min = 0;
@@ -71,193 +59,41 @@ valueAxis.min = 0;
 
 // Create series
 
-var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.valueY = "total";
-series.dataFields.categoryX = "topic";
-series.clustered = false;
-series.name = "Total";
-series.tooltipText = "{name}: [bold]{valueY}[/]";
-series.columns.template.propertyFields.fill = "color"; // get color from data
-series.columns.template.propertyFields.stroke = "color";
+var totalSeries = progressBar.series.push(new am4charts.ColumnSeries());
+totalSeries.dataFields.valueY = "total";
+totalSeries.dataFields.categoryX = "topic";
+totalSeries.clustered = false;
+totalSeries.name = "Total";
+totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
+totalSeries.columns.template.propertyFields.stroke = "color";
 
-var series2 = chart.series.push(new am4charts.ColumnSeries());
-series2.dataFields.valueY = "spent";
-series2.dataFields.categoryX = "topic";
-series2.clustered = false;
-series2.name = "Spent";
-series2.tooltipText = "{name}: [bold]{valueY}[/]";
-series2.columns.template.propertyFields.fill = "color"; // get color from data
-series2.columns.template.propertyFields.stroke = "color";
+var spentSeries = progressBar.series.push(new am4charts.ColumnSeries());
+spentSeries.dataFields.valueY = "spent";
+spentSeries.dataFields.categoryX = "topic";
+spentSeries.clustered = false;
+spentSeries.name = "Spent";
+spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
+spentSeries.columns.template.propertyFields.stroke = "color";
 var gradient = new am4core.LinearGradient();
 gradient.rotation = 90;
 gradient.addColor(am4core.color("#657181"));
-gradient.addColor(chart.data[1]["color"], 1, .99);
-chart.data[1]["color"] = gradient;
+gradient.addColor(progressBar.data[1]["color"], 1, .99);
+progressBar.data[1]["color"] = gradient;
 
 
 // Add cursor
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.lineX.disabled = true;
-chart.cursor.lineY.disabled = true;
+progressBar.cursor = new am4charts.XYCursor();
+progressBar.cursor.lineX.disabled = true;
+progressBar.cursor.lineY.disabled = true;
 
-var siteActProgressBar = container.createChild(am4charts.XYChart);
+} 
 
-siteActProgressBar.width = am4core.percent(25);
-//siteActProgressBar.paddingLeft = 250;
-
-
-siteActProgressBar.background.fill = am4core.color("#293b56");
-siteActProgressBar.background.fillOpacity = 0;
-siteActProgressBar.background.stroke = am4core.color("#293b56");
-siteActProgressBar.background.strokeOpacity = 2;
-siteActProgressBar.background.strokeWidth = 2;
-
-
-//chart.parent = container;
-
-// Add data
-siteActProgressBar.data = [{
-  "topic": "",
-  "total": 501,
-  "spent": 450,
-  "color" : am4core.color("#657181")
-},
-{
-  "topic": "",
-  "total":0,
-  "spent": 450,
-  "color" : am4core.color("#FF8850")
-  
-}];
-
-// Add and configure Series
-var categoryAxisForSiteAct = siteActProgressBar.xAxes.push(new am4charts.CategoryAxis());
-categoryAxisForSiteAct.dataFields.category = "topic";
-categoryAxisForSiteAct.title.text = "SITE ACT";
-categoryAxisForSiteAct.title.strokeWidth = 1;
-categoryAxisForSiteAct.fontSize = 10;
-//categoryAxis.fill = "#FFFFFF";
-categoryAxisForSiteAct.renderer.grid.template.location = 0;
-categoryAxisForSiteAct.renderer.minGridDistance = 20;
-categoryAxisForSiteAct.renderer.grid.template.disabled = true;
-
-var valueAxisForSiteAct = siteActProgressBar.yAxes.push(new am4charts.ValueAxis());
-valueAxisForSiteAct.renderer.labels.template.disabled = false;
-valueAxisForSiteAct.renderer.grid.template.disabled = true;
-valueAxisForSiteAct.min = 0;
-
-
-// Create series
-
-var totalSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
-totalSeries.dataFields.valueY = "total";
-totalSeries.dataFields.categoryX = "topic";
-totalSeries.clustered = false;
-totalSeries.name = "Total";
-totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
-totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
-totalSeries.columns.template.propertyFields.stroke = "color";
-
-var spentSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
-spentSeries.dataFields.valueY = "spent";
-spentSeries.dataFields.categoryX = "topic";
-spentSeries.clustered = false;
-spentSeries.name = "Spent";
-spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
-spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
-spentSeries.columns.template.propertyFields.stroke = "color";
-
-var gradientForSiteAct = new am4core.LinearGradient();
-gradientForSiteAct.rotation = 90;
-gradientForSiteAct.addColor(am4core.color("#657181"));
-gradientForSiteAct.addColor(siteActProgressBar.data[1]["color"], 1, .99);
-siteActProgressBar.data[1]["color"] = gradientForSiteAct;
-
-
-// Add cursor
-siteActProgressBar.cursor = new am4charts.XYCursor();
-siteActProgressBar.cursor.lineX.disabled = true;
-siteActProgressBar.cursor.lineY.disabled = true;
-
-var siteActProgressBar = container.createChild(am4charts.XYChart);
-
-siteActProgressBar.width = am4core.percent(25);
-// siteActProgressBar.height = am4core.percent(100);
-//siteActProgressBar.padding(100,50,50,600);
-
-
-siteActProgressBar.background.fill = am4core.color("#293b56");
-siteActProgressBar.background.fillOpacity = 0;
-siteActProgressBar.background.stroke = am4core.color("#293b56");
-siteActProgressBar.background.strokeOpacity = 2;
-siteActProgressBar.background.strokeWidth = 2;
-
-
-//chart.parent = container;
-
-// Add data
-siteActProgressBar.data = [{
-  "topic": "",
-  "total": 501,
-  "spent": 450,
-  "color" : am4core.color("#657181")
-},
-{
-  "topic": "",
-  "total":0,
-  "spent": 450,
-  "color" : am4core.color("#FF8850")
-  
-}];
-
-// Add and configure Series
-var categoryAxisForSiteAct = siteActProgressBar.xAxes.push(new am4charts.CategoryAxis());
-categoryAxisForSiteAct.dataFields.category = "topic";
-categoryAxisForSiteAct.title.text = "PATIENT ENROLL";
-categoryAxisForSiteAct.title.strokeWidth = 1;
-categoryAxisForSiteAct.fontSize = 10;
-//categoryAxis.fill = "#FFFFFF";
-categoryAxisForSiteAct.renderer.grid.template.location = 0;
-categoryAxisForSiteAct.renderer.minGridDistance = 20;
-categoryAxisForSiteAct.renderer.grid.template.disabled = true;
-
-var valueAxisForSiteAct = siteActProgressBar.yAxes.push(new am4charts.ValueAxis());
-valueAxisForSiteAct.renderer.labels.template.disabled = false;
-valueAxisForSiteAct.renderer.grid.template.disabled = true;
-valueAxisForSiteAct.min = 0;
-
-
-// Create series
-
-var totalSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
-totalSeries.dataFields.valueY = "total";
-totalSeries.dataFields.categoryX = "topic";
-totalSeries.clustered = false;
-totalSeries.name = "Total";
-totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
-totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
-totalSeries.columns.template.propertyFields.stroke = "color";
-
-var spentSeries = siteActProgressBar.series.push(new am4charts.ColumnSeries());
-spentSeries.dataFields.valueY = "spent";
-spentSeries.dataFields.categoryX = "topic";
-spentSeries.clustered = false;
-spentSeries.name = "Spent";
-spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
-spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
-spentSeries.columns.template.propertyFields.stroke = "color";
-
-var gradientForSiteAct = new am4core.LinearGradient();
-gradientForSiteAct.rotation = 90;
-gradientForSiteAct.addColor(am4core.color("#657181"));
-gradientForSiteAct.addColor(siteActProgressBar.data[1]["color"], 1, .99);
-siteActProgressBar.data[1]["color"] = gradientForSiteAct;
-
-
-// Add cursor
-siteActProgressBar.cursor = new am4charts.XYCursor();
-siteActProgressBar.cursor.lineX.disabled = true;
-siteActProgressBar.cursor.lineY.disabled = true;
+createProgressBarForFinances("MONTHLY", 63123, 1238123);
+createProgressBarForFinances("SITE ACT", 420023, 880000);
+createProgressBarForFinances("PATIENT ENROLL", 3458000, 4000000);
+createProgressBarForFinances("OVERALL EXPENSES", 7220000, 14500000);
 
 
 // Left horizontal bar charts (KPI Charts to the left of the map)
