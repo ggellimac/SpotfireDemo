@@ -9,14 +9,15 @@ function loadConfigFileForAmMapChart() {
 
 loadConfigFileForAmMapChart();
 
-var container = am4core.create("am-barchart", am4core.Container);
+let container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 
+//Creates a progress bar with the desired title and data
 function createProgressBarForFinances(title, spent, total) {
-  //Progress bar for monthly spending
-var progressBar = container.createChild(am4charts.XYChart);
+let progressBar = container.createChild(am4charts.XYChart);
+progressBar.numberFormatter.numberFormat = '$#,###';
 progressBar.width = am4core.percent(25);
 progressBar.height = am4core.percent(100);
 progressBar.background.fill = am4core.color("#293b56");
@@ -25,6 +26,10 @@ progressBar.background.stroke = am4core.color("#293b56");
 progressBar.background.strokeOpacity = 2;
 progressBar.background.strokeWidth = 2;
 
+let label = progressBar.createChild(am4core.Label);
+label.text = "TEST";
+label.fontSize = 20;
+label.padding(0,0,0,0);
 
 // Add data
 progressBar.data = [{
@@ -42,7 +47,7 @@ progressBar.data = [{
 }];
 
 // Add and configure Series
-var categoryAxis = progressBar.xAxes.push(new am4charts.CategoryAxis());
+let categoryAxis = progressBar.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "topic";
 categoryAxis.title.text = title;
 categoryAxis.title.strokeWidth = 1;
@@ -51,15 +56,18 @@ categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
 
-var valueAxis = progressBar.yAxes.push(new am4charts.ValueAxis());
-valueAxis.renderer.labels.template.disabled = false;
+
+let valueAxis = progressBar.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.labels.template.disabled = true;
 valueAxis.renderer.grid.template.disabled = true;
 valueAxis.min = 0;
+valueAxis.max = total;
+
 
 
 // Create series
 
-var totalSeries = progressBar.series.push(new am4charts.ColumnSeries());
+let totalSeries = progressBar.series.push(new am4charts.ColumnSeries());
 totalSeries.dataFields.valueY = "total";
 totalSeries.dataFields.categoryX = "topic";
 totalSeries.clustered = false;
@@ -67,8 +75,9 @@ totalSeries.name = "Total";
 totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
 totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
 totalSeries.columns.template.propertyFields.stroke = "color";
+totalSeries.columns.template.width = am4core.percent(50);
 
-var spentSeries = progressBar.series.push(new am4charts.ColumnSeries());
+let spentSeries = progressBar.series.push(new am4charts.ColumnSeries());
 spentSeries.dataFields.valueY = "spent";
 spentSeries.dataFields.categoryX = "topic";
 spentSeries.clustered = false;
@@ -76,7 +85,9 @@ spentSeries.name = "Spent";
 spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
 spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
 spentSeries.columns.template.propertyFields.stroke = "color";
-var gradient = new am4core.LinearGradient();
+spentSeries.columns.template.width = am4core.percent(50);
+
+let gradient = new am4core.LinearGradient();
 gradient.rotation = 90;
 gradient.addColor(am4core.color("#657181"));
 gradient.addColor(progressBar.data[1]["color"], 1, .99);
