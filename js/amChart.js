@@ -1,6 +1,6 @@
 am4core.options.autoSetClassName = true;
 
-//Creates the amChart mapchart from purely JSON config files 
+//Creates the amChart mapchart from purely JSON config files
 function loadConfigFileForAmMapChart() {
   $.getJSON('../js/amMapJSONConfig.json', function (jsonData){
     am4core.createFromConfig(jsonData.mapchartdata, "am-mapchart", am4maps.MapChart);
@@ -57,8 +57,8 @@ progressBar.data = [{
   "topic": "",
   "total": 0,
   "spent": spent,
-  "color" : am4core.color("#FF8850")
-  
+  "color" : am4core.color("#79c1d1")
+
 }];
 
 // Add and configure Series
@@ -104,7 +104,7 @@ spentSeries.columns.template.width = am4core.percent(25);
 
 let gradient = new am4core.LinearGradient();
 gradient.rotation = 90;
-gradient.addColor(am4core.color("#657181"));
+gradient.addColor(am4core.color("#069bcf"));
 gradient.addColor(progressBar.data[1]["color"], 1, .99);
 progressBar.data[1]["color"] = gradient;
 
@@ -113,7 +113,7 @@ progressBar.data[1]["color"] = gradient;
 progressBar.cursor = new am4charts.XYCursor();
 progressBar.cursor.lineX.disabled = true;
 progressBar.cursor.lineY.disabled = true;
-} 
+}
 
 createProgressBarForFinances("MONTHLY", 63123, 1238123);
 createProgressBarForFinances("SITE ACT", 420023, 880000);
@@ -473,5 +473,3 @@ am4core.ready(function () {
   // chart.scrollbarX = new am4core.Scrollbar();
 
 }); // end am4core.ready()
-
-
