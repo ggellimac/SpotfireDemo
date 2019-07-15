@@ -21,7 +21,7 @@ container.height = am4core.percent(100);
 function createProgressBarForFinances(title, spent, total) {
 
 let progressBar = container.createChild(am4charts.XYChart);
-progressBar.numberFormatter.numberFormat = '$#,###.#####';
+progressBar.numberFormatter.numberFormat = '$#,###';
 progressBar.width = am4core.percent(25);
 progressBar.height = am4core.percent(100);
 progressBar.background.fill = am4core.color("#293b56");
@@ -30,7 +30,6 @@ progressBar.background.stroke = am4core.color("#293b56");
 progressBar.background.strokeOpacity = 2;
 progressBar.background.strokeWidth = 2;
 progressBar.maskBullets = false;
-
 
 // Add data
 progressBar.data = [{
@@ -56,17 +55,13 @@ categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 20;
 categoryAxis.renderer.grid.template.disabled = true;
 
-
 let valueAxis = progressBar.yAxes.push(new am4charts.ValueAxis());
 valueAxis.renderer.labels.template.disabled = true;
 valueAxis.renderer.grid.template.disabled = false;
 valueAxis.min = 0;
 valueAxis.max = total;
 
-
-
 // Create series
-
 let totalSeries = progressBar.series.push(new am4charts.ColumnSeries());
 totalSeries.dataFields.valueY = "total";
 totalSeries.dataFields.categoryX = "topic";
@@ -484,9 +479,8 @@ am4core.ready(function () {
 
 }); // end am4core.ready()
 
-console.log(formatMoney(123123123))
 
 //Formats the given number into US currency 
 function formatMoney(number) {
-  return "$" + number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  return "$" + number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 }
