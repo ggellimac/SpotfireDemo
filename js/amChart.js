@@ -270,23 +270,18 @@ am4core.ready(function () {
       started: true,
       row: "test",
       name: "PREP",
+      bullet: "images/prep.svg",
       fromDate: "2018-01-01",
       toDate: "2018-03-01",
       color: am4core.color("#38A7C8"),
-      initialImage: {
-        svgPath: icon,
-        color: "#fff",
-        width: 30,
-        height: 30,
-        rotation: 170,
-        offsetX: 4,
-        offsetY: -17
-      },
+      image: icon,
+
     },
     {
       started: true,
       row: "test",
       name: "SITE STARTUP",
+      bullet: "images/startup.svg",
       fromDate: "2018-03-01",
       toDate: "2018-05-25",
       color: am4core.color("#38A7C8")
@@ -296,22 +291,28 @@ am4core.ready(function () {
       started: true,
       row: "test",
       name: "SITE ACTIVATION",
+      bullet: "images/activation.svg",
+
       fromDate: "2018-05-25",
       toDate: "2018-06-01",
       color: am4core.color("#38A7C8")
     },
     {
-      started: false,
+      started: true,
       row: "test",
       name: "SITE IDENTIFICATION",
+      bullet: "images/identification.svg",
+
       fromDate: "2018-06-01",
       toDate: "2018-06-10",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#38A7C8")
     },
     {
       started: false,
       row: "test",
       name: "PATIENT ENROLLMENT",
+      bullet: "images/enrollment.svg",
+
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
       color: am4core.color("#4C5A71")
@@ -320,6 +321,8 @@ am4core.ready(function () {
       started: false,
       row: "test",
       name: "PATIENT TREATMENT",
+      bullet: "images/treatment.svg",
+
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
       color: am4core.color("#4C5A71")
@@ -329,19 +332,23 @@ am4core.ready(function () {
       started: false,
       row: "test",
       name: "PATIENT FOLLOW UP",
+      bullet: "images/followup.svg",
+
       fromDate: "2018-09-08",
-      toDate: "2018-10-30",
+      toDate: "2018-12-30",
       color: am4core.color("#4C5A71")
     },
 
-    {
-      started: false,
-      row: "test",
-      name: "CLOSEOUT",
-      fromDate: "2018-10-30",
-      toDate: "2018-12-30",
-      color: am4core.color("#4C5A71")
-    }
+    // {
+    //   started: false,
+    //   row: "test",
+    //   name: "CLOSEOUT",
+    //   bullet: "images/prep.svg",
+
+    //   fromDate: "2018-10-30",
+    //   toDate: "2018-12-30",
+    //   color: am4core.color("#4C5A71")
+    // }
 
   ];
   am4core.options.autoSetClassName = true;
@@ -359,9 +366,25 @@ am4core.ready(function () {
   dateAxis.strictMinMax = true;
   dateAxis.renderer.tooltipLocation = 0;
 
+
+
+
+  // image.y = am4core.percent(100);
+  // image.propertyFields.href = "bullet";
+
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
-  series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX}";
+  var bullet = series1.bullets.push(new am4charts.LabelBullet());
+  var image = bullet.createChild(am4core.Image);
+  image.dy = -10;
+  image.dx = am4core.percent(0);
+  bullet.locationX = 1;
+
+  image.height = am4core.percent(5);
+
+  image.propertyFields.href = "bullet";
+
+  series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX} ";
   series1.dataFields.openDateX = "fromDate";
   series1.dataFields.dateX = "toDate";
   series1.dataFields.categoryY = "row";
@@ -369,6 +392,7 @@ am4core.ready(function () {
   series1.columns.template.propertyFields.stroke = "color";
   categoryAxis.renderer.labels.template.disabled = true;
 
+  
   // var fillModifier = new am4core.LinearGradientModifier();
   // fillModifier.opacities = [1, 1];
   // fillModifier.brightnesses = [.05, .8];
