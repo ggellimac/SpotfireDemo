@@ -281,7 +281,7 @@ am4core.ready(function () {
       started: true,
       row: "test",
       name: "SITE STARTUP",
-      bullet: "images/prep.svg",
+      bullet: "images/startup.svg",
       fromDate: "2018-03-01",
       toDate: "2018-05-25",
       color: am4core.color("#38A7C8")
@@ -291,27 +291,27 @@ am4core.ready(function () {
       started: true,
       row: "test",
       name: "SITE ACTIVATION",
-      bullet: "images/prep.svg",
+      bullet: "images/activation.svg",
 
       fromDate: "2018-05-25",
       toDate: "2018-06-01",
       color: am4core.color("#38A7C8")
     },
     {
-      started: false,
+      started: true,
       row: "test",
       name: "SITE IDENTIFICATION",
-      bullet: "images/prep.svg",
+      bullet: "images/identification.svg",
 
       fromDate: "2018-06-01",
       toDate: "2018-06-10",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#38A7C8")
     },
     {
       started: false,
       row: "test",
       name: "PATIENT ENROLLMENT",
-      bullet: "images/prep.svg",
+      bullet: "images/enrollment.svg",
 
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
@@ -321,7 +321,7 @@ am4core.ready(function () {
       started: false,
       row: "test",
       name: "PATIENT TREATMENT",
-      bullet: "images/prep.svg",
+      bullet: "images/treatment.svg",
 
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
@@ -332,23 +332,23 @@ am4core.ready(function () {
       started: false,
       row: "test",
       name: "PATIENT FOLLOW UP",
-      bullet: "images/prep.svg",
+      bullet: "images/followup.svg",
 
       fromDate: "2018-09-08",
-      toDate: "2018-10-30",
+      toDate: "2018-12-30",
       color: am4core.color("#4C5A71")
     },
 
-    {
-      started: false,
-      row: "test",
-      name: "CLOSEOUT",
-      bullet: "images/prep.svg",
+    // {
+    //   started: false,
+    //   row: "test",
+    //   name: "CLOSEOUT",
+    //   bullet: "images/prep.svg",
 
-      fromDate: "2018-10-30",
-      toDate: "2018-12-30",
-      color: am4core.color("#4C5A71")
-    }
+    //   fromDate: "2018-10-30",
+    //   toDate: "2018-12-30",
+    //   color: am4core.color("#4C5A71")
+    // }
 
   ];
   am4core.options.autoSetClassName = true;

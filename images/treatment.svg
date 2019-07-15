@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="32px" viewBox="0 0 26 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 19</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Widescreen---2nd-round" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.22391183">
+        <g id="Homepage-Copy" transform="translate(-2012.000000, -387.000000)">
+            <g id="Group-19" transform="translate(2012.000000, 387.000000)">
+                <g id="Group-11" transform="translate(0.000000, 13.000000)" fill-rule="nonzero">
+                    <path d="M17,18 L17,16 C17,13.2385763 14.7614237,11 12,11 L5,11 C2.23857625,11 0,13.2385763 0,16 L0,18 C0,18.5522847 0.44771525,19 1,19 C1.55228475,19 2,18.5522847 2,18 L2,16 C2,14.3431458 3.34314575,13 5,13 L12,13 C13.6568542,13 15,14.3431458 15,16 L15,18 C15,18.5522847 15.4477153,19 16,19 C16.5522847,19 17,18.5522847 17,18 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M8.5,9 C10.709139,9 12.5,7.209139 12.5,5 C12.5,2.790861 10.709139,1 8.5,1 C6.290861,1 4.5,2.790861 4.5,5 C4.5,7.209139 6.290861,9 8.5,9 Z" id="Oval" stroke="#FFFFFF" stroke-width="2"></path>
+                </g>
+                <path d="M19,0.75 C17.7573593,0.75 16.75,1.75735931 16.75,3 L16.75,9.70204094 C16.75,10.5578225 17.2354767,11.3395145 18.0025768,11.7188818 L19.945995,12.6799941 C20.5660456,12.9866384 21.2926846,12.9910292 21.9163957,12.6919004 L23.9729774,11.7055736 C24.7534512,11.3312621 25.25,10.5424178 25.25,9.67682645 L25.25,3 C25.25,1.75735931 24.2426407,0.75 23,0.75 L19,0.75 Z" id="Rectangle" stroke="#FFFFFF" stroke-width="1.5"></path>
+                <path d="M21,13 C21,16.5065719 21,18.9337248 21,20.2814586 C21,21.8923534 19.572229,23.0764071 18,22.996152" id="Path-7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M22,5 L24,5" id="Line-9" stroke="#FFFFFF" stroke-linecap="round"></path>
+                <path d="M22,8 L24,8" id="Line-9" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
