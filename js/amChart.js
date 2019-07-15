@@ -21,7 +21,7 @@ container.height = am4core.percent(100);
 function createProgressBarForFinances(title, spent, total) {
 
 let progressBar = container.createChild(am4charts.XYChart);
-progressBar.numberFormatter.numberFormat = '$#,###';
+progressBar.numberFormatter.numberFormat = '$#,###.#####';
 progressBar.width = am4core.percent(25);
 progressBar.height = am4core.percent(100);
 progressBar.background.fill = am4core.color("#293b56");
@@ -29,22 +29,8 @@ progressBar.background.fillOpacity = 0;
 progressBar.background.stroke = am4core.color("#293b56");
 progressBar.background.strokeOpacity = 2;
 progressBar.background.strokeWidth = 2;
+progressBar.maskBullets = false;
 
-let totalLabel = progressBar.createChild(am4core.Label);
-totalLabel.text = total;
-totalLabel.fontSize = 20;
-totalLabel.align = "left";
-totalLabel.isMeasured = false;
-totalLabel.y = 50;
-totalLabel.numberFormatter.numberFormat = "$###";
-
-let spentLabel = progressBar.createChild(am4core.Label);
-spentLabel.text = spent;
-spentLabel.fontSize = 20;
-spentLabel.align = "left";
-spentLabel.isMeasured = false;
-spentLabel.y = 250;
-//label.padding(0,0,0,0);
 
 // Add data
 progressBar.data = [{
@@ -55,7 +41,6 @@ progressBar.data = [{
 },
 {
   "topic": "",
-  "total": 0,
   "spent": spent,
   "color" : am4core.color("#FF8850")
   
@@ -74,7 +59,7 @@ categoryAxis.renderer.grid.template.disabled = true;
 
 let valueAxis = progressBar.yAxes.push(new am4charts.ValueAxis());
 valueAxis.renderer.labels.template.disabled = true;
-valueAxis.renderer.grid.template.disabled = true;
+valueAxis.renderer.grid.template.disabled = false;
 valueAxis.min = 0;
 valueAxis.max = total;
 
@@ -101,6 +86,31 @@ spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
 spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
 spentSeries.columns.template.propertyFields.stroke = "color";
 spentSeries.columns.template.width = am4core.percent(25);
+
+let totalLabel = totalSeries.bullets.push(new am4charts.LabelBullet());
+totalLabel.label.text = formatMoney(total);
+totalLabel.label.fontSize = 20;
+totalLabel.label.truncate = false;
+totalLabel.label.hideOversized = false;
+totalLabel.label.horizontalCenter = "right";
+totalLabel.label.dx = -40;
+
+let spentLabel = spentSeries.bullets.push(new am4charts.LabelBullet());
+spentLabel.label.text = formatMoney(spent);
+spentLabel.label.fontSize = 20;
+spentLabel.label.truncate = false;
+spentLabel.label.hideOversized = false;
+spentLabel.label.horizontalCenter = "right";
+spentLabel.label.dx = -40;
+
+let circle = spentLabel.createChild(am4core.Circle);
+circle.width = 10;
+circle.height = 10;
+circle.dx = -35;
+circle.horizontalCenter = "middle";
+circle.verticalCenter = "middle";
+circle.fill = am4core.color(progressBar.data[1]["color"]);
+circle.stroke = am4core.color(progressBar.data[1]["color"]);
 
 let gradient = new am4core.LinearGradient();
 gradient.rotation = 90;
@@ -401,4 +411,9 @@ am4core.ready(function () {
 
 }); // end am4core.ready()
 
+console.log(formatMoney(123123123))
 
+//Formats the given number into US currency 
+function formatMoney(number) {
+  return "$" + number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
