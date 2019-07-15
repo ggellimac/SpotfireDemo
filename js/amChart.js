@@ -274,7 +274,11 @@ am4core.ready(function () {
       fromDate: "2018-01-01",
       toDate: "2018-03-01",
       color: am4core.color("#38A7C8"),
-      image: icon,
+      cornerRadiusTopLeft: "50",
+      cornerRadiusBottomLeft: "50",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
+      milestone: "images/milestone.svg",
 
     },
     {
@@ -284,7 +288,13 @@ am4core.ready(function () {
       bullet: "images/startup.svg",
       fromDate: "2018-03-01",
       toDate: "2018-05-25",
-      color: am4core.color("#38A7C8")
+      color: am4core.color("#38A7C8"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
+      milestone: "images/milestone.svg",
+
 
     },
     {
@@ -295,7 +305,13 @@ am4core.ready(function () {
 
       fromDate: "2018-05-25",
       toDate: "2018-06-01",
-      color: am4core.color("#38A7C8")
+      color: am4core.color("#38A7C8"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
+      milestone: "images/milestone.svg",
+
     },
     {
       started: true,
@@ -305,7 +321,13 @@ am4core.ready(function () {
 
       fromDate: "2018-06-01",
       toDate: "2018-06-10",
-      color: am4core.color("#38A7C8")
+      color: am4core.color("#38A7C8"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
+      milestone: "images/milestone.svg",
+
     },
     {
       started: false,
@@ -315,7 +337,11 @@ am4core.ready(function () {
 
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
     },
     {
       started: false,
@@ -325,7 +351,11 @@ am4core.ready(function () {
 
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "0",
+      cornerRadiusBottomRight: "0",
     },
 
     {
@@ -336,7 +366,11 @@ am4core.ready(function () {
 
       fromDate: "2018-09-08",
       toDate: "2018-12-30",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
+      cornerRadiusTopLeft: "0",
+      cornerRadiusBottomLeft: "0",
+      cornerRadiusTopRight: "50",
+      cornerRadiusBottomRight: "50",
     },
 
     // {
@@ -379,12 +413,28 @@ am4core.ready(function () {
   image.dy = -10;
   image.dx = am4core.percent(0);
   bullet.locationX = 1;
+  // bullet.label.horizontalCenter = "left";
 
-  image.height = am4core.percent(5);
+  image.height = am4core.percent(100);
 
   image.propertyFields.href = "bullet";
 
+  var milestone = series1.bullets.push(new am4charts.LabelBullet());
+  var milestone_img = milestone.createChild(am4core.Image);
+  milestone_img.dy = -10;
+  milestone_img.dx = -25;
+  milestone.locationX = 0;
+  // milestone.label.horizontalCenter = "right";
+
+  milestone_img.height = am4core.percent(100);
+
+  milestone_img.propertyFields.href = "milestone";
+
   series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX} ";
+  // series1.columns.template.column.cornerRadiusTopLeft = "cornerRadiusTopLeft";
+  // series1.columns.template.column.cornerRadiusTopRight = "cornerRadiusTopRight";
+  // series1.columns.template.column.cornerRadiusBottomLeft = "cornerRadiusBottomLeft";
+  // series1.columns.template.column.cornerRadiusBottomRight = "cornerRadiusBottomRight";
   series1.dataFields.openDateX = "fromDate";
   series1.dataFields.dateX = "toDate";
   series1.dataFields.categoryY = "row";
@@ -399,10 +449,7 @@ am4core.ready(function () {
   // fillModifier.lightnesses = [.5, 0];
   // fillModifier.offsets = [0, 1];
   // series1.columns.template.fillModifier = fillModifier;
-  // series1.columns.template.column.cornerRadiusTopLeft = 50;
-  // series1.columns.template.column.cornerRadiusTopRight = 10;
-  // series1.columns.template.column.cornerRadiusBottomLeft = 50;
-  // series1.columns.template.column.cornerRadiusBottomRight = 10;
+
   count = 0;
   chart.data.forEach(element => {
     if (element["started"]) {
@@ -410,7 +457,9 @@ am4core.ready(function () {
       gradient.addColor(am4core.color("#88C5CF"));
       gradient.addColor(element["color"], 1, .99);
       element["color"] = gradient;
+
     }
+
     count++;
   });
   categoryAxis.renderer.grid.template.disabled = true;
