@@ -1,24 +1,45 @@
 {
     "mapchartdata": {
+        "legend": {
+            "useDefaultMarker": true,
+            "markers": {
+                "children": [
+                    {
+                        "cornerRadiusTopLeft": 12,
+                        "cornerRadiusTopRight": 12,
+                        "cornerRadiusBottomRight": 12,
+                        "cornerRadiusBottomLeft": 12,
+                        "strokeWidth": 2,
+                        "strokeOpacity": 1,
+                        "stroke": "#ccc"
+                    }
+                ]
+            }
+        },
         "geodata": "worldLow",
-        "zoomControl" : {},
+        "zoomControl": {},
         "projection": "Miller",
         "series": [
             {
-                "type": "MapPolygonSeries",
-                "dataSource" : {
-                    "url" : "../js/amMapChartDataForColors.json"
+                "legendSettings" : {
+                    "labelText" : "OUT OF SCOPE"
                 },
-                "exclude" : ["AQ"],
+                "type": "MapPolygonSeries",
+                "dataSource": {
+                    "url": "../js/amMapChartDataForNotStarted.json"
+                },
+                "exclude": [
+                    "AQ"
+                ],
                 "useGeodata": true,
                 "mapPolygons": {
                     "template": {
                         "tooltipText": "{name}",
-                        "fill": "#12769E",
+                        "fill": "#ffffff",
                         "nonScallingStroke": true,
                         "strokeOpacity": ".2",
-                        "propertyFields" : {
-                            "fill" : "fill"
+                        "propertyFields": {
+                            "fill": "fill"
                         },
                         "states": {
                             "hover": {
@@ -31,26 +52,58 @@
                 }
             },
             {
-                "type" : "MapImageSeries",
-                "dataSource" : {
-                    "url" : "../js/amMapChartDataForCircles.json"
+                "legendSettings" : {
+                    "labelText" : "PROBLEMATIC"
                 },
-                "mapImages" : {
-                    "propertyFields" : {
-                        "latitude" : "latitude",
-                        "longitude" : "longitude"
-                    },
-                    "children" : [{
-                        "type" : "Circle",
-                        "radius": 8,
-                        "fillOpacity" : 0,
-                        "stroke" : "#FFFFFF",
-                        "strokeWidth" : 2,
-                        "nonScaling" : true,
-                        "tooltipText" : "{title}"
-                    }]
+                "type": "MapPolygonSeries",
+                "dataSource": {
+                    "url": "../js/amMapChartDataForProblematic.json"
+                },
+                "exclude": [
+                    "AQ"
+                ],
+                "useGeodata": true,
+                "mapPolygons": {
+                    "template": {
+                        "tooltipText": "{name}",
+                        "fill": "#12769E",
+                        "nonScallingStroke": true,
+                        "strokeOpacity": ".2",
+                        "propertyFields": {
+                            "fill": "fill"
+                        },
+                        "states": {
+                            "hover": {
+                                "properties": {
+                                    "fill": "#ffffff"
+                                }
+                            }
+                        }
+                    }
                 }
-
+            },
+            {
+                "type": "MapImageSeries",
+                "dataSource": {
+                    "url": "../js/amMapChartDataForCircles.json"
+                },
+                "mapImages": {
+                    "propertyFields": {
+                        "latitude": "latitude",
+                        "longitude": "longitude"
+                    },
+                    "children": [
+                        {
+                            "type": "Circle",
+                            "radius": 8,
+                            "fillOpacity": 0,
+                            "stroke": "#FFFFFF",
+                            "strokeWidth": 2,
+                            "nonScaling": true,
+                            "tooltipText": "{title}"
+                        }
+                    ]
+                }
             }
         ]
     }
