@@ -125,7 +125,7 @@
 
 #am-progressbar {
   width: 100%;
-  height: 50vh;
+  height: 100px;
   background-image: linear-gradient(to right, #3B4D67 , #293B56);
   border: 5px solid #293b56;
 }
