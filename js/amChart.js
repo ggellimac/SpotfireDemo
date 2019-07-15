@@ -395,7 +395,9 @@ am4core.ready(function() {
 
   var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
   dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm";
-  dateAxis.renderer.minGridDistance = 70;
+  // dateAxis.renderer.minGridDistance = 70;
+  dateAxis.renderer.disabled = true;
+
   dateAxis.baseInterval = { count: 30, timeUnit: "minute" };
   dateAxis.max = new Date(2019, 0, 1, 24, 0, 0, 0).getTime();
   dateAxis.strictMinMax = true;
@@ -413,13 +415,13 @@ am4core.ready(function() {
   bullet.locationX = 1;
   // bullet.label.horizontalCenter = "left";
 
-  image.height = am4core.percent(100);
+  image.height = 20;
 
   image.propertyFields.href = "bullet";
 
   var milestone = series1.bullets.push(new am4charts.LabelBullet());
   var milestone_img = milestone.createChild(am4core.Image);
-  milestone_img.dy = -10;
+  milestone_img.dy = -24;
   milestone_img.dx = -25;
   milestone.locationX = 0;
   // milestone.label.horizontalCenter = "right";
