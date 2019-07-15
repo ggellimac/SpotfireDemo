@@ -54,6 +54,10 @@
   fill-opacity: 2;
 }
 
+#am-barchart .amcharts-Sprite-group .amcharts-RoundedRectangle {
+  height : 255px;
+}
+
 .amcharts-Label text tspan {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
