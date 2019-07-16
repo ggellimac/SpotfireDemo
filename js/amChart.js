@@ -133,12 +133,12 @@ function createProgressBarForFinances(title, spent, total) {
   let gradient = new am4core.LinearGradient();
   gradient.rotation = 90;
   if ((total / spent) <= 2) {
-    gradient.addColor(am4core.color("#069bcf"));
     gradient.addColor(am4core.color("#FF8C55"));
+    gradient.addColor(am4core.color("#069bcf"));
     progressBar.data[1]["color"] = gradient;
   } else {
-    gradient.addColor(am4core.color("#85726C"));
-    gradient.addColor(am4core.color("#FF8C55"));
+    gradient.addColor(am4core.color("#069bcf"));
+    gradient.addColor(am4core.color("#50b3d0"));
     progressBar.data[1]["color"] = gradient;
   }
 
