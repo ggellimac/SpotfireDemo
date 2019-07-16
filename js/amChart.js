@@ -13,6 +13,7 @@ function loadConfigFileForAmMapChart() {
 
 loadConfigFileForAmMapChart();
 
+
 let container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
@@ -26,7 +27,9 @@ function createProgressBarForFinances(title, spent, total) {
   let progressBar = container.createChild(am4charts.XYChart);
   progressBar.numberFormatter.numberFormat = "$#,###";
   progressBar.width = am4core.percent(25);
-  progressBar.height = am4core.percent(75);
+  progressBar.height = am4core.percent(100);
+  progressBar.minHeight = 255;
+  progressBar.maxHeight = 255;
   progressBar.background.fill = am4core.color("#293b56");
   progressBar.background.fillOpacity = 0;
   progressBar.background.stroke = am4core.color("#293b56");
@@ -71,7 +74,7 @@ function createProgressBarForFinances(title, spent, total) {
   totalSeries.dataFields.categoryX = "topic";
   totalSeries.clustered = false;
   totalSeries.name = "Total";
-  totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+  //totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
   totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
   totalSeries.columns.template.propertyFields.stroke = "color";
   totalSeries.columns.template.width = am4core.percent(25);
@@ -81,7 +84,7 @@ function createProgressBarForFinances(title, spent, total) {
   spentSeries.dataFields.categoryX = "topic";
   spentSeries.clustered = false;
   spentSeries.name = "Spent";
-  spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
+  //spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
   spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
   spentSeries.columns.template.propertyFields.stroke = "color";
   spentSeries.columns.template.width = am4core.percent(25);
@@ -122,7 +125,7 @@ function createProgressBarForFinances(title, spent, total) {
     gradient.addColor(am4core.color("#FF8C55"));
     progressBar.data[1]["color"] = gradient;
   }
-  
+
   // Add cursor
   progressBar.cursor = new am4charts.XYCursor();
   progressBar.cursor.lineX.disabled = true;
@@ -393,9 +396,7 @@ am4core.ready(function() {
 
   var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
   dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm";
-  // dateAxis.renderer.minGridDistance = 70;
-  dateAxis.renderer.disabled = true;
-
+  dateAxis.renderer.minGridDistance = 70;
   dateAxis.baseInterval = { count: 30, timeUnit: "minute" };
   dateAxis.max = new Date(2019, 0, 1, 24, 0, 0, 0).getTime();
   dateAxis.strictMinMax = true;
@@ -413,13 +414,13 @@ am4core.ready(function() {
   bullet.locationX = 1;
   // bullet.label.horizontalCenter = "left";
 
-  image.height = 20;
+  image.height = am4core.percent(100);
 
   image.propertyFields.href = "bullet";
 
   var milestone = series1.bullets.push(new am4charts.LabelBullet());
   var milestone_img = milestone.createChild(am4core.Image);
-  milestone_img.dy = -24;
+  milestone_img.dy = -10;
   milestone_img.dx = -25;
   milestone.locationX = 0;
   // milestone.label.horizontalCenter = "right";
