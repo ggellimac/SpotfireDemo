@@ -11,6 +11,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+ #project-dropdown{
+   padding-top: 10px;
+   float: right;
+   position: relative;
+ }
+
  .dot {
   height: 40px;
   width: 40px;
@@ -1039,9 +1045,6 @@ pre code {
 }
 
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
