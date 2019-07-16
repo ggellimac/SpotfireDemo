@@ -27,8 +27,6 @@ function createProgressBarForFinances(title, spent, total) {
   progressBar.numberFormatter.numberFormat = "$#,###";
   progressBar.width = am4core.percent(25);
   progressBar.height = am4core.percent(75);
-  // progressBar.minHeight = 255;
-  // progressBar.maxHeight = 255;
   progressBar.background.fill = am4core.color("#293b56");
   progressBar.background.fillOpacity = 0;
   progressBar.background.stroke = am4core.color("#293b56");
