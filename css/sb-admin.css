@@ -64,6 +64,9 @@
 
 .amcharts-Label text tspan {
   font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  display: inline;
   fill: #ffffff;
 }
 

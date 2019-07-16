@@ -217,7 +217,7 @@ am4core.ready(function() {
   categoryAxis.renderer.dx = 50;
   categoryAxis.fontSize = 12;
   categoryAxis.fontFamily = "Montserrat";
-  categoryAxis.fontWeight = 700;
+  categoryAxis.fontWeight = 400;
   categoryAxis.fill = "#FFFFFF";
   categoryAxis.fillOpacity = "2";
 
@@ -292,17 +292,14 @@ for (i=2; i>=0; i--){
     let fractionLabel1 = kpiamChart.createChild(am4core.Label);
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
-    fractionLabel1.text = `[#FFFFFF]${value}[/] / [#6A7B95]${total}[/]`;
+    fractionLabel1.text = `[#FFFFFF font-size: 30px font-weight: 300]${value}[/] [font-size: 30px font-weight:300]/[/] [#6A7B95 font-size: 30px font-weight:300]${total}[/]`;
     fractionLabel1.align = "right";
     fractionLabel1.isMeasured = false;
     fractionLabel1.y = 220 - 110*i;
     fractionLabel1.x = am4core.percent(22);
-    fractionLabel1.fontSize = 30;
-    fractionLabel1.fontWeight = 300;
     fractionLabel1.fontFamily = "Montserrat";
-    fractionLabel1.fill = "#FFFFFF";
  }
-}); // end am4core.ready()
+}); // end am4core.ready
 
 // progress bar using gantt chart example
 am4core.ready(function() {
