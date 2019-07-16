@@ -280,6 +280,19 @@ am4core.ready(function() {
   categoryAxis.renderer.inside = true;
   valueAxis.renderer.labels.template.disabled = true;
   categoryAxis.position = "left";
+
+
+  var i;
+  for (i=2; i>=0; i--){
+    let fractionLabel = kpiamChart.createChild(am4core.Label);
+    let value = kpiamChart.data[i]["value0"];
+    let total = kpiamChart.data[i]["value3"];
+    fractionLabel.text = value + " / "+ total;
+  //  fractionLabel.x = am4core.percent(50);
+  //  fractionLabel.horizontalCenter = "middle";
+    fractionLabel.y = 10*i;
+
+  }
 }); // end am4core.ready()
 
 // progress bar using gantt chart example
