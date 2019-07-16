@@ -288,9 +288,11 @@ am4core.ready(function() {
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
     fractionLabel.text = value + " / "+ total;
-  //  fractionLabel.x = am4core.percent(50);
-  //  fractionLabel.horizontalCenter = "middle";
-    fractionLabel.y = 10*i;
+    fractionLabel.align = "center";
+    fractionLabel.isMeasured = false;
+    fractionLabel.y = 110*i;
+    fractionLabel.x = am4core.percent(40);
+    fractionLabel.fontSize = 30;
 
   }
 }); // end am4core.ready()
