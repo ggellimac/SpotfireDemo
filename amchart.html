@@ -10,10 +10,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <!-- Script for allowing interaction with spotfire-->
-    <script src="https://spotfire-next.cloud.tibco.com/spotfire/js-api/loader.js"></script>
 
-    <title>Syneos Health - Dashboard</title>
+    <title>Syneos Health - Amchart</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -184,12 +182,12 @@
 <!--project dropdown-->
 <div class="dropdown project-dropdown">
     <button type="button" class="btn other-project-name" data-toggle="dropdown">
-    Spotfire Demo
+    Amchart Demo
     <img id="search-carrot" src="images/carrot.png"></img>
   </button>
   <div class="dropdown-menu">
     <div class="dropdown-item">
-        <a class="btn other-project-name" href="amchart.html">Amcharts Demo</a>
+        <a class="btn other-project-name" href="index.html">Spotfire Demo</a>
     </div>
     <div class="dropdown-item">
       <a class=" btn other-project-name " href="#">GSK / ViiV 089234-1</a>
@@ -200,40 +198,30 @@
   </div>
 </div>
 
+          <div id="content-wrapper">   <!--AMCHARTS CONTAINER-->
+
+            <div class="container-fluid">
+
+              <div id="no-padding" class="container-fluid">
+
+                  <!-- Am-chart progress bar (using gantt chart) -->
+                  <div id="am-progressbar" class="card mb-3"></div>
+                  <!-- Am-chart KPI chart -->
+                  <div id="global-view" class="card mb-3"><h2>SITES</h2>
+                    <p>Global View</p>
+                    <div id="am-kpichart" class="card mb-3"></div>
+                  </div>
+                  <!-- Am-chart Map chart-->
+                  <div id="am-mapchart" class="card mb-1"></div>
+                  <!-- Am-chart Bar chart-->
+                  <div id="am-barchart" class="card mb-1"></div>
 
 
-      <div id="content-wrapper">   <!--SPOTFIRE CONTAINER-->
 
-        <div class="container-fluid">
 
-          <div id="no-padding" class="container-fluid"> <!--i needed another container-->
-
-            <!-- KPI chart example-->
-            <!-- <div id="kpiChart">
-            </div> -->
-
-              <!-- Map chart Example-->
-              <div id="map-chart" class="card mb-3">
-
-                <!-- The old chart that was where the map chart is now
-              <div class="card-header">
-                <i class="fas fa-chart-area"></i>
-                Area Chart Example</div>
-              <div class="card-body">
-                <canvas id="myAreaChart" width="100%" height="30"></canvas>
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-              --></div>
-
-              <!--A budget chart from Spotfire -->
-              <div id="budget-chart" class="card mb-3"></div>
-            </div>
-            <!--end of fluid container-->
-          </div>
-          <!-- /.container-fluid -->
-
-          </div> <!--end of fluid container-->
-
+             </div><!--end of fluid container-->
+            </div> <!-- /.container-fluid -->
+           </div> <!--end of content wrapper-->
         </div>
         <!-- /.container-fluid -->
 
@@ -662,12 +650,21 @@
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
+
+    <!--Scripts for AmChart visualizations-->
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/maps.js"></script>
+    <script src="//www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
   </body>
 
   <!-- Script for fetching and embedding the Spotfire visualization-->
-  <script src="../js/spotfire.js"></script>
   <script src="../js/toggleSwitch.js"></script>
   <script src="../js/checklistFiller.js"></script>
   <script src="../js/resourcesFiller.js"></script>
-  
+
+  <!--AmChart JS file-->
+  <script src="../js/amChart.js"></script>
 </html>
