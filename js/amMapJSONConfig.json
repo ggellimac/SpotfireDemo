@@ -1,24 +1,14 @@
 {
     "mapchartdata": {
-        "legend": {
-            "useDefaultMarker": true,
-            "markers": {
-                "children": [
-                    {
-                        "cornerRadiusTopLeft": 12,
-                        "cornerRadiusTopRight": 12,
-                        "cornerRadiusBottomRight": 12,
-                        "cornerRadiusBottomLeft": 12,
-                        "strokeWidth": 2,
-                        "strokeOpacity": 1,
-                        "stroke": "#ccc"
-                    }
-                ]
-            }
-        },
         "geodata": "worldLow",
         "zoomControl": {},
         "projection": "Miller",
+        "exporting" : {
+            "menu" : {
+                "align" : "right",
+                "verticalAlign" : "top"
+            }
+        },
         "series": [
             {
                 "type": "MapPolygonSeries",
@@ -41,7 +31,7 @@
                         "states": {
                             "hover": {
                                 "properties": {
-                                    "fill": "#12769E"
+                                    "fill": "#ffffff"
                                 }
                             }
                         }
