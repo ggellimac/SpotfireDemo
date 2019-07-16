@@ -217,7 +217,7 @@ am4core.ready(function() {
   categoryAxis.renderer.dx = 50;
   categoryAxis.fontSize = 12;
   categoryAxis.fontFamily = "Montserrat";
-  categoryAxis.fontWeight = 400;
+  categoryAxis.fontWeight = 700;
   categoryAxis.fill = "#FFFFFF";
   categoryAxis.fillOpacity = "2";
 
