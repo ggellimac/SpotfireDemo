@@ -213,12 +213,13 @@ am4core.ready(function() {
 
   // show categories above and to the right of bar charts
   categoryAxis.dataFields.category = "category";
-  categoryAxis.renderer.dy = -5;
+  categoryAxis.renderer.dy = -3;
   categoryAxis.renderer.dx = 50;
   categoryAxis.fontSize = 12;
   categoryAxis.fontFamily = "Montserrat";
   categoryAxis.fontWeight = 400;
-  categoryAxis.fill = "#FFFFFF";
+  categoryAxis.fill = am4core.color("#FFFFFF");
+  categoryAxis.fillOpacity = "2";
 
   // resize cell which changes column size
   categoryAxis.renderer.cellStartLocation = 0.1;
@@ -289,27 +290,17 @@ am4core.ready(function() {
   var i;
   for (i=2; i>=0; i--){
     let fractionLabel1 = kpiamChart.createChild(am4core.Label);
-    let fractionLabel2 = kpiamChart.createChild(am4core.Label);
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
-    fractionLabel1.text = value;
-    fractionLabel2.text = "/" + total;
+    fractionLabel1.text = `[#FFFFFF]${value}[/] / [#6A7B95]${total}[/]`;
     fractionLabel1.align = "right";
-    fractionLabel2.align = "right";
     fractionLabel1.isMeasured = false;
-    fractionLabel2.isMeasured = false;
     fractionLabel1.y = 110*i;
-    fractionLabel2.y = 110*i;
     fractionLabel1.x = am4core.percent(22);
-    fractionLabel2.x = am4core.percent(37);
     fractionLabel1.fontSize = 30;
     fractionLabel1.fontWeight = 300;
     fractionLabel1.fontFamily = "Montserrat";
     fractionLabel1.fill = "#FFFFFF"
-    fractionLabel2.fontSize = 30;
-    fractionLabel2.fontWeight = 100;
-    fractionLabel2.fontFamily = "Montserrat Light";
-    fractionLabel2.fill = "#6A7B95"
 
   }
 }); // end am4core.ready()
