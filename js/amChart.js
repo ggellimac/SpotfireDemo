@@ -18,10 +18,8 @@ let container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
-
 container.exporting.menu = new am4core.ExportMenu();
-container.exporting.menu.align = "right";
-container.exporting.menu.verticalAlign = "top";
+
 
 //Creates a progress bar with the desired title and data
 //
@@ -31,7 +29,8 @@ function createProgressBarForFinances(title, spent, total) {
   let progressBar = container.createChild(am4charts.XYChart);
   progressBar.numberFormatter.numberFormat = "$#,###";
   progressBar.width = am4core.percent(25);
-  progressBar.height = am4core.percent(100);
+  progressBar.height = am4core.percent(75);
+  progressBar.dy = 25;
   progressBar.minHeight = 255;
   progressBar.maxHeight = 255;
   progressBar.background.fill = am4core.color("#293b56");
@@ -115,7 +114,7 @@ function createProgressBarForFinances(title, spent, total) {
   let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
   let milestone_img = milestone.createChild(am4core.Image);
   milestone_img.rotation = -90;
-  milestone_img.dy = 23;
+  milestone_img.dy = 30;
   milestone_img.dx = -20;
   milestone.locationY = 1;
 

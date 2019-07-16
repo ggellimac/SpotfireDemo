@@ -11,10 +11,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-
-#testingThis{
-  float: right;
-}
  .dot {
   height: 40px;
   width: 40px;
@@ -104,10 +100,7 @@
 
 }
 
-
-
 #am-mapchart{
-
   width: 40%;
   height: 50vh;
   display: inline-block;
@@ -115,20 +108,39 @@
   border: 0px;
   background-color:#293B56;
   border-bottom: 0px;
-
 }
 
 #am-barchart {
   background-image: linear-gradient(to right, #3B4D67 , #293B56);
   position: relative;
   float: right;
-  width: 45%;
+  width: 100%;
   height: 50vh;
   fill: "#FFFFFF";
   border-radius: 0px;
   border: transparent;
 }
 
+#label-for-bar-charts{
+  background-image: linear-gradient(to right, #3B4D67 , #293B56);
+  float: right;
+  width: 45%;
+  height: 50vh;
+  border: transparent;
+  color: white;
+  font-size: 2rem;
+  font-family: "Open Sans" sans-serif;
+  padding-top: 0.3rem;
+  border-radius: 0px;
+}
+
+#label-for-bar-charts h2{
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-family: "Montserrat" sans-serif;
+  font-weight: 700;
+}
 
 #am-progressbar {
   width: 100%;
