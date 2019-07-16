@@ -213,8 +213,12 @@ am4core.ready(function() {
 
   // show categories above and to the right of bar charts
   categoryAxis.dataFields.category = "category";
-  categoryAxis.renderer.dy = -10;
+  categoryAxis.renderer.dy = -5;
   categoryAxis.renderer.dx = 50;
+  categoryAxis.fontSize = 12;
+  categoryAxis.fontFamily = "Montserrat";
+  categoryAxis.fontWeight = 400;
+  categoryAxis.fill = "#FFFFFF";
 
   // resize cell which changes column size
   categoryAxis.renderer.cellStartLocation = 0.1;
@@ -296,8 +300,8 @@ am4core.ready(function() {
     fractionLabel2.isMeasured = false;
     fractionLabel1.y = 110*i;
     fractionLabel2.y = 110*i;
-    fractionLabel1.x = am4core.percent(30);
-    fractionLabel2.x = am4core.percent(45);
+    fractionLabel1.x = am4core.percent(22);
+    fractionLabel2.x = am4core.percent(37);
     fractionLabel1.fontSize = 30;
     fractionLabel1.fontWeight = 300;
     fractionLabel1.fontFamily = "Montserrat";
