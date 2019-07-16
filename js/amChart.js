@@ -43,12 +43,15 @@ function createProgressBarForFinances(title, spent, total) {
       topic: "",
       total: total,
       spent: spent,
-      color: am4core.color("#657181")
+      color: am4core.color("#657181"),
+      milestone: "images/milestone.svg"
     },
     {
       topic: "",
       spent: spent,
-      color: am4core.color("#FF8C55")
+      color: am4core.color("#FF8C55"),
+      milestone: "images/milestone.svg"
+
     }
   ];
 
@@ -105,6 +108,16 @@ function createProgressBarForFinances(title, spent, total) {
   spentLabel.label.horizontalCenter = "right";
   spentLabel.label.dx = -40;
 
+  let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
+  let milestone_img = milestone.createChild(am4core.Image);
+  milestone_img.rotation = -90;
+  // milestone_img.dy = -18;
+  milestone_img.dx = -13;
+  milestone.locationY = 1;
+
+  milestone_img.width = am4core.percent(100);;
+  milestone_img.propertyFields.href = "milestone";
+
   let circle = spentLabel.createChild(am4core.Circle);
   circle.width = 10;
   circle.height = 10;
@@ -125,6 +138,8 @@ function createProgressBarForFinances(title, spent, total) {
     gradient.addColor(am4core.color("#FF8C55"));
     progressBar.data[1]["color"] = gradient;
   }
+
+  
 
   // Add cursor
   progressBar.cursor = new am4charts.XYCursor();
@@ -282,10 +297,6 @@ am4core.ready(function() {
       fromDate: "2018-01-01",
       toDate: "2018-03-01",
       color: am4core.color("#38A7C8"),
-      cornerRadiusTopLeft: "50",
-      cornerRadiusBottomLeft: "50",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0",
       milestone: "images/milestone.svg"
     },
     {
@@ -296,10 +307,6 @@ am4core.ready(function() {
       fromDate: "2018-03-01",
       toDate: "2018-05-25",
       color: am4core.color("#38A7C8"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0",
       milestone: "images/milestone.svg"
     },
     {
@@ -307,14 +314,9 @@ am4core.ready(function() {
       row: "test",
       name: "SITE ACTIVATION",
       bullet: "images/activation.svg",
-
       fromDate: "2018-05-25",
       toDate: "2018-06-01",
       color: am4core.color("#38A7C8"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0",
       milestone: "images/milestone.svg"
     },
     {
@@ -322,14 +324,9 @@ am4core.ready(function() {
       row: "test",
       name: "SITE IDENTIFICATION",
       bullet: "images/identification.svg",
-
       fromDate: "2018-06-01",
       toDate: "2018-06-10",
       color: am4core.color("#38A7C8"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0",
       milestone: "images/milestone.svg"
     },
     {
@@ -337,28 +334,18 @@ am4core.ready(function() {
       row: "test",
       name: "PATIENT ENROLLMENT",
       bullet: "images/enrollment.svg",
-
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
       color: am4core.color("#4C5A71"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0"
     },
     {
       started: false,
       row: "test",
       name: "PATIENT TREATMENT",
       bullet: "images/treatment.svg",
-
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
       color: am4core.color("#4C5A71"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "0",
-      cornerRadiusBottomRight: "0"
     },
 
     {
@@ -366,26 +353,10 @@ am4core.ready(function() {
       row: "test",
       name: "PATIENT FOLLOW UP",
       bullet: "images/followup.svg",
-
       fromDate: "2018-09-08",
       toDate: "2018-12-30",
       color: am4core.color("#4C5A71"),
-      cornerRadiusTopLeft: "0",
-      cornerRadiusBottomLeft: "0",
-      cornerRadiusTopRight: "50",
-      cornerRadiusBottomRight: "50"
     }
-
-    // {
-    //   started: false,
-    //   row: "test",
-    //   name: "CLOSEOUT",
-    //   bullet: "images/prep.svg",
-
-    //   fromDate: "2018-10-30",
-    //   toDate: "2018-12-30",
-    //   color: am4core.color("#4C5A71")
-    // }
   ];
   am4core.options.autoSetClassName = true;
 
@@ -407,15 +378,13 @@ am4core.ready(function() {
 
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
+
   var bullet = series1.bullets.push(new am4charts.LabelBullet());
   var image = bullet.createChild(am4core.Image);
   image.dy = -10;
   image.dx = am4core.percent(0);
   bullet.locationX = 1;
-  // bullet.label.horizontalCenter = "left";
-
   image.height = am4core.percent(100);
-
   image.propertyFields.href = "bullet";
 
   var milestone = series1.bullets.push(new am4charts.LabelBullet());
@@ -423,17 +392,10 @@ am4core.ready(function() {
   milestone_img.dy = -10;
   milestone_img.dx = -25;
   milestone.locationX = 0;
-  // milestone.label.horizontalCenter = "right";
-
   milestone_img.height = am4core.percent(100);
-
   milestone_img.propertyFields.href = "milestone";
 
   series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX} ";
-  // series1.columns.template.column.cornerRadiusTopLeft = "cornerRadiusTopLeft";
-  // series1.columns.template.column.cornerRadiusTopRight = "cornerRadiusTopRight";
-  // series1.columns.template.column.cornerRadiusBottomLeft = "cornerRadiusBottomLeft";
-  // series1.columns.template.column.cornerRadiusBottomRight = "cornerRadiusBottomRight";
   series1.dataFields.openDateX = "fromDate";
   series1.dataFields.dateX = "toDate";
   series1.dataFields.categoryY = "row";
