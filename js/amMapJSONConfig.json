@@ -21,43 +21,9 @@
         "projection": "Miller",
         "series": [
             {
-                "legendSettings" : {
-                    "labelText" : "OUT OF SCOPE"
-                },
                 "type": "MapPolygonSeries",
                 "dataSource": {
-                    "url": "../js/amMapChartDataForNotStarted.json"
-                },
-                "exclude": [
-                    "AQ"
-                ],
-                "useGeodata": true,
-                "mapPolygons": {
-                    "template": {
-                        "tooltipText": "{name}",
-                        "fill": "#ffffff",
-                        "nonScallingStroke": true,
-                        "strokeOpacity": ".2",
-                        "propertyFields": {
-                            "fill": "fill"
-                        },
-                        "states": {
-                            "hover": {
-                                "properties": {
-                                    "fill": "#ffffff"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            {
-                "legendSettings" : {
-                    "labelText" : "PROBLEMATIC"
-                },
-                "type": "MapPolygonSeries",
-                "dataSource": {
-                    "url": "../js/amMapChartDataForProblematic.json"
+                    "url": "../js/amMapChartDataForColors.json"
                 },
                 "exclude": [
                     "AQ"
@@ -75,7 +41,7 @@
                         "states": {
                             "hover": {
                                 "properties": {
-                                    "fill": "#ffffff"
+                                    "fill": "#12769E"
                                 }
                             }
                         }
