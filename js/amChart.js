@@ -194,7 +194,7 @@ am4core.ready(function() {
       value0: 48,
       // value2: 0,
       value2: 200 - 48,
-      value3: 300
+      value3: 200
     },
     {
       category: "SITES IDENTIFIED",
