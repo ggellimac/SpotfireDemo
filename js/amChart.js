@@ -19,6 +19,10 @@ container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 
+container.exporting.menu = new am4core.ExportMenu();
+container.exporting.menu.align = "right";
+container.exporting.menu.verticalAlign = "top";
+
 //Creates a progress bar with the desired title and data
 //
 //
@@ -111,11 +115,11 @@ function createProgressBarForFinances(title, spent, total) {
   let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
   let milestone_img = milestone.createChild(am4core.Image);
   milestone_img.rotation = -90;
-  // milestone_img.dy = -18;
-  milestone_img.dx = -13;
+  milestone_img.dy = 23;
+  milestone_img.dx = -20;
   milestone.locationY = 1;
 
-  milestone_img.width = am4core.percent(100);;
+  milestone_img.width = am4core.percent(100);
   milestone_img.propertyFields.href = "milestone";
 
   let circle = spentLabel.createChild(am4core.Circle);
