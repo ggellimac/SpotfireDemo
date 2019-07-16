@@ -16,6 +16,9 @@
                 ]
             }
         },
+        "background" : {
+            "fillOpacity" : 0
+        },
         "geodata": "worldLow",
         "zoomControl": {},
         "projection": "Miller",

@@ -12,7 +12,9 @@
  */
 
 
-
+#testingThis{
+  float: right;
+}
  .dot {
   height: 40px;
   width: 40px;
