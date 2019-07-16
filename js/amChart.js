@@ -163,25 +163,30 @@ am4core.ready(function() {
       category: "PATIENTS ENROLLED",
       value0: 14,
       // value2: 5,
-      value2: 200 - 14
+      value2: 200 - 14,
+      value3: 200
     },
     {
       category: "SITES ACTIVATED",
       value0: 48,
       // value2: 0,
-      value2: 200 - 48
+      value2: 200 - 48,
+      value3: 300
     },
     {
       category: "SITES IDENTIFIED",
       value0: 68,
       value1: 40,
-      value2: 200 - 68 - 40
+      value2: 200 - 68 - 40,
+      value3: 200
     }
   ];
 
   // chart.colors.step = 2;
   kpiamChart.padding(30, 10, 10, 0);
   // kpiamChart.legend = new am4charts.Legend();
+
+
 
   var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
 
@@ -247,6 +252,18 @@ am4core.ready(function() {
 
     bullets[i].locationX = 0.5;
   }
+
+  //fraction labels
+    var i;
+    //make 3 fraction labels
+    for (i = 0; i<3; i++){
+      let fractionLabel = kpiamChart.createChild(am4core.Label);
+      fractionLabel.text = "The title is: {kpiamChart.data[i].value0}/{kpiamChart.data[i].value3}";
+      fractionlabel.fontSize = 20;
+      fractionlabal.align = "center";
+    }
+
+
   // categoryAxis.renderer.disabled = true;
   categoryAxis.renderer.inside = true;
 
