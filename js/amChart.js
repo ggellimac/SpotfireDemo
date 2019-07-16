@@ -163,8 +163,10 @@ am4core.ready(function() {
   am4core.useTheme(am4themes_animated);
   // Themes end
 
-  var kpiamChart = am4core.create("am-kpichart", am4charts.XYChart);
+  let kpiamChart = am4core.create("am-kpichart", am4charts.XYChart);
   kpiamChart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+  // set up colors
   kpiamChart.colors.list = [
     // light blue, orange, dark blue
     am4core.color("#75BDD0"),
@@ -173,6 +175,9 @@ am4core.ready(function() {
     am4core.color("#ffffff")
   ];
 
+
+  // category is the stage you're in
+  // value0 is the first color, value 1 second, and so on
   kpiamChart.data = [
     {
       category: "PATIENTS ENROLLED",
@@ -194,41 +199,43 @@ am4core.ready(function() {
     }
   ];
 
-  // chart.colors.step = 2;
+  // adjust whitespace
   kpiamChart.padding(30, 10, 10, 0);
-  // kpiamChart.legend = new am4charts.Legend();
 
-  var categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
+  // create axis for categories
+  let categoryAxis = kpiamChart.yAxes.push(new am4charts.CategoryAxis());
 
+  // show categories above and to the right of bar charts
   categoryAxis.dataFields.category = "category";
   categoryAxis.renderer.dy = -10;
   categoryAxis.renderer.dx = 50;
-  categoryAxis.renderer.grid.template.location = 0;
 
   // resize cell which changes column size
   categoryAxis.renderer.cellStartLocation = 0.1;
   categoryAxis.renderer.cellEndLocation = 0.3;
 
-  // remove grid
+  // hide grid
   categoryAxis.renderer.grid.template.disabled = true;
 
-  var valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
+  // create value axis for percentages
+  let valueAxis = kpiamChart.xAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
   valueAxis.max = 100;
   valueAxis.strictMinMax = true;
   valueAxis.calculateTotals = true;
   valueAxis.renderer.minWidth = 50;
 
-  var series = [];
-  var bullets = [];
-  var numSeries = 3;
+  let series = [];
+  let bullets = [];
+  let numSeries = 3;
+  // create several (numSeries) bar charts 
   for (i = 0; i < numSeries; i++) {
     series.push(kpiamChart.series.push(new am4charts.ColumnSeries()));
     series[i].columns.template.width = am4core.percent(50);
 
+    // hover message
     series[i].columns.template.tooltipText =
       "{name}: {valueX.totalPercent.formatNumber('#.00')}%";
-    // series[i].name = "Series ".concat(i);
     if (i == 0) {
       series[i].name = "Completed";
     } else if (i == 1) {
@@ -237,14 +244,17 @@ am4core.ready(function() {
       series[i].name = "To Be Completed";
     }
 
+    // set up data fields
     series[i].dataFields.categoryY = "category";
     series[i].dataFields.valueX = "value".concat(i);
     series[i].dataFields.valueXShow = "totalPercent";
     series[i].dataItems.template.locations.categoryY = 0.5;
 
     series[i].stacked = true;
+
     series[i].tooltip.pointerOrientation = "horizontal";
 
+    // gradient if completed or at risk
     if (i < numSeries - 1) {
       var fillModifier = new am4core.LinearGradientModifier();
       fillModifier.opacities = [1, 1];
@@ -259,15 +269,11 @@ am4core.ready(function() {
     bullets[i].interactionsEnabled = false;
     bullets[i].label.text = "{valueX.totalPercent.formatNumber('#.00')}%";
     bullets[i].label.fill = am4core.color("#ffffff");
-
     bullets[i].locationX = 0.5;
   }
-  // categoryAxis.renderer.disabled = true;
   categoryAxis.renderer.inside = true;
-
   valueAxis.renderer.labels.template.disabled = true;
   categoryAxis.position = "left";
-  // kpiamChart.scrollbarY = new am4core.Scrollbar();
 }); // end am4core.ready()
 
 // progress bar using gantt chart example
@@ -276,17 +282,13 @@ am4core.ready(function() {
   am4core.useTheme(am4themes_animated);
   // Themes end
 
+  // initial setup
   var chart = am4core.create("am-progressbar", am4charts.XYChart);
   chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-
   chart.paddingRight = 30;
   chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm";
 
   var colorSet = new am4core.ColorSet();
-  colorSet.saturation = 0.4;
-
-  var icon =
-    "M352.821381,363.269231 L356.814871,357.614288 C357.039817,357.295481 357.060717,356.885808 356.86987,356.548308 C356.677923,356.210808 356.305028,356 355.899684,356 L336.099983,356 C335.492793,356 335,356.465231 335,357.038462 L335,369.5 L335,381.961538 C335,382.534769 335.492793,383 336.099983,383 C336.707174,383 337.199967,382.534769 337.199967,381.961538 L337.199967,370.538462 L355.899684,370.538462 C356.305028,370.538462 356.677923,370.327654 356.86987,369.990154 C357.061267,369.652654 357.040367,369.242981 356.814871,368.924173 L352.821381,363.269231 Z M337.199967,368.461538 L337.199967,358.076923 L353.844365,358.076923 L350.584565,362.693404 C350.338168,363.042327 350.338168,363.496654 350.584565,363.845577 L353.844365,368.461538 L337.199967,368.461538 Z";
 
   chart.data = [
     {
@@ -358,13 +360,16 @@ am4core.ready(function() {
       color: am4core.color("#4C5A71"),
     }
   ];
-  am4core.options.autoSetClassName = true;
+
 
   var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+
+  // if all data have the same row, it gantt chart looks stacked
   categoryAxis.dataFields.category = "row";
   categoryAxis.renderer.grid.template.location = 0;
   categoryAxis.renderer.inversed = true;
 
+  // set up date axis
   var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
   dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm";
   dateAxis.renderer.minGridDistance = 70;
@@ -373,12 +378,11 @@ am4core.ready(function() {
   dateAxis.strictMinMax = true;
   dateAxis.renderer.tooltipLocation = 0;
 
-  // image.y = am4core.percent(100);
-  // image.propertyFields.href = "bullet";
 
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
 
+  // adds the corresponding image for each stage
   var bullet = series1.bullets.push(new am4charts.LabelBullet());
   var image = bullet.createChild(am4core.Image);
   image.dy = -10;
@@ -387,6 +391,7 @@ am4core.ready(function() {
   image.height = am4core.percent(100);
   image.propertyFields.href = "bullet";
 
+  // adds white marker for stages that have finished/milestone property
   var milestone = series1.bullets.push(new am4charts.LabelBullet());
   var milestone_img = milestone.createChild(am4core.Image);
   milestone_img.dy = -10;
@@ -395,12 +400,15 @@ am4core.ready(function() {
   milestone_img.height = am4core.percent(100);
   milestone_img.propertyFields.href = "milestone";
 
+  // hover and color data
   series1.columns.template.tooltipText = "{name}: {openDateX} - {dateX} ";
   series1.dataFields.openDateX = "fromDate";
   series1.dataFields.dateX = "toDate";
   series1.dataFields.categoryY = "row";
   series1.columns.template.propertyFields.fill = "color"; // get color from data
   series1.columns.template.propertyFields.stroke = "color";
+
+  // hide row name
   categoryAxis.renderer.labels.template.disabled = true;
 
   // var fillModifier = new am4core.LinearGradientModifier();
@@ -410,6 +418,7 @@ am4core.ready(function() {
   // fillModifier.offsets = [0, 1];
   // series1.columns.template.fillModifier = fillModifier;
 
+  // stages that have begun have a gradient
   count = 0;
   chart.data.forEach(element => {
     if (element["started"]) {
@@ -418,14 +427,11 @@ am4core.ready(function() {
       gradient.addColor(element["color"], 1, 0.99);
       element["color"] = gradient;
     }
-
     count++;
   });
   categoryAxis.renderer.grid.template.disabled = true;
 
   series1.columns.template.strokeOpacity = 1;
-
-  // chart.scrollbarX = new am4core.Scrollbar();
 }); // end am4core.ready()
 
 //Formats the given number into US currency
