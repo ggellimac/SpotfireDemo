@@ -62,13 +62,13 @@
   height : 255px;
 }
 
-.amcharts-Label text tspan {
+/*.amcharts-Label text tspan {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: bold;
   display: inline;
   fill: #ffffff;
-}
+}*/
 
 #global-view{
   background-image: linear-gradient(to left, #3B4D67 , #293B56);

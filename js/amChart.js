@@ -284,15 +284,28 @@ am4core.ready(function() {
 
   var i;
   for (i=2; i>=0; i--){
-    let fractionLabel = kpiamChart.createChild(am4core.Label);
+    let fractionLabel1 = kpiamChart.createChild(am4core.Label);
+    let fractionLabel2 = kpiamChart.createChild(am4core.Label);
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
-    fractionLabel.text = value + " / "+ total;
-    fractionLabel.align = "center";
-    fractionLabel.isMeasured = false;
-    fractionLabel.y = 110*i;
-    fractionLabel.x = am4core.percent(40);
-    fractionLabel.fontSize = 30;
+    fractionLabel1.text = value;
+    fractionLabel2.text = "/" + total;
+    fractionLabel1.align = "right";
+    fractionLabel2.align = "right";
+    fractionLabel1.isMeasured = false;
+    fractionLabel2.isMeasured = false;
+    fractionLabel1.y = 110*i;
+    fractionLabel2.y = 110*i;
+    fractionLabel1.x = am4core.percent(30);
+    fractionLabel2.x = am4core.percent(45);
+    fractionLabel1.fontSize = 30;
+    fractionLabel1.fontWeight = 300;
+    fractionLabel1.fontFamily = "Montserrat";
+    fractionLabel1.fill = "#FFFFFF"
+    fractionLabel2.fontSize = 30;
+    fractionLabel2.fontWeight = 100;
+    fractionLabel2.fontFamily = "Montserrat Light";
+    fractionLabel2.fill = "#6A7B95"
 
   }
 }); // end am4core.ready()
