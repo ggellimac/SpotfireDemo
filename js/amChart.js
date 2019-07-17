@@ -110,15 +110,15 @@ function createProgressBarForFinances(title, spent, total) {
   spentLabel.label.horizontalCenter = "right";
   spentLabel.label.dx = -40;
 
-  let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
-  let milestone_img = milestone.createChild(am4core.Image);
-  milestone_img.rotation = -90;
-  milestone_img.dy = 30;
-  milestone_img.dx = -20;
-  milestone.locationY = 1;
+  // let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
+  // let milestone_img = milestone.createChild(am4core.Image);
+  // milestone_img.rotation = -90;
+  // milestone_img.dy = 30;
+  // milestone_img.dx = -20;
+  // milestone.locationY = 1;
 
-  milestone_img.width = am4core.percent(100);
-  milestone_img.propertyFields.href = "milestone";
+  // milestone_img.width = am4core.percent(100);
+  // milestone_img.propertyFields.href = "milestone";
 
   let circle = spentLabel.createChild(am4core.Circle);
   circle.width = 10;
