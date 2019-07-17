@@ -2,7 +2,7 @@ am4core.options.autoSetClassName = true;
 
 //Creates the amChart mapchart from purely JSON config files
 function loadConfigFileForAmMapChart() {
-  $.getJSON("../js/amMapJSONConfig.json", function(jsonData) {
+  $.getJSON("../js/jsonFilesForAmcharts/amMapJSONConfig.json", function(jsonData) {
     am4core.createFromConfig(
       jsonData.mapchartdata,
       "am-mapchart",

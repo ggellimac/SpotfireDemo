@@ -13,7 +13,7 @@
             {
                 "type": "MapPolygonSeries",
                 "dataSource": {
-                    "url": "../js/amMapChartDataForColors.json"
+                    "url": "../js/jsonFilesForAmcharts/amMapChartDataForColors.json"
                 },
                 "exclude": [
                     "AQ"
@@ -41,7 +41,7 @@
             {
                 "type": "MapImageSeries",
                 "dataSource": {
-                    "url": "../js/amMapChartDataForCircles.json"
+                    "url": "../js/jsonFilesForAmcharts/amMapChartDataForCircles.json"
                 },
                 "mapImages": {
                     "propertyFields": {
