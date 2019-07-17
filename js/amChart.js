@@ -2,7 +2,9 @@ am4core.options.autoSetClassName = true;
 
 //Creates the amChart mapchart from purely JSON config files
 function loadConfigFileForAmMapChart() {
-  $.getJSON("../js/jsonFilesForAmcharts/amMapJSONConfig.json", function(jsonData) {
+  $.getJSON("../js/jsonFilesForAmcharts/amMapJSONConfig.json", function(
+    jsonData
+  ) {
     am4core.createFromConfig(
       jsonData.mapchartdata,
       "am-mapchart",
@@ -13,13 +15,11 @@ function loadConfigFileForAmMapChart() {
 
 loadConfigFileForAmMapChart();
 
-
 let container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 container.exporting.menu = new am4core.ExportMenu();
-
 
 //Creates a progress bar with the desired title and data
 //
@@ -54,7 +54,6 @@ function createProgressBarForFinances(title, spent, total) {
       spent: spent,
       color: am4core.color("#FF8C55"),
       milestone: "images/milestone.svg"
-
     }
   ];
 
@@ -132,7 +131,7 @@ function createProgressBarForFinances(title, spent, total) {
 
   let gradient = new am4core.LinearGradient();
   gradient.rotation = 90;
-  if ((total / spent) <= 2) {
+  if (total / spent <= 2) {
     gradient.addColor(am4core.color("#FF8C55"));
     gradient.addColor(am4core.color("#069bcf"));
     progressBar.data[1]["color"] = gradient;
@@ -141,8 +140,6 @@ function createProgressBarForFinances(title, spent, total) {
     gradient.addColor(am4core.color("#50b3d0"));
     progressBar.data[1]["color"] = gradient;
   }
-
-
 
   // Add cursor
   progressBar.cursor = new am4charts.XYCursor();
@@ -177,7 +174,6 @@ am4core.ready(function() {
     am4core.color("#4D5B74"),
     am4core.color("#ffffff")
   ];
-
 
   // category is the stage you're in
   // value0 is the first color, value 1 second, and so on
@@ -286,9 +282,8 @@ am4core.ready(function() {
   valueAxis.renderer.labels.template.disabled = true;
   categoryAxis.position = "left";
 
-
-  var i=0;
-for (i=2; i>=0; i--){
+  var i = 0;
+  for (i = 2; i >= 0; i--) {
     let fractionLabel1 = kpiamChart.createChild(am4core.Label);
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
@@ -298,7 +293,7 @@ for (i=2; i>=0; i--){
     fractionLabel1.y = 330 - 150 * i;
     fractionLabel1.x = am4core.percent(22);
     fractionLabel1.fontFamily = "Montserrat";
- }
+  }
 }); // end am4core.ready
 
 // progress bar using gantt chart example
@@ -363,7 +358,7 @@ am4core.ready(function() {
       bullet: "images/enrollment.svg",
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
-      color: am4core.color("#4C5A71"),
+      color: am4core.color("#4C5A71")
     },
     {
       started: false,
@@ -372,7 +367,7 @@ am4core.ready(function() {
       bullet: "images/treatment.svg",
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
-      color: am4core.color("#4C5A71"),
+      color: am4core.color("#4C5A71")
     },
 
     {
@@ -382,10 +377,9 @@ am4core.ready(function() {
       bullet: "images/followup.svg",
       fromDate: "2018-09-08",
       toDate: "2018-12-30",
-      color: am4core.color("#4C5A71"),
+      color: am4core.color("#4C5A71")
     }
   ];
-
 
   var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 
@@ -402,7 +396,6 @@ am4core.ready(function() {
   dateAxis.max = new Date(2019, 0, 1, 24, 0, 0, 0).getTime();
   dateAxis.strictMinMax = true;
   dateAxis.renderer.tooltipLocation = 0;
-
 
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
