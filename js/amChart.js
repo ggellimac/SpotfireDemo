@@ -295,7 +295,7 @@ for (i=2; i>=0; i--){
     fractionLabel1.text = `[#FFFFFF font-size: 30px font-weight: 300]${value}[/] [font-size: 30px font-weight:300]/[/] [#6A7B95 font-size: 30px font-weight:300]${total}[/]`;
     fractionLabel1.align = "right";
     fractionLabel1.isMeasured = false;
-    fractionLabel1.y = 220 - 110*i;
+    fractionLabel1.y = 330 - 150 * i;
     fractionLabel1.x = am4core.percent(22);
     fractionLabel1.fontFamily = "Montserrat";
  }
