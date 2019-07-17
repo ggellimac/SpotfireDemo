@@ -2,9 +2,7 @@ am4core.options.autoSetClassName = true;
 
 //Creates the amChart mapchart from purely JSON config files
 function loadConfigFileForAmMapChart() {
-  $.getJSON("../js/jsonFilesForAmcharts/amMapJSONConfig.json", function(
-    jsonData
-  ) {
+  $.getJSON("../js/jsonFilesForAmcharts/amMapJSONConfig.json", function(jsonData) {
     am4core.createFromConfig(
       jsonData.mapchartdata,
       "am-mapchart",
@@ -15,11 +13,13 @@ function loadConfigFileForAmMapChart() {
 
 loadConfigFileForAmMapChart();
 
+
 let container = am4core.create("am-barchart", am4core.Container);
 container.layout = "horizontal";
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 container.exporting.menu = new am4core.ExportMenu();
+
 
 //Creates a progress bar with the desired title and data
 //
@@ -54,6 +54,7 @@ function createProgressBarForFinances(title, spent, total) {
       spent: spent,
       color: am4core.color("#FF8C55"),
       milestone: "images/milestone.svg"
+
     }
   ];
 
@@ -110,15 +111,15 @@ function createProgressBarForFinances(title, spent, total) {
   spentLabel.label.horizontalCenter = "right";
   spentLabel.label.dx = -40;
 
-  // let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
-  // let milestone_img = milestone.createChild(am4core.Image);
-  // milestone_img.rotation = -90;
-  // milestone_img.dy = 30;
-  // milestone_img.dx = -20;
-  // milestone.locationY = 1;
+  let milestone = totalSeries.bullets.push(new am4charts.LabelBullet());
+  let milestone_img = milestone.createChild(am4core.Image);
+  milestone_img.rotation = -90;
+  milestone_img.dy = 30;
+  milestone_img.dx = -20;
+  milestone.locationY = 1;
 
-  // milestone_img.width = am4core.percent(100);
-  // milestone_img.propertyFields.href = "milestone";
+  milestone_img.width = am4core.percent(100);
+  milestone_img.propertyFields.href = "milestone";
 
   let circle = spentLabel.createChild(am4core.Circle);
   circle.width = 10;
@@ -131,7 +132,7 @@ function createProgressBarForFinances(title, spent, total) {
 
   let gradient = new am4core.LinearGradient();
   gradient.rotation = 90;
-  if (total / spent <= 2) {
+  if ((total / spent) <= 2) {
     gradient.addColor(am4core.color("#FF8C55"));
     gradient.addColor(am4core.color("#069bcf"));
     progressBar.data[1]["color"] = gradient;
@@ -140,6 +141,8 @@ function createProgressBarForFinances(title, spent, total) {
     gradient.addColor(am4core.color("#50b3d0"));
     progressBar.data[1]["color"] = gradient;
   }
+
+
 
   // Add cursor
   progressBar.cursor = new am4charts.XYCursor();
@@ -175,6 +178,7 @@ am4core.ready(function() {
     am4core.color("#ffffff")
   ];
 
+
   // category is the stage you're in
   // value0 is the first color, value 1 second, and so on
   kpiamChart.data = [
@@ -183,21 +187,24 @@ am4core.ready(function() {
       value0: 14,
       // value2: 5,
       value2: 200 - 14,
-      value3: 200
+      value3: 200,
+      bullet: "images/enrollment.svg"
     },
     {
       category: "SITES ACTIVATED",
       value0: 48,
       // value2: 0,
       value2: 200 - 48,
-      value3: 200
+      value3: 200,
+      bullet: "images/activation.svg"
     },
     {
       category: "SITES IDENTIFIED",
       value0: 68,
       value1: 40,
       value2: 200 - 68 - 40,
-      value3: 200
+      value3: 200,
+      bullet: "images/identification.svg"
     }
   ];
 
@@ -282,18 +289,19 @@ am4core.ready(function() {
   valueAxis.renderer.labels.template.disabled = true;
   categoryAxis.position = "left";
 
-  var i = 0;
-  for (i = 2; i >= 0; i--) {
+
+  var i=0;
+for (i=2; i>=0; i--){
     let fractionLabel1 = kpiamChart.createChild(am4core.Label);
     let value = kpiamChart.data[i]["value0"];
     let total = kpiamChart.data[i]["value3"];
     fractionLabel1.text = `[#FFFFFF font-size: 30px font-weight: 300]${value}[/] [font-size: 30px font-weight:300]/[/] [#6A7B95 font-size: 30px font-weight:300]${total}[/]`;
     fractionLabel1.align = "right";
     fractionLabel1.isMeasured = false;
-    fractionLabel1.y = 330 - 150 * i;
+    fractionLabel1.y = 220 - 110*i;
     fractionLabel1.x = am4core.percent(22);
     fractionLabel1.fontFamily = "Montserrat";
-  }
+ }
 }); // end am4core.ready
 
 // progress bar using gantt chart example
@@ -358,7 +366,7 @@ am4core.ready(function() {
       bullet: "images/enrollment.svg",
       fromDate: "2018-06-10",
       toDate: "2018-07-29",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
     },
     {
       started: false,
@@ -367,7 +375,7 @@ am4core.ready(function() {
       bullet: "images/treatment.svg",
       fromDate: "2018-07-29",
       toDate: "2018-09-08",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
     },
 
     {
@@ -377,9 +385,10 @@ am4core.ready(function() {
       bullet: "images/followup.svg",
       fromDate: "2018-09-08",
       toDate: "2018-12-30",
-      color: am4core.color("#4C5A71")
+      color: am4core.color("#4C5A71"),
     }
   ];
+
 
   var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 
@@ -396,6 +405,7 @@ am4core.ready(function() {
   dateAxis.max = new Date(2019, 0, 1, 24, 0, 0, 0).getTime();
   dateAxis.strictMinMax = true;
   dateAxis.renderer.tooltipLocation = 0;
+
 
   var series1 = chart.series.push(new am4charts.ColumnSeries());
   series1.columns.template.width = am4core.percent(80);
