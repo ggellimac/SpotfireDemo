@@ -80,7 +80,6 @@ function createProgressBarForFinances(title, spent, total) {
   totalSeries.dataFields.categoryX = "topic";
   totalSeries.clustered = false;
   totalSeries.name = "Total";
-  //totalSeries.tooltipText = "{name}: [bold]{valueY}[/]";
   totalSeries.columns.template.propertyFields.fill = "color"; // get color from data
   totalSeries.columns.template.propertyFields.stroke = "color";
   totalSeries.columns.template.width = am4core.percent(25);
@@ -90,7 +89,6 @@ function createProgressBarForFinances(title, spent, total) {
   spentSeries.dataFields.categoryX = "topic";
   spentSeries.clustered = false;
   spentSeries.name = "Spent";
-  //spentSeries.tooltipText = "{name}: [bold]{valueY}[/]";
   spentSeries.columns.template.propertyFields.fill = "color"; // get color from data
   spentSeries.columns.template.propertyFields.stroke = "color";
   spentSeries.columns.template.width = am4core.percent(25);
@@ -438,13 +436,6 @@ am4core.ready(function() {
 
   // hide row name
   categoryAxis.renderer.labels.template.disabled = true;
-
-  // var fillModifier = new am4core.LinearGradientModifier();
-  // fillModifier.opacities = [1, 1];
-  // fillModifier.brightnesses = [.05, .8];
-  // fillModifier.lightnesses = [.5, 0];
-  // fillModifier.offsets = [0, 1];
-  // series1.columns.template.fillModifier = fillModifier;
 
   // stages that have begun have a gradient
   count = 0;
